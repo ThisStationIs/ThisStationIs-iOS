@@ -1,5 +1,5 @@
 # Created by https://www.toptal.com/developers/gitignore/api/macos,swift,cocoapods
-# Edit at https://www.toptal.com/developers/gitignore?templates=macos,swift,cocoapods
+ds/# Edit at https://www.toptal.com/developers/gitignore?templates=macos,swift,cocoapods
 
 ### CocoaPods ###
 ## CocoaPods GitIgnore Template
@@ -8,6 +8,7 @@
 #           - Also handy if you have a large number of dependant pods
 #           - AS PER https://guides.cocoapods.org/using/using-cocoapods.html NEVER IGNORE THE LOCK FILE
 Pods/
+Podfile
 
 ### macOS ###
 # General
