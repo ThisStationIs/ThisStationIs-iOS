@@ -8,12 +8,26 @@
 import UIKit
 
 class MainButton: UIButton {
+    override var isEnabled: Bool {
+        didSet {
+            backgroundColor = isEnabled ? .green : .lightGray
+        }
+    }
+    
     init() {
         super.init(frame: .zero)
+        setupAttribute()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setupAttribute(){
+        layer.cornerRadius = 20
+        self.backgroundColor = .green
+        
+        setTitleColor(.white, for: .normal)
     }
 }
 
