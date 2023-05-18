@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1BC84BE44221C17E659DB310 /* Pods_ThisStationIs_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE21A22CDE95E598FC241D67 /* Pods_ThisStationIs_iOS.framework */; };
+		241E711029F64B1600E9D986 /* EmailRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241E710F29F64B1600E9D986 /* EmailRegisterViewController.swift */; };
+		249FF6CB2A11CCDE00F5F2A9 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249FF6CA2A11CCDE00F5F2A9 /* InputView.swift */; };
+		249FF6CD2A11D07C00F5F2A9 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249FF6CC2A11D07C00F5F2A9 /* TextField.swift */; };
+		249FF6CF2A11D81000F5F2A9 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249FF6CE2A11D81000F5F2A9 /* Constant.swift */; };
 		393C422C29ED6A21002A80FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393C422B29ED6A21002A80FC /* AppDelegate.swift */; };
 		393C422E29ED6A21002A80FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393C422D29ED6A21002A80FC /* SceneDelegate.swift */; };
 		393C423029ED6A21002A80FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393C422F29ED6A21002A80FC /* ViewController.swift */; };
@@ -26,6 +30,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		241E710F29F64B1600E9D986 /* EmailRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRegisterViewController.swift; sourceTree = "<group>"; };
+		249FF6CA2A11CCDE00F5F2A9 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		249FF6CC2A11D07C00F5F2A9 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		249FF6CE2A11D81000F5F2A9 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		393C422829ED6A21002A80FC /* ThisStationIs-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ThisStationIs-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		393C422B29ED6A21002A80FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		393C422D29ED6A21002A80FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +68,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		241E710E29F64AED00E9D986 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				241E710F29F64B1600E9D986 /* EmailRegisterViewController.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
 		393C421F29ED6A20002A80FC = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +113,7 @@
 			children = (
 				393C422F29ED6A21002A80FC /* ViewController.swift */,
 				393C424229ED7055002A80FC /* Login */,
+				241E710E29F64AED00E9D986 /* Register */,
 				393C424329ED705D002A80FC /* Main */,
 			);
 			path = Presentation;
@@ -176,6 +193,8 @@
 			isa = PBXGroup;
 			children = (
 				393C425529ED717B002A80FC /* MainButton.swift */,
+				249FF6CA2A11CCDE00F5F2A9 /* InputView.swift */,
+				249FF6CC2A11D07C00F5F2A9 /* TextField.swift */,
 			);
 			path = "Custom Component";
 			sourceTree = "<group>";
@@ -184,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				393C425829ED7194002A80FC /* Extensions */,
+				249FF6CE2A11D81000F5F2A9 /* Constant.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -337,8 +357,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				393C425D29ED71C5002A80FC /* APIClient.swift in Sources */,
+				249FF6CF2A11D81000F5F2A9 /* Constant.swift in Sources */,
 				393C425329ED712B002A80FC /* LoginViewController.swift in Sources */,
 				393C424B29ED70B3002A80FC /* HomeViewController.swift in Sources */,
+				249FF6CD2A11D07C00F5F2A9 /* TextField.swift in Sources */,
+				249FF6CB2A11CCDE00F5F2A9 /* InputView.swift in Sources */,
 				393C425F29ED71D0002A80FC /* Networking.swift in Sources */,
 				393C423029ED6A21002A80FC /* ViewController.swift in Sources */,
 				393C424D29ED70BF002A80FC /* CommunityViewController.swift in Sources */,
@@ -346,6 +369,7 @@
 				393C424629ED7083002A80FC /* MainTabBarViewController.swift in Sources */,
 				393C422C29ED6A21002A80FC /* AppDelegate.swift in Sources */,
 				393C424F29ED70C7002A80FC /* HistoryViewController.swift in Sources */,
+				241E711029F64B1600E9D986 /* EmailRegisterViewController.swift in Sources */,
 				393C425A29ED71A7002A80FC /* String+Ex.swift in Sources */,
 				393C425129ED70D6002A80FC /* MyViewController.swift in Sources */,
 				393C422E29ED6A21002A80FC /* SceneDelegate.swift in Sources */,
