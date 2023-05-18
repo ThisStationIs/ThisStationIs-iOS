@@ -8,6 +8,7 @@ target 'ThisStationIs-iOS' do
   pod 'FlexLayout'
   pod 'SnapKit', '~> 5.6.0'
   pod 'Then'
+  pod 'PinLayout'
   # Pods for ThisStationIs-iOS
 
 end

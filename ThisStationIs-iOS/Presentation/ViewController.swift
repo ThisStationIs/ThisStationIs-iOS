@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     var testContainerView = UIView()
     
     let inputTextField = InputView(label: "레이블").then {
-        $0.setRightViewMode(type: .password)
+        $0.setRightViewMode(type: .auth)
         $0.errorText = "에러 텍스트"
     }
     
