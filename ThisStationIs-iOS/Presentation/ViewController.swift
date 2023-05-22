@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     }
     
     lazy var testButton = UIButton().then {
-        $0.setTitle("test", for: .normal)
+        $0.setAttributedTitle(.attributeFont(font: .heading24, text: "test"), for: .normal)
         $0.addTarget(self, action: #selector(selectTestButton), for: .touchUpInside)
         $0.backgroundColor = .red
     }
