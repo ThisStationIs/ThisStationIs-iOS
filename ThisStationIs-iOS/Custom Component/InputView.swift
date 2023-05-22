@@ -51,7 +51,7 @@ class InputView: UIView {
     private var errorTextLabel = UILabel().then {
         $0.text = "error Text"
         $0.font = UIFont.systemFont(ofSize: 14)
-        $0.textColor = UIColor(named: ColorSet.error.name)
+        $0.textColor = AppColor.setupColor(.statusNegative)
     }
     
     private lazy var showPasswordButton = UIButton().then {
@@ -69,8 +69,8 @@ class InputView: UIView {
     private var sendButton = UIButton().then {
         $0.setTitle("TEXT", for: .normal)
         $0.titleLabel?.font = UIFont.systemFont(ofSize: 14)
-        $0.setTitleColor(UIColor(named: ColorSet.primary.name), for: .normal)
-        $0.backgroundColor = UIColor(named: ColorSet.primary.name)?.withAlphaComponent(0.1)
+        $0.setTitleColor(AppColor.setupColor(.primaryNormal), for: .normal)
+        $0.backgroundColor = AppColor.setupColor(.statusNegative).withAlphaComponent(0.1)
         $0.layer.cornerRadius = 32 / 2
     }
     
