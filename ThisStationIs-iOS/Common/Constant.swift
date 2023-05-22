@@ -5,7 +5,7 @@
 //  Created by milli on 2023/05/15.
 //
 
-import Foundation
+import UIKit
 
 /// Assets ColorSet에 이정된 이름
 enum ColorSet: String {
@@ -17,4 +17,14 @@ enum ColorSet: String {
     var name: String {
         return self.rawValue
     }
+}
+
+
+struct AppColor {
+//    static func appColor(_ name: ColorSet) -> UIColor {
+//        switch name {
+//        case .divider:
+//            return UIColor(named: "background")!
+//        }
+//    }
 }
