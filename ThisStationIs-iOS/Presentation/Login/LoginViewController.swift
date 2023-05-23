@@ -28,12 +28,7 @@ class LoginViewController: UIViewController {
         $0.backgroundColor = AppColor.setupColor(.primaryNormal)
     }
     
-    let idInputView = UIView().then {
-        $0.backgroundColor = AppColor.setupColor(.statusNegative)
-    }
-//    = InputView(label: "아이디").then {
-//        $0.backgroundColor = AppColor.setupColor(.textMain)
-//    }
+    let idInputView = InputView(label: "아이디")
     
     let pwInputView = UIView().then {
         $0.backgroundColor = AppColor.setupColor(.statusNegative)
@@ -67,9 +62,9 @@ extension LoginViewController {
         [
             iconView,
             idInputView,
-            pwInputView,
-            loginButton,
-            joinInButton
+//            pwInputView,
+//            loginButton,
+//            joinInButton
         ].forEach {
             view.addSubview($0)
         }
@@ -82,19 +77,24 @@ extension LoginViewController {
     }
     
     private func setupLayout(){
-        iconView.pin.top(55).marginTop(view.safeAreaInsets.top).width(view.frame.width).height(80)
-        idInputView.pin.below(of: iconView).marginTop(40)
+        iconView.pin.top(view.safeAreaInsets.top + 55)
+            .width(view.frame.width).height(80)
+        
+        idInputView.pin
+            .below(of: iconView)
             .horizontally(24)
+            .marginTop(40)
             .height(64)
-        pwInputView.pin.below(of: idInputView).marginTop(40)
-            .horizontally(24)
-            .height(idInputView.frame.height)
-        loginButton.pin.below(of: pwInputView).marginTop(30)
-            .horizontally(24)
-            .height(60)
-        joinInButton.pin.below(of: loginButton).marginTop(24)
-            .left(51)
-            .width(50)
+        
+//        pwInputView.pin.below(of: idInputView).marginTop(40)
+//            .horizontally(24)
+//            .height(idInputView.frame.height)
+//        loginButton.pin.below(of: pwInputView).marginTop(30)
+//            .horizontally(24)
+//            .height(60)
+//        joinInButton.pin.below(of: loginButton).marginTop(24)
+//            .left(51)
+//            .width(50)
         
         setupIconViewLayout()
     }
