@@ -152,7 +152,7 @@ class InputView: UIView {
     }
     
     override func layoutSubviews() {
-        self.pin.all(self.pin.safeArea)
+//        self.pin.all(self.pin.safeArea)
         self.flex.layout()
     }
 }
