@@ -13,7 +13,19 @@ import FlexLayout
 class LoginViewController: UIViewController {
     
     let iconView = UIView().then {
-        $0.backgroundColor = AppColor.setupColor(.statusNegative)
+        $0.backgroundColor = .white
+    }
+    
+    let leftSideView = UIView().then {
+        $0.backgroundColor = AppColor.setupColor(.primaryNormal)
+    }
+    
+    let icon = UIImageView().then {
+        $0.image = UIImage(named: "logo")
+    }
+    
+    let rightSideView = UIView().then {
+        $0.backgroundColor = AppColor.setupColor(.primaryNormal)
     }
     
     let idInputView = UIView().then {
@@ -50,7 +62,7 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController {
     private func setupView(){
-        view.backgroundColor = AppColor.setupColor(.statusPositive)
+        view.backgroundColor = .white
         
         [
             iconView,
@@ -61,10 +73,16 @@ extension LoginViewController {
         ].forEach {
             view.addSubview($0)
         }
+        
+        [
+            leftSideView, icon, rightSideView
+        ].forEach {
+            iconView.addSubview($0)
+        }
     }
     
     private func setupLayout(){
-        iconView.pin.top().marginTop(view.safeAreaInsets.top).width(view.frame.width).height(80)
+        iconView.pin.top(55).marginTop(view.safeAreaInsets.top).width(view.frame.width).height(80)
         idInputView.pin.below(of: iconView).marginTop(40)
             .horizontally(24)
             .height(64)
@@ -77,5 +95,17 @@ extension LoginViewController {
         joinInButton.pin.below(of: loginButton).marginTop(24)
             .left(51)
             .width(50)
+        
+        leftSideView.pin
+            .start(24)
+            .center().vertically()
+            .width(97).height(16)
+        
+        icon.pin.center().horizontally()
+            .width(69).height(80)
+        
+        rightSideView.pin.end(24)
+            .center().vertically()
+            .width(97).height(16)
     }
 }
