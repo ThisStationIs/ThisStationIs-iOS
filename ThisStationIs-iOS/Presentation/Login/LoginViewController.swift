@@ -30,8 +30,8 @@ class LoginViewController: UIViewController {
     
     let idInputView = InputView(label: "아이디")
     
-    let pwInputView = UIView().then {
-        $0.backgroundColor = AppColor.setupColor(.statusNegative)
+    let pwInputView = InputView(label: "비밀번호").then {
+        $0.setRightViewMode(type: .password)
     }
     
     let loginButton = MainButton().then {
@@ -40,6 +40,7 @@ class LoginViewController: UIViewController {
     
     let joinInButton = UIButton().then {
         $0.setTitle("회원가입", for: .normal)
+        $0.setTitleColor(AppColor.setupColor(.primaryNormal), for: .normal)
     }
 
     override func viewDidLoad() {
@@ -62,9 +63,9 @@ extension LoginViewController {
         [
             iconView,
             idInputView,
-//            pwInputView,
-//            loginButton,
-//            joinInButton
+            pwInputView,
+            loginButton,
+            joinInButton
         ].forEach {
             view.addSubview($0)
         }
@@ -82,19 +83,21 @@ extension LoginViewController {
         
         idInputView.pin
             .below(of: iconView)
-            .horizontally(24)
-            .marginTop(40)
+            .horizontally(24).marginTop(40)
             .height(64)
         
-//        pwInputView.pin.below(of: idInputView).marginTop(40)
-//            .horizontally(24)
-//            .height(idInputView.frame.height)
-//        loginButton.pin.below(of: pwInputView).marginTop(30)
-//            .horizontally(24)
-//            .height(60)
-//        joinInButton.pin.below(of: loginButton).marginTop(24)
-//            .left(51)
-//            .width(50)
+        pwInputView.pin.below(of: idInputView)
+            .below(of: idInputView)
+            .horizontally(24).marginTop(40)
+            .height(idInputView.frame.height)
+        
+        loginButton.pin.below(of: pwInputView)
+            .horizontally(24).marginTop(30)
+            .height(60)
+        
+        joinInButton.pin.below(of: loginButton).marginTop(24)
+            .left(51)
+            .width(60)
         
         setupIconViewLayout()
     }
