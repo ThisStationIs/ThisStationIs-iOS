@@ -96,6 +96,10 @@ extension LoginViewController {
             .left(51)
             .width(50)
         
+        setupIconViewLayout()
+    }
+    
+    private func setupIconViewLayout(){
         leftSideView.pin
             .start(24)
             .center().vertically()
