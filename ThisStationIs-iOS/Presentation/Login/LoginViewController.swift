@@ -28,9 +28,9 @@ class LoginViewController: UIViewController {
         $0.backgroundColor = AppColor.setupColor(.primaryNormal)
     }
     
-    let idInputView = InputView(label: "아이디")
+    let idInputView = InputView(label: "아이디", placeholder: "아이디를 입력해주세요.")
     
-    let pwInputView = InputView(label: "비밀번호").then {
+    let pwInputView = InputView(label: "비밀번호", placeholder: "비밀번호를 입력해주세요.").then {
         $0.setRightViewMode(type: .password)
     }
     
