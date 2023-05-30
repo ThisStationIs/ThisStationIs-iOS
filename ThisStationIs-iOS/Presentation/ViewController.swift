@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.view.backgroundColor = .white
-        self.view.addSubview(testContainerView)
+//        self.view.addSubview(testContainerView)
     
         
         testContainerView.flex.direction(.column).define {
@@ -44,8 +44,8 @@ class ViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        testContainerView.pin.all(view.pin.safeArea)
-        testContainerView.flex.layout()
+//        testContainerView.pin.height(.infinity)
+        testContainerView.flex.layout(mode: .adjustHeight)
     }
 
 
