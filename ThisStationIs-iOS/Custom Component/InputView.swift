@@ -67,8 +67,7 @@ class InputView: UIView {
     }
     
     private var sendButton = UIButton().then {
-        $0.setTitle("발송", for: .normal)
-        $0.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        $0.setAttributedTitle(.attributeFont(font: .body14, text: "발송"), for: .normal)
         $0.setTitleColor(UIColor(named: ColorSet.primary.name), for: .normal)
         $0.backgroundColor = UIColor(named: ColorSet.primary.name)?.withAlphaComponent(0.1)
         $0.layer.cornerRadius = 32 / 2
@@ -83,7 +82,7 @@ class InputView: UIView {
     
     var errorText: String = "" {
         didSet {
-            errorTextLabel.text = errorText
+            errorTextLabel.attributedText = .attributeFont(font: .body14, text: errorText)
         }
     }
     
@@ -106,7 +105,6 @@ class InputView: UIView {
     
     private func setUI() {
         self.flex
-            .padding(16)
             .define {
                 $0.addItem(inputLabel)
                 $0.addItem(textField).height(40)
@@ -153,7 +151,7 @@ class InputView: UIView {
     }
     
     override func layoutSubviews() {
-        self.pin.all(self.pin.safeArea)
-        self.flex.layout()
+        self.pin.height(.infinity)
+        self.flex.layout(mode: .adjustHeight)
     }
 }
