@@ -12,12 +12,12 @@ class ViewController: UIViewController {
     var testContainerView = UIView()
     
     let inputTextField = InputView(label: "레이블").then {
-        $0.setRightViewMode(type: .password)
+        $0.setRightViewMode(type: .auth)
         $0.errorText = "에러 텍스트"
     }
     
     lazy var testButton = UIButton().then {
-        $0.setTitle("test", for: .normal)
+        $0.setAttributedTitle(.attributeFont(font: .heading24, text: "test"), for: .normal)
         $0.addTarget(self, action: #selector(selectTestButton), for: .touchUpInside)
         $0.backgroundColor = .red
     }
@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.view.backgroundColor = .white
-        self.view.addSubview(testContainerView)
+//        self.view.addSubview(testContainerView)
     
         
         testContainerView.flex.direction(.column).define {
@@ -44,8 +44,8 @@ class ViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        testContainerView.pin.all(view.pin.safeArea)
-        testContainerView.flex.layout()
+//        testContainerView.pin.height(.infinity)
+        testContainerView.flex.layout(mode: .adjustHeight)
     }
 
 

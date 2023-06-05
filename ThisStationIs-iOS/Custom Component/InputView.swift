@@ -83,7 +83,7 @@ class InputView: UIView {
     
     var errorText: String = "" {
         didSet {
-            errorTextLabel.text = errorText
+            errorTextLabel.attributedText = .attributeFont(font: .body14, text: errorText)
         }
     }
     
@@ -106,10 +106,9 @@ class InputView: UIView {
     
     private func setUI() {
         self.flex
-            .padding(16)
             .define {
                 $0.addItem(inputLabel)
-                $0.addItem(textField)
+                $0.addItem(textField).height(40)
                 $0.addItem(errorTextLabel)
                     .display(isError ? .flex : .none)
                     .marginTop(8)
@@ -125,14 +124,15 @@ class InputView: UIView {
         let rightView = UIView()
         
         if type == .auth {
-            textField.padding = .init(top: 8, left: 0, bottom: 8, right: 117)
-//            rightView.flex.direction(.rowReverse).define {
-//                $0.addItem(timeLabel).marginRight(8)
-//                $0.addItem(sendButton)
-//                    .paddingHorizontal(22)
-//                    .paddingVertical(4)
-//            }
-//            self.flex.addItem(rightView).height(32)
+            rightView.flex.direction(.rowReverse).width(117).define {
+                $0.addItem(sendButton)
+                    .paddingHorizontal(22)
+                    .paddingVertical(4)
+                $0.addItem(timeLabel).marginRight(8)
+            }
+            self.flex.addItem(rightView).height(32)
+            
+            textField.padding = .init(top: 8, left: 0, bottom: 8, right: 130)
         } else if type == .password {
             rightView.frame = .init(x: 0, y: 0, width: 24, height: 24)
             rightView.addSubview(showPasswordButton)
@@ -142,9 +142,9 @@ class InputView: UIView {
           
         }
         
+        
         textField.rightView = rightView
         textField.rightViewMode = .always
-        
     }
     
     private func authenticationViewMode() {

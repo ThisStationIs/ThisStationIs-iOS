@@ -9,6 +9,7 @@ target 'ThisStationIs-iOS' do
   pod 'PinLayout'
   pod 'SnapKit', '~> 5.6.0'
   pod 'Then'
+  pod 'PinLayout'
   # Pods for ThisStationIs-iOS
 
 end
