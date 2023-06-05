@@ -25,7 +25,7 @@ class MainButton: UIButton {
     
     private func setupAttribute(){
         layer.cornerRadius = 20
-        self.backgroundColor = .green
+        self.backgroundColor = AppColor.setupColor(.primaryNormal)
         
         setTitleColor(.white, for: .normal)
     }
