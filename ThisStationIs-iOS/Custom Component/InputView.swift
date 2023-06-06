@@ -93,6 +93,7 @@ class InputView: UIView {
     /// 텍스트 필드
     init(label: String, placeholder: String = "") {
         super.init(frame: .zero)
+        self.backgroundColor = .red
         setUI()
         
         inputLabel.text = label
@@ -141,7 +142,6 @@ class InputView: UIView {
           
         }
         
-        
         textField.rightView = rightView
         textField.rightViewMode = .always
     }
@@ -151,7 +151,7 @@ class InputView: UIView {
     }
     
     override func layoutSubviews() {
-        self.pin.height(.infinity)
+        self.pin.horizontally()
         self.flex.layout(mode: .adjustHeight)
     }
 }

@@ -9,7 +9,7 @@ import UIKit
 
 class EmailRegisterViewController: UIViewController {
     
-    let emailFlexContianer: UIView = UIView()
+    let emailFlexContainer: UIView = UIView()
     
     let titleLabel = UILabel().then {
         $0.attributedText = .attributeFont(font: .heading24, text: "로그인에 사용할 이메일 형식의\n아이디를 입력해주세요.", lineHeight: 33.6)
@@ -20,10 +20,20 @@ class EmailRegisterViewController: UIViewController {
         $0.errorText = "이메일 형식이 아니에요."
     }
     
-    let nextButton = UIButton().then {
-        $0.backgroundColor = .systemGreen
+    lazy var nextButton = UIButton().then {
+        $0.backgroundColor = UIColor(named: ColorSet.primary.name)
         $0.setTitle("다음", for: .normal)
         $0.layer.cornerRadius = 20
+        $0.addTarget(self, action: #selector(selectNextButton), for: .touchUpInside)
+    }
+    
+  
+    
+    @objc func selectNextButton() {
+//        bottomSheetView.alpha = 1.1
+//        bottomSheetView.showBottomSheet()
+        let bottomSheetView = BottomSheetView()
+        bottomSheetView.showBottomSheet()
     }
     
     override func viewDidLoad() {
@@ -33,9 +43,9 @@ class EmailRegisterViewController: UIViewController {
     }
     
     private func setUI() {
-        self.view.addSubview(emailFlexContianer)
+        self.view.addSubview(emailFlexContainer)
         
-        emailFlexContianer.flex
+        emailFlexContainer.flex
             .paddingTop(15)
             .justifyContent(.spaceBetween)
             .define {
@@ -55,7 +65,7 @@ class EmailRegisterViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        emailFlexContianer.pin.all(view.pin.safeArea)
-        emailFlexContianer.flex.layout()
+        emailFlexContainer.pin.all(view.pin.safeArea)
+        emailFlexContainer.flex.layout()
     }
 }
