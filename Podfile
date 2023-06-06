@@ -6,6 +6,7 @@ target 'ThisStationIs-iOS' do
   use_frameworks!
   pod 'Alamofire'
   pod 'FlexLayout'
+  pod 'PinLayout'
   pod 'SnapKit', '~> 5.6.0'
   pod 'Then'
   pod 'PinLayout'

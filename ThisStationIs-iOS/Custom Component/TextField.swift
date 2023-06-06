@@ -11,15 +11,15 @@ class TextField: UITextField {
     var padding = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
 
     private var underLineView = UIView().then {
-        $0.backgroundColor = UIColor(named: ColorSet.divider.name)
+        $0.backgroundColor = AppColor.setupColor(.componentDivider)
     }
 
     var isError: Bool = false {
         didSet {
             if isError {
-                underLineView.backgroundColor = UIColor(named: ColorSet.error.name)
+                underLineView.backgroundColor = AppColor.setupColor(.statusNegative)
             } else {
-                underLineView.backgroundColor = UIColor(named: ColorSet.divider.name)
+                underLineView.backgroundColor = AppColor.setupColor(.componentDivider)
             }
         }
     }
