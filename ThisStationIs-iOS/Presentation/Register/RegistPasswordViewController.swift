@@ -23,6 +23,9 @@ class RegistPasswordViewController: UIViewController {
     let checkPasswordInputView = InputView(label: "비밀번호 확인", placeholder: "비밀번호를 다시 입력해주세요.").then {
         $0.setRightViewMode(type: .password)
     }
+    
+    let bottomButton = MainButton().then {
+        $0.setTitle("다음", for: .normal)
     }
     
     override func viewDidLoad() {
@@ -43,7 +46,8 @@ extension RegistPasswordViewController {
         [
             mainDescriptionLabel,
             passwordInputView,
-            checkPasswordInputView
+            checkPasswordInputView,
+            bottomButton
         ].forEach {
             view.addSubview($0)
         }
@@ -63,5 +67,9 @@ extension RegistPasswordViewController {
             .below(of: passwordInputView)
             .horizontally(24).marginTop(8)
             .height(passwordInputView.frame.height)
+        
+        bottomButton.pin.bottom(view.safeAreaInsets.bottom + 34)
+            .horizontally(24)
+            .height(60)
     }
 }
