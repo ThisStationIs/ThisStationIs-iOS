@@ -30,6 +30,9 @@
 		393C425F29ED71D0002A80FC /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393C425E29ED71D0002A80FC /* Networking.swift */; };
 		393C42632A1BAFDE002A80FC /* NSAttributedString+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393C42622A1BAFDE002A80FC /* NSAttributedString+Ex.swift */; };
 		3981DE172A2F086F007AA4F6 /* UIWindow+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3981DE162A2F086F007AA4F6 /* UIWindow+Ex.swift */; };
+		48171D482A30243300F1F869 /* SelectFavoriteLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48171D472A30243300F1F869 /* SelectFavoriteLineViewController.swift */; };
+		48171D4A2A30268600F1F869 /* LineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48171D492A30268600F1F869 /* LineCollectionViewCell.swift */; };
+		CFD59C662A2F89B500CE92F9 /* RegistPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD59C652A2F89B500CE92F9 /* RegistPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,9 +60,12 @@
 		393C425E29ED71D0002A80FC /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		393C42622A1BAFDE002A80FC /* NSAttributedString+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Ex.swift"; sourceTree = "<group>"; };
 		3981DE162A2F086F007AA4F6 /* UIWindow+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Ex.swift"; sourceTree = "<group>"; };
+		48171D472A30243300F1F869 /* SelectFavoriteLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFavoriteLineViewController.swift; sourceTree = "<group>"; };
+		48171D492A30268600F1F869 /* LineCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineCollectionViewCell.swift; sourceTree = "<group>"; };
 		AE21A22CDE95E598FC241D67 /* Pods_ThisStationIs_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThisStationIs_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B170A4849F34BBCF59543A3F /* Pods-ThisStationIs-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThisStationIs-iOS.debug.xcconfig"; path = "Target Support Files/Pods-ThisStationIs-iOS/Pods-ThisStationIs-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		BAA9736FCC519EBBE9996F2C /* Pods-ThisStationIs-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThisStationIs-iOS.release.xcconfig"; path = "Target Support Files/Pods-ThisStationIs-iOS/Pods-ThisStationIs-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		CFD59C652A2F89B500CE92F9 /* RegistPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistPasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +84,9 @@
 			isa = PBXGroup;
 			children = (
 				241E710F29F64B1600E9D986 /* EmailRegisterViewController.swift */,
+				CFD59C652A2F89B500CE92F9 /* RegistPasswordViewController.swift */,
+				48171D472A30243300F1F869 /* SelectFavoriteLineViewController.swift */,
+				48171D492A30268600F1F869 /* LineCollectionViewCell.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -369,15 +378,18 @@
 				249FF6CF2A11D81000F5F2A9 /* Constant.swift in Sources */,
 				393C425329ED712B002A80FC /* LoginViewController.swift in Sources */,
 				393C424B29ED70B3002A80FC /* HomeViewController.swift in Sources */,
+				48171D482A30243300F1F869 /* SelectFavoriteLineViewController.swift in Sources */,
 				249FF6CD2A11D07C00F5F2A9 /* TextField.swift in Sources */,
 				249FF6CB2A11CCDE00F5F2A9 /* InputView.swift in Sources */,
 				3981DE172A2F086F007AA4F6 /* UIWindow+Ex.swift in Sources */,
+				48171D4A2A30268600F1F869 /* LineCollectionViewCell.swift in Sources */,
 				393C425F29ED71D0002A80FC /* Networking.swift in Sources */,
 				393C423029ED6A21002A80FC /* ViewController.swift in Sources */,
 				393C424D29ED70BF002A80FC /* CommunityViewController.swift in Sources */,
 				393C425629ED717B002A80FC /* MainButton.swift in Sources */,
 				3923B5B52A25DD09002845EC /* BottomSheetView.swift in Sources */,
 				393C42632A1BAFDE002A80FC /* NSAttributedString+Ex.swift in Sources */,
+				CFD59C662A2F89B500CE92F9 /* RegistPasswordViewController.swift in Sources */,
 				393C424629ED7083002A80FC /* MainTabBarViewController.swift in Sources */,
 				393C422C29ED6A21002A80FC /* AppDelegate.swift in Sources */,
 				393C424F29ED70C7002A80FC /* HistoryViewController.swift in Sources */,
