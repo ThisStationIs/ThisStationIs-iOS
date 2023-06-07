@@ -17,11 +17,12 @@ class RegistPasswordViewController: UIViewController {
     }
     
     let passwordInputView = InputView(label: "비밀번호", placeholder: "비밀번호를 입력해주세요.").then {
-        $0.setRightViewMode(type: .auth)
+        $0.setRightViewMode(type: .password)
     }
     
     let checkPasswordInputView = InputView(label: "비밀번호 확인", placeholder: "비밀번호를 다시 입력해주세요.").then {
-        $0.setRightViewMode(type: .auth)
+        $0.setRightViewMode(type: .password)
+    }
     }
     
     override func viewDidLoad() {
