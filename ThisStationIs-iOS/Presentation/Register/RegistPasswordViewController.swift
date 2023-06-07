@@ -52,5 +52,15 @@ extension RegistPasswordViewController {
         mainDescriptionLabel.sizeToFit()
         mainDescriptionLabel.pin.top(view.safeAreaInsets.top + 73)
             .left(24)
+        
+        passwordInputView.pin
+            .below(of: mainDescriptionLabel)
+            .horizontally(24).marginTop(40)
+            .height(64)
+        
+        checkPasswordInputView.pin
+            .below(of: passwordInputView)
+            .horizontally(24).marginTop(8)
+            .height(passwordInputView.frame.height)
     }
 }
