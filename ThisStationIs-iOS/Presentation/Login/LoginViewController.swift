@@ -41,6 +41,7 @@ class LoginViewController: UIViewController {
     let joinInButton = UIButton().then {
         $0.setTitle("회원가입", for: .normal)
         $0.setTitleColor(AppColor.setupColor(.primaryNormal), for: .normal)
+        $0.titleLabel?.attributedText = .attributeFont(font: .label, text: "회원가입")
     }
 
     override func viewDidLoad() {
