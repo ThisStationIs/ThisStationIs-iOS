@@ -94,7 +94,6 @@ class InputView: UIView {
     /// 텍스트 필드
     init(label: String, placeholder: String = "") {
         super.init(frame: .zero)
-        self.backgroundColor = .red
         setUI()
         
         inputLabel.text = label
