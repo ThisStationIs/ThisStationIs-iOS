@@ -15,7 +15,7 @@ class SelectFavoriteLineViewController: UIViewController {
     }
     
     let lineCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
-        $0.backgroundColor = .red
+        $0.register(LineCollectionViewCell.self, forCellWithReuseIdentifier: "LineCollectionViewCell")
     }
     
     let bottomButton = MainButton().then {
@@ -25,11 +25,17 @@ class SelectFavoriteLineViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        setupDelegate()
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         setupLayout()
+    }
+    
+    func setupDelegate() {
+        lineCollectionView.dataSource = self
+        lineCollectionView.delegate = self
     }
 }
 
@@ -51,18 +57,45 @@ extension SelectFavoriteLineViewController {
         mainDescriptionLabel.pin.top(view.safeAreaInsets.top + 73)
             .left(24)
         
+        bottomButton.pin.bottom(view.safeAreaInsets.bottom + 34)
+            .horizontally(24)
+            .height(60)
+        
         lineCollectionView.pin
             .below(of: mainDescriptionLabel)
             .above(of: bottomButton)
             .horizontally(24)
-//            .marginTop(40)
-            .marginVertical(40)
-//            .marginBottom(97)
-            .height(200)
-            
-        
-        bottomButton.pin.bottom(view.safeAreaInsets.bottom + 34)
-            .horizontally(24)
-            .height(60)
+            .marginTop(40)
+            .marginBottom(97)
     }
+}
+
+extension SelectFavoriteLineViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 24
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LineCollectionViewCell", for: indexPath) as! LineCollectionViewCell
+        cell.setupAttribute(bgColor: AppColor.setupColor(.statusPositive), txtColor: .white)
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let numberOfColumns: CGFloat = 3
+        
+        let spacingBetweenCells: CGFloat = 9
+        let totalSpacing: CGFloat = (numberOfColumns - 1) * spacingBetweenCells
+        
+        let availableWidth = collectionView.frame.width - totalSpacing
+        let cellWidth = availableWidth / numberOfColumns
+        
+        let cellHeight: CGFloat = 48
+        
+        let layout = collectionViewLayout as? UICollectionViewFlowLayout
+        layout?.minimumInteritemSpacing = spacingBetweenCells
+        
+        return CGSize(width: cellWidth, height: cellHeight)
+    }
+    
 }
