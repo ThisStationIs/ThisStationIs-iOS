@@ -14,6 +14,10 @@ class SelectFavoriteLineViewController: UIViewController {
         $0.numberOfLines = 0
     }
     
+    let lineCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
+        $0.backgroundColor = .red
+    }
+    
     let bottomButton = MainButton().then {
         $0.setTitle("가입 완료", for: .normal)
     }
@@ -35,6 +39,7 @@ extension SelectFavoriteLineViewController {
         
         [
             mainDescriptionLabel,
+            lineCollectionView,
             bottomButton
         ].forEach {
             view.addSubview($0)
@@ -45,6 +50,16 @@ extension SelectFavoriteLineViewController {
         mainDescriptionLabel.sizeToFit()
         mainDescriptionLabel.pin.top(view.safeAreaInsets.top + 73)
             .left(24)
+        
+        lineCollectionView.pin
+            .below(of: mainDescriptionLabel)
+            .above(of: bottomButton)
+            .horizontally(24)
+//            .marginTop(40)
+            .marginVertical(40)
+//            .marginBottom(97)
+            .height(200)
+            
         
         bottomButton.pin.bottom(view.safeAreaInsets.bottom + 34)
             .horizontally(24)
