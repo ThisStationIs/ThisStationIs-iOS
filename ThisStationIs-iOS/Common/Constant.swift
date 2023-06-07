@@ -69,5 +69,4 @@ struct AppColor {
             return UIColor(named: "textTeritory")!
         }
     }
-    
 }
