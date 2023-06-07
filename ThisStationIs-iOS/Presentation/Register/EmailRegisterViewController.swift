@@ -21,7 +21,7 @@ class EmailRegisterViewController: UIViewController {
     }
     
     lazy var nextButton = UIButton().then {
-        $0.backgroundColor = UIColor(named: ColorSet.primary.name)
+        $0.backgroundColor = AppColor.setupColor(.textMain)
         $0.setTitle("다음", for: .normal)
         $0.layer.cornerRadius = 20
         $0.addTarget(self, action: #selector(selectNextButton), for: .touchUpInside)
