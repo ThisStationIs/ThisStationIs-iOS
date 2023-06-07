@@ -25,13 +25,15 @@ class ViewController: UIViewController {
     @objc func selectTestButton() {
         inputTextField.isError = inputTextField.isError ? false : true
         testContainerView.flex.layout()
+        
+        self.navigationController?.pushViewController(EmailRegisterViewController(), animated: true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.view.backgroundColor = .white
-//        self.view.addSubview(testContainerView)
+        self.view.addSubview(testContainerView)
     
         
         testContainerView.flex.direction(.column).define {
@@ -44,7 +46,7 @@ class ViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-//        testContainerView.pin.height(.infinity)
+        testContainerView.pin.all(view.pin.safeArea)
         testContainerView.flex.layout(mode: .adjustHeight)
     }
 
