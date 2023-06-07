@@ -57,7 +57,7 @@ extension SelectFavoriteLineViewController {
         mainDescriptionLabel.pin.top(view.safeAreaInsets.top + 73)
             .left(24)
         
-        bottomButton.pin.bottom(view.safeAreaInsets.bottom + 34)
+        bottomButton.pin.bottom(view.safeAreaInsets.bottom)
             .horizontally(24)
             .height(60)
         
@@ -66,7 +66,7 @@ extension SelectFavoriteLineViewController {
             .above(of: bottomButton)
             .horizontally(24)
             .marginTop(40)
-            .marginBottom(97)
+            .marginBottom(24)
     }
 }
 
