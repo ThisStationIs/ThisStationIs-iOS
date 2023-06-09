@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1BC84BE44221C17E659DB310 /* Pods_ThisStationIs_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE21A22CDE95E598FC241D67 /* Pods_ThisStationIs_iOS.framework */; };
 		241E711029F64B1600E9D986 /* EmailRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241E710F29F64B1600E9D986 /* EmailRegisterViewController.swift */; };
+		2469FD3F2A32C11F00B78CF5 /* AuthNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2469FD3E2A32C11F00B78CF5 /* AuthNumberViewController.swift */; };
 		249FF6CB2A11CCDE00F5F2A9 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249FF6CA2A11CCDE00F5F2A9 /* InputView.swift */; };
 		249FF6CD2A11D07C00F5F2A9 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249FF6CC2A11D07C00F5F2A9 /* TextField.swift */; };
 		249FF6CF2A11D81000F5F2A9 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249FF6CE2A11D81000F5F2A9 /* Constant.swift */; };
@@ -29,7 +30,7 @@
 		393C425D29ED71C5002A80FC /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393C425C29ED71C5002A80FC /* APIClient.swift */; };
 		393C425F29ED71D0002A80FC /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393C425E29ED71D0002A80FC /* Networking.swift */; };
 		393C42632A1BAFDE002A80FC /* NSAttributedString+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393C42622A1BAFDE002A80FC /* NSAttributedString+Ex.swift */; };
-		3981DE172A2F086F007AA4F6 /* UIWindow+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3981DE162A2F086F007AA4F6 /* UIWindow+Ex.swift */; };
+		3981DE172A2F086F007AA4F6 /* UIView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3981DE162A2F086F007AA4F6 /* UIView+Ex.swift */; };
 		48171D482A30243300F1F869 /* SelectFavoriteLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48171D472A30243300F1F869 /* SelectFavoriteLineViewController.swift */; };
 		48171D4A2A30268600F1F869 /* LineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48171D492A30268600F1F869 /* LineCollectionViewCell.swift */; };
 		CFD59C662A2F89B500CE92F9 /* RegistPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD59C652A2F89B500CE92F9 /* RegistPasswordViewController.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		241E710F29F64B1600E9D986 /* EmailRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRegisterViewController.swift; sourceTree = "<group>"; };
+		2469FD3E2A32C11F00B78CF5 /* AuthNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNumberViewController.swift; sourceTree = "<group>"; };
 		249FF6CA2A11CCDE00F5F2A9 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		249FF6CC2A11D07C00F5F2A9 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		249FF6CE2A11D81000F5F2A9 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -59,7 +61,7 @@
 		393C425C29ED71C5002A80FC /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		393C425E29ED71D0002A80FC /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		393C42622A1BAFDE002A80FC /* NSAttributedString+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Ex.swift"; sourceTree = "<group>"; };
-		3981DE162A2F086F007AA4F6 /* UIWindow+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Ex.swift"; sourceTree = "<group>"; };
+		3981DE162A2F086F007AA4F6 /* UIView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ex.swift"; sourceTree = "<group>"; };
 		48171D472A30243300F1F869 /* SelectFavoriteLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFavoriteLineViewController.swift; sourceTree = "<group>"; };
 		48171D492A30268600F1F869 /* LineCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineCollectionViewCell.swift; sourceTree = "<group>"; };
 		AE21A22CDE95E598FC241D67 /* Pods_ThisStationIs_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThisStationIs_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				241E710F29F64B1600E9D986 /* EmailRegisterViewController.swift */,
+				2469FD3E2A32C11F00B78CF5 /* AuthNumberViewController.swift */,
 				CFD59C652A2F89B500CE92F9 /* RegistPasswordViewController.swift */,
 				48171D472A30243300F1F869 /* SelectFavoriteLineViewController.swift */,
 				48171D492A30268600F1F869 /* LineCollectionViewCell.swift */,
@@ -229,7 +232,7 @@
 			children = (
 				393C425929ED71A7002A80FC /* String+Ex.swift */,
 				393C42622A1BAFDE002A80FC /* NSAttributedString+Ex.swift */,
-				3981DE162A2F086F007AA4F6 /* UIWindow+Ex.swift */,
+				3981DE162A2F086F007AA4F6 /* UIView+Ex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -381,10 +384,11 @@
 				48171D482A30243300F1F869 /* SelectFavoriteLineViewController.swift in Sources */,
 				249FF6CD2A11D07C00F5F2A9 /* TextField.swift in Sources */,
 				249FF6CB2A11CCDE00F5F2A9 /* InputView.swift in Sources */,
-				3981DE172A2F086F007AA4F6 /* UIWindow+Ex.swift in Sources */,
+				3981DE172A2F086F007AA4F6 /* UIView+Ex.swift in Sources */,
 				48171D4A2A30268600F1F869 /* LineCollectionViewCell.swift in Sources */,
 				393C425F29ED71D0002A80FC /* Networking.swift in Sources */,
 				393C423029ED6A21002A80FC /* ViewController.swift in Sources */,
+				2469FD3F2A32C11F00B78CF5 /* AuthNumberViewController.swift in Sources */,
 				393C424D29ED70BF002A80FC /* CommunityViewController.swift in Sources */,
 				393C425629ED717B002A80FC /* MainButton.swift in Sources */,
 				3923B5B52A25DD09002845EC /* BottomSheetView.swift in Sources */,

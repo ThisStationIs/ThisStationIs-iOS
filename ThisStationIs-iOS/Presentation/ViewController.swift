@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         inputTextField.isError = inputTextField.isError ? false : true
         testContainerView.flex.layout()
         
-        self.navigationController?.pushViewController(EmailRegisterViewController(), animated: true)
+        self.navigationController?.pushViewController(AuthNumberViewController(), animated: true)
     }
     
     override func viewDidLoad() {

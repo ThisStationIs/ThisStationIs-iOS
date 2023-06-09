@@ -20,11 +20,13 @@ class EmailRegisterViewController: UIViewController {
         $0.errorText = "이메일 형식이 아니에요."
     }
     
-    lazy var nextButton = UIButton().then {
-        $0.backgroundColor = AppColor.setupColor(.textMain)
+    lazy var nextButton = MainButton().then {
         $0.setTitle("다음", for: .normal)
-        $0.layer.cornerRadius = 20
         $0.addTarget(self, action: #selector(selectNextButton), for: .touchUpInside)
+    }
+    
+    let termsView = UIView().then {
+        $0.backgroundColor = .red
     }
     
   
@@ -32,17 +34,17 @@ class EmailRegisterViewController: UIViewController {
     @objc func selectNextButton() {
 //        bottomSheetView.alpha = 1.1
 //        bottomSheetView.showBottomSheet()
-        let bottomSheetView = BottomSheetView()
+        let bottomSheetView = BottomSheetView(contentView: termsView)
         bottomSheetView.showBottomSheet()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
-        setUI()
+        setupView()
     }
     
-    private func setUI() {
+    private func setupView() {
         self.view.addSubview(emailFlexContainer)
         
         emailFlexContainer.flex
@@ -50,10 +52,13 @@ class EmailRegisterViewController: UIViewController {
             .justifyContent(.spaceBetween)
             .define {
                 
-            $0.addItem().direction(.column).padding(.init(top: 0, left: 24, bottom: 10, right: 24)).define {
+            $0.addItem()
+                    .direction(.column)
+                    .padding(.init(top: 0, left: 24, bottom: 10, right: 24))
+                    .define {
                 $0.addItem(titleLabel)
                 $0.addItem(emailTextField)
-                    .marginTop(20)
+                    .paddingTop(48)
             }
             
             $0.addItem().padding(.init(top: 0, left: 24, bottom: 0, right: 24)).define {

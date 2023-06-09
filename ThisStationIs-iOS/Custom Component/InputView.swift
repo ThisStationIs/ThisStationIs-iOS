@@ -67,10 +67,10 @@ class InputView: UIView {
     }
     
     private var sendButton = UIButton().then {
-        $0.setTitle("TEXT", for: .normal)
+        $0.setTitle("발송", for: .normal)
         $0.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         $0.setTitleColor(AppColor.setupColor(.primaryNormal), for: .normal)
-        $0.backgroundColor = AppColor.setupColor(.statusNegative).withAlphaComponent(0.1)
+        $0.backgroundColor = AppColor.setupColor(.primaryNormal).withAlphaComponent(0.1)
         $0.layer.cornerRadius = 32 / 2
     }
     
@@ -105,6 +105,7 @@ class InputView: UIView {
     }
     
     private func setUI() {
+        
         self.flex
             .define {
                 $0.addItem(inputLabel)
@@ -152,6 +153,6 @@ class InputView: UIView {
     
     override func layoutSubviews() {
 //        self.pin.all(self.pin.safeArea)
-        self.flex.layout()
+        self.flex.layout(mode: .adjustHeight)
     }
 }

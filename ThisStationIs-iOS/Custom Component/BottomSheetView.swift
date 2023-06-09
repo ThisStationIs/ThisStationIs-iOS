@@ -38,16 +38,16 @@ class BottomSheetView: UIView {
         scrollView.setContentOffset(.init(x: 0, y: -490), animated: true)
     }
     
-    init() {
+    init(contentView: UIView) {
         super.init(frame: .zero)
-        setUI()
+        setupView(contentView: contentView)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setUI() {
+    private func setupView(contentView: UIView) {
         self.backgroundColor = .clear
         
         // blur effect
@@ -61,17 +61,20 @@ class BottomSheetView: UIView {
         scrollView.addSubview(containerView)
     
         containerView.flex.alignContent(.center).define {
-            $0.addItem(testButton).width(50).height(50)
+            $0.addItem(indicatorImageView)
+                .marginTop(16)
+                .width(64)
+                .height(5)
+            $0.addItem(contentView)
         }
     }
     
     /// 바텀시트 열기
     func showBottomSheet() {
-        if let rootViewController = UIApplication.shared.keyWindow?.visibleViewController as? UIViewController {
-            rootViewController.view.addSubview(self)
-            DispatchQueue.main.async {
-                self.scrollView.setContentOffset(.init(x: 0, y: 0), animated: true)
-            }
+        self.addToTopViewController()
+        
+        DispatchQueue.main.async {
+            self.scrollView.setContentOffset(.init(x: 0, y: 0), animated: true)
         }
     }
     
@@ -91,7 +94,9 @@ class BottomSheetView: UIView {
         
         // 스크롤 뷰 초기 위치 조정
         scrollView.setContentOffset(.init(x: 0, y: -490), animated: false)
+        layoutIfNeeded()
     }
+
 }
 
 extension BottomSheetView: UIScrollViewDelegate {
