@@ -25,16 +25,15 @@ class EmailRegisterViewController: UIViewController {
         $0.addTarget(self, action: #selector(selectNextButton), for: .touchUpInside)
     }
     
-    let termsView = UIView().then {
-        $0.backgroundColor = .red
-    }
+    let termsView = RegisterTermsView()
     
-  
+    var bottomSheetView: BottomSheetView!
     
     @objc func selectNextButton() {
 //        bottomSheetView.alpha = 1.1
 //        bottomSheetView.showBottomSheet()
-        let bottomSheetView = BottomSheetView(contentView: termsView)
+        bottomSheetView = BottomSheetView(contentView: termsView)
+        termsView.closeAction = closeBottomSheetView
         bottomSheetView.showBottomSheet()
     }
     
@@ -42,6 +41,11 @@ class EmailRegisterViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         setupView()
+    }
+    
+    func closeBottomSheetView() {
+        bottomSheetView.closeBottomSheet()
+        self.navigationController?.pushViewController(AuthNumberViewController(), animated: true)
     }
     
     private func setupView() {

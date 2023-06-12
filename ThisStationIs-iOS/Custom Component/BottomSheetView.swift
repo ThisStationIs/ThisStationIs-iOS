@@ -24,6 +24,7 @@ class BottomSheetView: UIView {
     }
     
     let indicatorImageView = UIImageView().then {
+        $0.frame = .init(x: 0, y: 0, width: 64, height: 5)
         $0.image = UIImage(named: "indicator")
     }
     
@@ -59,21 +60,25 @@ class BottomSheetView: UIView {
         
         self.addSubview(scrollView)
         scrollView.addSubview(containerView)
-    
-        containerView.flex.alignContent(.center).define {
-            $0.addItem(indicatorImageView)
-                .marginTop(16)
-                .width(64)
-                .height(5)
-            $0.addItem(contentView)
-        }
+        
+        containerView.addSubview(indicatorImageView)
+        containerView.addSubview(contentView)
+        
+        indicatorImageView.pin.topCenter()
+            .marginTop(16)
+            .width(64)
+            .height(5)
+        
+        contentView.pin.below(of: indicatorImageView)
+            .marginTop(24)
+            .width(UIScreen.main.bounds.width)
     }
     
     /// 바텀시트 열기
     func showBottomSheet() {
         self.addToTopViewController()
         
-        DispatchQueue.main.async {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             self.scrollView.setContentOffset(.init(x: 0, y: 0), animated: true)
         }
     }
@@ -84,6 +89,7 @@ class BottomSheetView: UIView {
     }
     
     override func layoutSubviews() {
+        super.layoutSubviews()
         self.pin.all()
         scrollView.pin.all()
         
@@ -93,10 +99,8 @@ class BottomSheetView: UIView {
         scrollView.contentSize = self.frame.size
         
         // 스크롤 뷰 초기 위치 조정
-        scrollView.setContentOffset(.init(x: 0, y: -490), animated: false)
-        layoutIfNeeded()
+        self.scrollView.setContentOffset(.init(x: 0, y: -490), animated: false)
     }
-
 }
 
 extension BottomSheetView: UIScrollViewDelegate {

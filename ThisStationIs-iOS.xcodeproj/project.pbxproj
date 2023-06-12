@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1BC84BE44221C17E659DB310 /* Pods_ThisStationIs_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE21A22CDE95E598FC241D67 /* Pods_ThisStationIs_iOS.framework */; };
 		241E711029F64B1600E9D986 /* EmailRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241E710F29F64B1600E9D986 /* EmailRegisterViewController.swift */; };
+		24684E3C2A36BC2C000C2947 /* RegisterTermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24684E3B2A36BC2C000C2947 /* RegisterTermsView.swift */; };
+		24684E402A36C762000C2947 /* CheckButtonWithText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24684E3F2A36C762000C2947 /* CheckButtonWithText.swift */; };
 		2469FD3F2A32C11F00B78CF5 /* AuthNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2469FD3E2A32C11F00B78CF5 /* AuthNumberViewController.swift */; };
 		249FF6CB2A11CCDE00F5F2A9 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249FF6CA2A11CCDE00F5F2A9 /* InputView.swift */; };
 		249FF6CD2A11D07C00F5F2A9 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249FF6CC2A11D07C00F5F2A9 /* TextField.swift */; };
@@ -38,6 +40,8 @@
 
 /* Begin PBXFileReference section */
 		241E710F29F64B1600E9D986 /* EmailRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRegisterViewController.swift; sourceTree = "<group>"; };
+		24684E3B2A36BC2C000C2947 /* RegisterTermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTermsView.swift; sourceTree = "<group>"; };
+		24684E3F2A36C762000C2947 /* CheckButtonWithText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckButtonWithText.swift; sourceTree = "<group>"; };
 		2469FD3E2A32C11F00B78CF5 /* AuthNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNumberViewController.swift; sourceTree = "<group>"; };
 		249FF6CA2A11CCDE00F5F2A9 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		249FF6CC2A11D07C00F5F2A9 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
@@ -214,6 +218,8 @@
 				249FF6CA2A11CCDE00F5F2A9 /* InputView.swift */,
 				249FF6CC2A11D07C00F5F2A9 /* TextField.swift */,
 				3923B5B42A25DD09002845EC /* BottomSheetView.swift */,
+				24684E3B2A36BC2C000C2947 /* RegisterTermsView.swift */,
+				24684E3F2A36C762000C2947 /* CheckButtonWithText.swift */,
 			);
 			path = "Custom Component";
 			sourceTree = "<group>";
@@ -394,6 +400,8 @@
 				3923B5B52A25DD09002845EC /* BottomSheetView.swift in Sources */,
 				393C42632A1BAFDE002A80FC /* NSAttributedString+Ex.swift in Sources */,
 				CFD59C662A2F89B500CE92F9 /* RegistPasswordViewController.swift in Sources */,
+				24684E402A36C762000C2947 /* CheckButtonWithText.swift in Sources */,
+				24684E3C2A36BC2C000C2947 /* RegisterTermsView.swift in Sources */,
 				393C424629ED7083002A80FC /* MainTabBarViewController.swift in Sources */,
 				393C422C29ED6A21002A80FC /* AppDelegate.swift in Sources */,
 				393C424F29ED70C7002A80FC /* HistoryViewController.swift in Sources */,
