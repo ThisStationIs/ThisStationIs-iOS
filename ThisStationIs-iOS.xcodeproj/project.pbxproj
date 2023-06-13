@@ -12,6 +12,7 @@
 		24684E3C2A36BC2C000C2947 /* RegisterTermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24684E3B2A36BC2C000C2947 /* RegisterTermsView.swift */; };
 		24684E402A36C762000C2947 /* CheckButtonWithText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24684E3F2A36C762000C2947 /* CheckButtonWithText.swift */; };
 		2469FD3F2A32C11F00B78CF5 /* AuthNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2469FD3E2A32C11F00B78CF5 /* AuthNumberViewController.swift */; };
+		24798B432A37FDB4004A0343 /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24798B422A37FDB4004A0343 /* BadgeView.swift */; };
 		249FF6CB2A11CCDE00F5F2A9 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249FF6CA2A11CCDE00F5F2A9 /* InputView.swift */; };
 		249FF6CD2A11D07C00F5F2A9 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249FF6CC2A11D07C00F5F2A9 /* TextField.swift */; };
 		249FF6CF2A11D81000F5F2A9 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249FF6CE2A11D81000F5F2A9 /* Constant.swift */; };
@@ -43,6 +44,7 @@
 		24684E3B2A36BC2C000C2947 /* RegisterTermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTermsView.swift; sourceTree = "<group>"; };
 		24684E3F2A36C762000C2947 /* CheckButtonWithText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckButtonWithText.swift; sourceTree = "<group>"; };
 		2469FD3E2A32C11F00B78CF5 /* AuthNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNumberViewController.swift; sourceTree = "<group>"; };
+		24798B422A37FDB4004A0343 /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
 		249FF6CA2A11CCDE00F5F2A9 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		249FF6CC2A11D07C00F5F2A9 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		249FF6CE2A11D81000F5F2A9 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				3923B5B42A25DD09002845EC /* BottomSheetView.swift */,
 				24684E3B2A36BC2C000C2947 /* RegisterTermsView.swift */,
 				24684E3F2A36C762000C2947 /* CheckButtonWithText.swift */,
+				24798B422A37FDB4004A0343 /* BadgeView.swift */,
 			);
 			path = "Custom Component";
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 				393C424D29ED70BF002A80FC /* CommunityViewController.swift in Sources */,
 				393C425629ED717B002A80FC /* MainButton.swift in Sources */,
 				3923B5B52A25DD09002845EC /* BottomSheetView.swift in Sources */,
+				24798B432A37FDB4004A0343 /* BadgeView.swift in Sources */,
 				393C42632A1BAFDE002A80FC /* NSAttributedString+Ex.swift in Sources */,
 				CFD59C662A2F89B500CE92F9 /* RegistPasswordViewController.swift in Sources */,
 				24684E402A36C762000C2947 /* CheckButtonWithText.swift in Sources */,

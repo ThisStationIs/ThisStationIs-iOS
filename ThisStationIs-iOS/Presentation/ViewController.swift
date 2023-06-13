@@ -22,6 +22,12 @@ class ViewController: UIViewController {
         $0.backgroundColor = .red
     }
     
+    var testBadgeView = BadgeView(size: .small).then {
+        $0.text = .attributeFont(font: .content, text: "1호선")
+        $0.textColor = .systemBlue
+        $0.backgroundColor = .systemBlue.withAlphaComponent(0.5)
+    }
+    
     @objc func selectTestButton() {
         inputTextField.isError = inputTextField.isError ? false : true
         testContainerView.flex.layout()
@@ -39,8 +45,8 @@ class ViewController: UIViewController {
         testContainerView.flex.direction(.column).define {
             $0.addItem(inputTextField)
             $0.addItem(testButton).height(60)
+            $0.addItem(testBadgeView).marginTop(30).width(53)
         }
-        
     }
     
     override func viewDidLayoutSubviews() {
@@ -49,7 +55,5 @@ class ViewController: UIViewController {
         testContainerView.pin.all(view.pin.safeArea)
         testContainerView.flex.layout(mode: .adjustHeight)
     }
-
-
 }
 
