@@ -9,21 +9,44 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    lazy var homeTableView = UITableView().then {
+        $0.delegate = self
+        $0.dataSource = self
+        $0.estimatedRowHeight = 318
+        $0.rowHeight = UITableView.automaticDimension
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.backgroundColor = .red
+        setupView()
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
+    
+    private func setupView() {
+        self.view.addSubview(homeTableView)
+        homeTableView.pin.all()
+    }
+}
 
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let identifier = "\(indexPath.row)"
+        
+        if let reuseCell = tableView.dequeueReusableCell(withIdentifier: identifier) {
+            return reuseCell
+        }
+        
+        let cell = PostTableViewCell(reuseIdentifier: identifier)
+        
+        return cell
+    }
 }
