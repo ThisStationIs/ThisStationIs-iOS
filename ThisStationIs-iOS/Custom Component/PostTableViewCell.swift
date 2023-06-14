@@ -11,8 +11,8 @@ class PostTableViewCell: UITableViewCell {
     
     let profileView = UIView()
     let profileAndDateView = UIView()
-    
     let badgeView = UIView()
+    let commnetView = UIView()
     
     let profileImageView = UIImageView().then {
         $0.frame = .init(x: 0, y: 0, width: 32, height: 32)
@@ -48,6 +48,16 @@ class PostTableViewCell: UITableViewCell {
     let contentLabel = UILabel().then {
         $0.attributedText = .attributeFont(font: .body16, text: "주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리")
         $0.numberOfLines = 2
+    }
+    
+    let commentIamgeView = UIImageView().then {
+        $0.frame = .init(x: 0, y: 0, width: 24, height: 24)
+        $0.image = UIImage(named: "comment")
+    }
+    
+    let commentCountLabel = UILabel().then {
+        $0.attributedText = .attributeFont(font: .body14, text: "0")
+        $0.textColor = AppColor.setupColor(.textSub)
     }
     
     init(reuseIdentifier: String?) {
@@ -93,13 +103,22 @@ class PostTableViewCell: UITableViewCell {
                 
                 // 내용
                 $0.addItem(contentLabel).marginTop(8)
+                
+                // 댓글
+                $0.addItem(commnetView)
+                    .alignContent(.center)
+                    .marginTop(28)
+                    .direction(.row)
+                    .define {
+                        $0.addItem(commentIamgeView)
+                        $0.addItem(commentCountLabel)
+                    }
             }
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.contentView.pin.all()
-        
+//        self.contentView.pin.all()
         
         self.flex.layout(mode: .adjustHeight)
         self.contentView.flex.layout(mode: .adjustHeight)
