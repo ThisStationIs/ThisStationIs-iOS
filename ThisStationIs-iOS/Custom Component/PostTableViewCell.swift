@@ -73,7 +73,6 @@ class PostTableViewCell: UITableViewCell {
     private func setupView() {
         self.backgroundColor = .white
         self.contentView.flex
-            .width(UIScreen.main.bounds.width)
             .define {
                 // 프로필, 작성 시간
                 $0.addItem(profileAndDateView)
@@ -118,11 +117,16 @@ class PostTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-//        self.contentView.pin.all()
+        
+ 
+        self.contentView.pin.above(of: commnetView).top()
+        self.contentView.pin.below(of: profileAndDateView).bottom()
         
         self.flex.layout(mode: .adjustHeight)
-        self.contentView.flex.layout(mode: .adjustHeight)
         
-        self.contentView.flex.padding(20, 24)
+//        self.contentView.pin.all()
+//        self.contentView.flex.layout(mode: .adjustHeight)
+        
+//        self.contentView.flex.padding(20, 24)
     }
 }

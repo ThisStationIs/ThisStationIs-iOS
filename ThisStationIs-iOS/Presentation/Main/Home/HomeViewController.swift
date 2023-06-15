@@ -8,12 +8,12 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    
     lazy var homeTableView = UITableView().then {
         $0.delegate = self
         $0.dataSource = self
-        $0.estimatedRowHeight = 318
         $0.rowHeight = UITableView.automaticDimension
+        $0.estimatedRowHeight = 318
     }
     
     override func viewDidLoad() {
