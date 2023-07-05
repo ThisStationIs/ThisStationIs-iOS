@@ -36,6 +36,7 @@
 		48171D542A385D2100F1F869 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48171D532A385D2100F1F869 /* AppCoordinator.swift */; };
 		48171DCC2A497BB900F1F869 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48171DCB2A497BB800F1F869 /* LoginViewModel.swift */; };
 		48171DCE2A497CA100F1F869 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48171DCD2A497CA100F1F869 /* LoginCoordinator.swift */; };
+		48171E762A5526B800F1F869 /* NoticeNoDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48171E752A5526B700F1F869 /* NoticeNoDataTableViewCell.swift */; };
 		CFD59C662A2F89B500CE92F9 /* RegistPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD59C652A2F89B500CE92F9 /* RegistPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,7 @@
 		48171D532A385D2100F1F869 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		48171DCB2A497BB800F1F869 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		48171DCD2A497CA100F1F869 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		48171E752A5526B700F1F869 /* NoticeNoDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeNoDataTableViewCell.swift; sourceTree = "<group>"; };
 		AE21A22CDE95E598FC241D67 /* Pods_ThisStationIs_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThisStationIs_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B170A4849F34BBCF59543A3F /* Pods-ThisStationIs-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThisStationIs-iOS.debug.xcconfig"; path = "Target Support Files/Pods-ThisStationIs-iOS/Pods-ThisStationIs-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		BAA9736FCC519EBBE9996F2C /* Pods-ThisStationIs-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThisStationIs-iOS.release.xcconfig"; path = "Target Support Files/Pods-ThisStationIs-iOS/Pods-ThisStationIs-iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				393C424229ED7055002A80FC /* Login */,
 				241E710E29F64AED00E9D986 /* Register */,
 				393C424329ED705D002A80FC /* Main */,
+				48171E752A5526B700F1F869 /* NoticeNoDataTableViewCell.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48171E762A5526B800F1F869 /* NoticeNoDataTableViewCell.swift in Sources */,
 				393C425D29ED71C5002A80FC /* APIClient.swift in Sources */,
 				249FF6CF2A11D81000F5F2A9 /* Constant.swift in Sources */,
 				48171D542A385D2100F1F869 /* AppCoordinator.swift in Sources */,
