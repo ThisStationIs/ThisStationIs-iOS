@@ -11,8 +11,10 @@ enum TSIFontType {
     /// heading
     case heading24
     case heading16
+    case heading18
     
     /// body
+    case body18
     case body16
     case body14
     case button
@@ -43,7 +45,11 @@ extension NSAttributedString {
             setFont = UIFont.systemFont(ofSize: 24, weight: .medium)
         case .heading16:
             // weight 700
-            setFont = UIFont.systemFont(ofSize: 24, weight: .bold)
+            setFont = UIFont.systemFont(ofSize: 16, weight: .medium)
+        case .heading18:
+            setFont = UIFont.systemFont(ofSize: 18, weight: .bold)
+        case .body18:
+            setFont = UIFont.systemFont(ofSize: 18, weight: .regular)
         case .body16:
             // weight 400
             setFont = UIFont.systemFont(ofSize: 16, weight: .regular)

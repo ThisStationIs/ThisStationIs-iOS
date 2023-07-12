@@ -35,6 +35,9 @@
 		393C425D29ED71C5002A80FC /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393C425C29ED71C5002A80FC /* APIClient.swift */; };
 		393C425F29ED71D0002A80FC /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393C425E29ED71D0002A80FC /* Networking.swift */; };
 		393C42632A1BAFDE002A80FC /* NSAttributedString+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393C42622A1BAFDE002A80FC /* NSAttributedString+Ex.swift */; };
+		394A03302A5F08720093A62A /* HomeTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394A032F2A5F08720093A62A /* HomeTableHeaderView.swift */; };
+		394A03322A5F0B940093A62A /* UIScreen+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394A03312A5F0B940093A62A /* UIScreen+Ex.swift */; };
+		394A03362A5F11410093A62A /* HomeTrendPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394A03352A5F11410093A62A /* HomeTrendPostTableViewCell.swift */; };
 		3981DE172A2F086F007AA4F6 /* UIView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3981DE162A2F086F007AA4F6 /* UIView+Ex.swift */; };
 		48171D482A30243300F1F869 /* SelectFavoriteLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48171D472A30243300F1F869 /* SelectFavoriteLineViewController.swift */; };
 		48171D4A2A30268600F1F869 /* LineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48171D492A30268600F1F869 /* LineCollectionViewCell.swift */; };
@@ -71,6 +74,9 @@
 		393C425C29ED71C5002A80FC /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		393C425E29ED71D0002A80FC /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		393C42622A1BAFDE002A80FC /* NSAttributedString+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Ex.swift"; sourceTree = "<group>"; };
+		394A032F2A5F08720093A62A /* HomeTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableHeaderView.swift; sourceTree = "<group>"; };
+		394A03312A5F0B940093A62A /* UIScreen+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Ex.swift"; sourceTree = "<group>"; };
+		394A03352A5F11410093A62A /* HomeTrendPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTrendPostTableViewCell.swift; sourceTree = "<group>"; };
 		3981DE162A2F086F007AA4F6 /* UIView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ex.swift"; sourceTree = "<group>"; };
 		48171D472A30243300F1F869 /* SelectFavoriteLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFavoriteLineViewController.swift; sourceTree = "<group>"; };
 		48171D492A30268600F1F869 /* LineCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -220,6 +226,7 @@
 		393C425429ED7131002A80FC /* Custom Component */ = {
 			isa = PBXGroup;
 			children = (
+				394A032E2A5F08660093A62A /* Home */,
 				393C425529ED717B002A80FC /* MainButton.swift */,
 				249FF6CA2A11CCDE00F5F2A9 /* InputView.swift */,
 				249FF6CC2A11D07C00F5F2A9 /* TextField.swift */,
@@ -248,6 +255,7 @@
 				393C425929ED71A7002A80FC /* String+Ex.swift */,
 				393C42622A1BAFDE002A80FC /* NSAttributedString+Ex.swift */,
 				3981DE162A2F086F007AA4F6 /* UIView+Ex.swift */,
+				394A03312A5F0B940093A62A /* UIScreen+Ex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -259,6 +267,15 @@
 				393C425E29ED71D0002A80FC /* Networking.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		394A032E2A5F08660093A62A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				394A032F2A5F08720093A62A /* HomeTableHeaderView.swift */,
+				394A03352A5F11410093A62A /* HomeTrendPostTableViewCell.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		3D77D03B872DF0EDFE2FB89C /* Pods */ = {
@@ -400,6 +417,7 @@
 				249FF6CD2A11D07C00F5F2A9 /* TextField.swift in Sources */,
 				249FF6CB2A11CCDE00F5F2A9 /* InputView.swift in Sources */,
 				244581332A3820A6000BC904 /* PostTableViewCell.swift in Sources */,
+				394A03322A5F0B940093A62A /* UIScreen+Ex.swift in Sources */,
 				3981DE172A2F086F007AA4F6 /* UIView+Ex.swift in Sources */,
 				48171D4A2A30268600F1F869 /* LineCollectionViewCell.swift in Sources */,
 				246436BA2A3990D700C9F796 /* LinkPreView.swift in Sources */,
@@ -409,7 +427,9 @@
 				393C424D29ED70BF002A80FC /* CommunityViewController.swift in Sources */,
 				393C425629ED717B002A80FC /* MainButton.swift in Sources */,
 				3923B5B52A25DD09002845EC /* BottomSheetView.swift in Sources */,
+				394A03302A5F08720093A62A /* HomeTableHeaderView.swift in Sources */,
 				24798B432A37FDB4004A0343 /* BadgeView.swift in Sources */,
+				394A03362A5F11410093A62A /* HomeTrendPostTableViewCell.swift in Sources */,
 				393C42632A1BAFDE002A80FC /* NSAttributedString+Ex.swift in Sources */,
 				CFD59C662A2F89B500CE92F9 /* RegistPasswordViewController.swift in Sources */,
 				24684E402A36C762000C2947 /* CheckButtonWithText.swift in Sources */,

@@ -72,7 +72,17 @@ class BadgeView: UIView {
         
         titleLabel.attributedText = .attributeFont(font: .body14, text: "Label")
         titleLabel.textAlignment = .center
-        titleLabel.pin.all()
+        titleLabel.snp.makeConstraints {
+            $0.top.bottom.equalToSuperview().inset(5)
+            $0.leading.trailing.equalToSuperview().inset(12)
+        }
+        
+        self.snp.makeConstraints {
+            $0.top.equalTo(titleLabel.snp.top).inset(-5)
+            $0.bottom.equalTo(titleLabel.snp.bottom).inset(-5)
+            $0.leading.equalTo(titleLabel.snp.leading).inset(-12)
+            $0.trailing.equalTo(titleLabel.snp.trailing).inset(-12)
+        }
     }
     
     // 작은 뱃지
@@ -83,12 +93,16 @@ class BadgeView: UIView {
         
         titleLabel.attributedText = .attributeFont(font: .content, text: "Label")
         titleLabel.textAlignment = .center
-        titleLabel.pin.all()
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-     
-        self.flex.layout(mode: .adjustHeight)
+        titleLabel.snp.makeConstraints {
+            $0.top.bottom.equalToSuperview().inset(5)
+            $0.leading.trailing.equalToSuperview().inset(12)
+        }
+        
+        self.snp.makeConstraints {
+            $0.top.equalTo(titleLabel.snp.top).inset(-5)
+            $0.bottom.equalTo(titleLabel.snp.bottom).inset(-5)
+            $0.leading.equalTo(titleLabel.snp.leading).inset(-12)
+            $0.trailing.equalTo(titleLabel.snp.trailing).inset(-12)
+        }
     }
 }

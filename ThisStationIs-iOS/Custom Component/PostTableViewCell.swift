@@ -6,13 +6,9 @@
 //
 
 import UIKit
+import SnapKit
 
 class PostTableViewCell: UITableViewCell {
-    
-    let profileView = UIView()
-    let profileAndDateView = UIView()
-    let badgeView = UIView()
-    let commnetView = UIView()
     
     let profileImageView = UIImageView().then {
         $0.frame = .init(x: 0, y: 0, width: 32, height: 32)
@@ -50,6 +46,8 @@ class PostTableViewCell: UITableViewCell {
         $0.numberOfLines = 2
     }
     
+    let commentView = UIView()
+    
     let commentIamgeView = UIImageView().then {
         $0.frame = .init(x: 0, y: 0, width: 24, height: 24)
         $0.image = UIImage(named: "comment")
@@ -72,61 +70,93 @@ class PostTableViewCell: UITableViewCell {
     
     private func setupView() {
         self.backgroundColor = .white
-        self.contentView.flex
-            .define {
-                // 프로필, 작성 시간
-                $0.addItem(profileAndDateView)
-                    .direction(.row)
-                    .justifyContent(.spaceBetween)
-                    .define {
-                        $0.addItem(profileView).direction(.row).define {
-                            $0.addItem(profileImageView)
-                            $0.addItem(usernameLabel)
-                                .marginLeft(11)
-                        }
-                        
-                        $0.addItem(writeDateLabel).alignContent(.end)
-                    }
-                
-                // 호선, 카테고리
-                $0.addItem(badgeView)
-                    .direction(.row)
-                    .marginTop(11)
-                    .define {
-                        $0.addItem(lineBadge)
-                        $0.addItem(categoryBadge)
-                    }
-                
-                // 제목
-                $0.addItem(titleLabel).marginTop(16)
-                
-                // 내용
-                $0.addItem(contentLabel).marginTop(8)
-                
-                // 댓글
-                $0.addItem(commnetView)
-                    .alignContent(.center)
-                    .marginTop(28)
-                    .direction(.row)
-                    .define {
-                        $0.addItem(commentIamgeView)
-                        $0.addItem(commentCountLabel)
-                    }
-            }
+        
+        // ContentView에 추가
+        [
+            profileImageView,
+            usernameLabel,
+            writeDateLabel,
+            lineBadge,
+            categoryBadge,
+            titleLabel,
+            contentLabel,
+            commentView
+        ].forEach {
+            self.contentView.addSubview($0)
+        }
+        
+        // commentView
+        [
+            commentIamgeView,
+            commentCountLabel
+        ].forEach {
+            self.commentView.addSubview($0)
+        }
+        
+        /// SetLayout
+        setupLayout()
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
+    private func setupLayout() {
+        profileImageView.snp.makeConstraints {
+            $0.top.equalToSuperview().inset(16)
+            $0.leading.equalToSuperview().inset(24)
+            $0.width.height.equalTo(32)
+        }
         
- 
-        self.contentView.pin.above(of: commnetView).top()
-        self.contentView.pin.below(of: profileAndDateView).bottom()
+        usernameLabel.snp.makeConstraints {
+            $0.centerY.equalTo(profileImageView)
+            $0.leading.equalTo(profileImageView.snp.trailing).offset(8)
+            $0.width.equalTo(201).priority(.medium)
+        }
         
-        self.flex.layout(mode: .adjustHeight)
+        writeDateLabel.snp.makeConstraints {
+            $0.centerY.equalTo(profileImageView)
+            $0.trailing.equalToSuperview().inset(24)
+        }
         
-//        self.contentView.pin.all()
-//        self.contentView.flex.layout(mode: .adjustHeight)
+        lineBadge.snp.makeConstraints {
+            $0.top.equalTo(profileImageView.snp.bottom).offset(8)
+            $0.leading.equalToSuperview().inset(24)
+        }
         
-//        self.contentView.flex.padding(20, 24)
+        categoryBadge.snp.makeConstraints {
+            $0.top.equalTo(profileImageView.snp.bottom).offset(8)
+            $0.leading.equalTo(lineBadge.snp.trailing).offset(8)
+        }
+        
+        titleLabel.snp.makeConstraints {
+            $0.top.equalTo(lineBadge.snp.bottom).offset(16)
+            $0.leading.trailing.equalToSuperview().inset(24)
+        }
+        
+        contentLabel.snp.makeConstraints {
+            $0.top.equalTo(titleLabel.snp.bottom).offset(8)
+            $0.leading.trailing.equalToSuperview().inset(24)
+        }
+        
+        commentIamgeView.snp.makeConstraints {
+            $0.top.leading.equalToSuperview()
+            $0.width.height.equalTo(24)
+        }
+        
+        commentCountLabel.snp.makeConstraints {
+            $0.centerY.equalTo(commentIamgeView)
+            $0.leading.equalTo(commentIamgeView.snp.trailing).offset(8)
+        }
+        
+        commentView.snp.makeConstraints {
+            $0.top.equalTo(contentLabel.snp.bottom).offset(28)
+            $0.leading.trailing.equalToSuperview().inset(24)
+            $0.top.equalTo(commentIamgeView.snp.top)
+            $0.bottom.equalTo(commentIamgeView.snp.bottom)
+            $0.bottom.equalToSuperview().inset(8)
+        }
+        
+        self.contentView.snp.makeConstraints {
+            $0.top.equalTo(profileImageView.snp.top).inset(-16)
+            $0.bottom.equalTo(commentView.snp.bottom).inset(-8)
+            $0.edges.equalToSuperview()
+        }
     }
 }
