@@ -12,25 +12,45 @@ class HomeViewController: UIViewController {
     lazy var homeTableHeaderView = HomeTableHeaderView().then {
         $0.frame = .init(x: 0, y: 0, width: UIScreen.width, height: 129)
         $0.backgroundColor = .white
+        $0.setCongestionAction = self.setCongestionAction
     }
     
     lazy var homeTableView = UITableView(frame: .zero, style: .grouped).then {
         $0.delegate = self
         $0.dataSource = self
+        $0.backgroundColor = .white
         $0.rowHeight = UITableView.automaticDimension
         $0.separatorStyle = .none
         $0.estimatedRowHeight = 318
         $0.tableHeaderView = homeTableHeaderView
     }
     
+    let searchBar = UISearchBar().then {
+        $0.placeholder = "키워드를 검색해보세요"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .red
         setupView()
-
+        
+    }
+    
+    @objc func selectSearchTapGesture() {
+       
+    }
+    
+    func setCongestionAction() {
+        let congestionSearchLineViewController = CongestionSearchLineViewController()
+        congestionSearchLineViewController.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(congestionSearchLineViewController, animated: true)
     }
     
     private func setupView() {
+        self.navigationItem.titleView = searchBar
+        self.navigationController?.navigationBar.backgroundColor = .white
+        let searchTapGesture = UITapGestureRecognizer(target: self, action: #selector(selectSearchTapGesture))
+        searchBar.addGestureRecognizer(searchTapGesture)
+        
         self.view.addSubview(homeTableView)
         homeTableView.pin.all()
     }

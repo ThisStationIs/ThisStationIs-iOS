@@ -39,6 +39,10 @@
 		394A03322A5F0B940093A62A /* UIScreen+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394A03312A5F0B940093A62A /* UIScreen+Ex.swift */; };
 		394A03362A5F11410093A62A /* HomeTrendPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394A03352A5F11410093A62A /* HomeTrendPostTableViewCell.swift */; };
 		3981DE172A2F086F007AA4F6 /* UIView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3981DE162A2F086F007AA4F6 /* UIView+Ex.swift */; };
+		39F97B0B2A7CC885003BB7CA /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F97B0A2A7CC885003BB7CA /* HomeViewModel.swift */; };
+		39F97B0E2A7CC8E4003BB7CA /* CongestionSearchLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F97B0D2A7CC8E4003BB7CA /* CongestionSearchLineViewController.swift */; };
+		39F97B102A7CCFB9003BB7CA /* SubwayLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F97B0F2A7CCFB9003BB7CA /* SubwayLineView.swift */; };
+		39F97B122A7CD7B3003BB7CA /* LineCongestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F97B112A7CD7B3003BB7CA /* LineCongestionViewController.swift */; };
 		48171D482A30243300F1F869 /* SelectFavoriteLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48171D472A30243300F1F869 /* SelectFavoriteLineViewController.swift */; };
 		48171D4A2A30268600F1F869 /* LineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48171D492A30268600F1F869 /* LineCollectionViewCell.swift */; };
 		CFD59C662A2F89B500CE92F9 /* RegistPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD59C652A2F89B500CE92F9 /* RegistPasswordViewController.swift */; };
@@ -78,6 +82,10 @@
 		394A03312A5F0B940093A62A /* UIScreen+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Ex.swift"; sourceTree = "<group>"; };
 		394A03352A5F11410093A62A /* HomeTrendPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTrendPostTableViewCell.swift; sourceTree = "<group>"; };
 		3981DE162A2F086F007AA4F6 /* UIView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ex.swift"; sourceTree = "<group>"; };
+		39F97B0A2A7CC885003BB7CA /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		39F97B0D2A7CC8E4003BB7CA /* CongestionSearchLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongestionSearchLineViewController.swift; sourceTree = "<group>"; };
+		39F97B0F2A7CCFB9003BB7CA /* SubwayLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubwayLineView.swift; sourceTree = "<group>"; };
+		39F97B112A7CD7B3003BB7CA /* LineCongestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineCongestionViewController.swift; sourceTree = "<group>"; };
 		48171D472A30243300F1F869 /* SelectFavoriteLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFavoriteLineViewController.swift; sourceTree = "<group>"; };
 		48171D492A30268600F1F869 /* LineCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineCollectionViewCell.swift; sourceTree = "<group>"; };
 		AE21A22CDE95E598FC241D67 /* Pods_ThisStationIs_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThisStationIs_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,7 +202,9 @@
 		393C424429ED7065002A80FC /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				39F97B0C2A7CC8AD003BB7CA /* Congestion */,
 				393C424A29ED70B3002A80FC /* HomeViewController.swift */,
+				39F97B0A2A7CC885003BB7CA /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -236,6 +246,7 @@
 				24798B422A37FDB4004A0343 /* BadgeView.swift */,
 				244581322A3820A6000BC904 /* PostTableViewCell.swift */,
 				246436B92A3990D700C9F796 /* LinkPreView.swift */,
+				39F97B0F2A7CCFB9003BB7CA /* SubwayLineView.swift */,
 			);
 			path = "Custom Component";
 			sourceTree = "<group>";
@@ -276,6 +287,15 @@
 				394A03352A5F11410093A62A /* HomeTrendPostTableViewCell.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		39F97B0C2A7CC8AD003BB7CA /* Congestion */ = {
+			isa = PBXGroup;
+			children = (
+				39F97B0D2A7CC8E4003BB7CA /* CongestionSearchLineViewController.swift */,
+				39F97B112A7CD7B3003BB7CA /* LineCongestionViewController.swift */,
+			);
+			path = Congestion;
 			sourceTree = "<group>";
 		};
 		3D77D03B872DF0EDFE2FB89C /* Pods */ = {
@@ -410,6 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				393C425D29ED71C5002A80FC /* APIClient.swift in Sources */,
+				39F97B0B2A7CC885003BB7CA /* HomeViewModel.swift in Sources */,
 				249FF6CF2A11D81000F5F2A9 /* Constant.swift in Sources */,
 				393C425329ED712B002A80FC /* LoginViewController.swift in Sources */,
 				393C424B29ED70B3002A80FC /* HomeViewController.swift in Sources */,
@@ -421,9 +442,11 @@
 				3981DE172A2F086F007AA4F6 /* UIView+Ex.swift in Sources */,
 				48171D4A2A30268600F1F869 /* LineCollectionViewCell.swift in Sources */,
 				246436BA2A3990D700C9F796 /* LinkPreView.swift in Sources */,
+				39F97B0E2A7CC8E4003BB7CA /* CongestionSearchLineViewController.swift in Sources */,
 				393C425F29ED71D0002A80FC /* Networking.swift in Sources */,
 				393C423029ED6A21002A80FC /* ViewController.swift in Sources */,
 				2469FD3F2A32C11F00B78CF5 /* AuthNumberViewController.swift in Sources */,
+				39F97B122A7CD7B3003BB7CA /* LineCongestionViewController.swift in Sources */,
 				393C424D29ED70BF002A80FC /* CommunityViewController.swift in Sources */,
 				393C425629ED717B002A80FC /* MainButton.swift in Sources */,
 				3923B5B52A25DD09002845EC /* BottomSheetView.swift in Sources */,
@@ -438,6 +461,7 @@
 				393C422C29ED6A21002A80FC /* AppDelegate.swift in Sources */,
 				393C424F29ED70C7002A80FC /* HistoryViewController.swift in Sources */,
 				241E711029F64B1600E9D986 /* EmailRegisterViewController.swift in Sources */,
+				39F97B102A7CCFB9003BB7CA /* SubwayLineView.swift in Sources */,
 				393C425A29ED71A7002A80FC /* String+Ex.swift in Sources */,
 				393C425129ED70D6002A80FC /* MyViewController.swift in Sources */,
 				393C422E29ED6A21002A80FC /* SceneDelegate.swift in Sources */,

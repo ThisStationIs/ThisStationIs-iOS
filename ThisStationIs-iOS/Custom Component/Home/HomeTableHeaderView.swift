@@ -52,6 +52,14 @@ class HomeTableHeaderView: UIView {
     
     var halfViewWidth = (UIScreen.width - 24 - 24 - 16) / 2
     
+    var setCongestionAction: (() -> ())?
+    
+    @objc func selectCongestionGesture() {
+        if let setCongestionAction = setCongestionAction {
+            setCongestionAction()
+        }
+    }
+    
     init() {
         super.init(frame: .zero)
         setupView()
@@ -89,6 +97,7 @@ class HomeTableHeaderView: UIView {
         }
         
         setupLayout()
+        setAction()
     }
     
     private func setupLayout() {
@@ -140,5 +149,10 @@ class HomeTableHeaderView: UIView {
             $0.trailing.equalToSuperview().inset(24)
             $0.top.equalToSuperview().inset(16)
         }
+    }
+    
+    private func setAction() {
+        let congestionGesture = UITapGestureRecognizer(target: self, action: #selector(selectCongestionGesture))
+        congestionView.addGestureRecognizer(congestionGesture)
     }
 }
