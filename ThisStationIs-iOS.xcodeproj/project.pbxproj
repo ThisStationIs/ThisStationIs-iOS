@@ -37,6 +37,7 @@
 		48171DCC2A497BB900F1F869 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48171DCB2A497BB800F1F869 /* LoginViewModel.swift */; };
 		48171DCE2A497CA100F1F869 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48171DCD2A497CA100F1F869 /* LoginCoordinator.swift */; };
 		48171E762A5526B800F1F869 /* NoticeNoDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48171E752A5526B700F1F869 /* NoticeNoDataTableViewCell.swift */; };
+		CF7EE0872A88FB5B00891649 /* NoticeNewCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7EE0862A88FB5B00891649 /* NoticeNewCommentCell.swift */; };
 		CFD59C662A2F89B500CE92F9 /* RegistPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD59C652A2F89B500CE92F9 /* RegistPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		AE21A22CDE95E598FC241D67 /* Pods_ThisStationIs_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThisStationIs_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B170A4849F34BBCF59543A3F /* Pods-ThisStationIs-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThisStationIs-iOS.debug.xcconfig"; path = "Target Support Files/Pods-ThisStationIs-iOS/Pods-ThisStationIs-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		BAA9736FCC519EBBE9996F2C /* Pods-ThisStationIs-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThisStationIs-iOS.release.xcconfig"; path = "Target Support Files/Pods-ThisStationIs-iOS/Pods-ThisStationIs-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		CF7EE0862A88FB5B00891649 /* NoticeNewCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeNewCommentCell.swift; sourceTree = "<group>"; };
 		CFD59C652A2F89B500CE92F9 /* RegistPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistPasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,10 +139,10 @@
 			isa = PBXGroup;
 			children = (
 				393C422F29ED6A21002A80FC /* ViewController.swift */,
+				48171E752A5526B700F1F869 /* NoticeNoDataTableViewCell.swift */,
 				393C424229ED7055002A80FC /* Login */,
 				241E710E29F64AED00E9D986 /* Register */,
 				393C424329ED705D002A80FC /* Main */,
-				48171E752A5526B700F1F869 /* NoticeNoDataTableViewCell.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -205,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				393C424E29ED70C7002A80FC /* HistoryViewController.swift */,
+				CF7EE0862A88FB5B00891649 /* NoticeNewCommentCell.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				393C423029ED6A21002A80FC /* ViewController.swift in Sources */,
 				393C424D29ED70BF002A80FC /* CommunityViewController.swift in Sources */,
 				393C425629ED717B002A80FC /* MainButton.swift in Sources */,
+				CF7EE0872A88FB5B00891649 /* NoticeNewCommentCell.swift in Sources */,
 				3923B5B52A25DD09002845EC /* BottomSheetView.swift in Sources */,
 				393C42632A1BAFDE002A80FC /* NSAttributedString+Ex.swift in Sources */,
 				CFD59C662A2F89B500CE92F9 /* RegistPasswordViewController.swift in Sources */,
