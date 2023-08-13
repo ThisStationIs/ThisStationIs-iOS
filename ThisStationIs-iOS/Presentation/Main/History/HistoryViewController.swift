@@ -7,7 +7,7 @@
 
 import UIKit
 import Then
-import FlexLayout
+import SnapKit
 
 enum CellType {
     case isData
