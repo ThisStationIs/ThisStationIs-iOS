@@ -47,13 +47,8 @@ extension HistoryViewController {
     }
     
     private func setupLayout(){
-        historyTableView.pin.top(view.safeAreaInsets.top) // 네비게이션 바 아래로 상단 여백을 설정합니다.
-            .all() // 나머지 영역을 화면 상하좌우에 맞춥니다.
-        
-        view.flex.direction(.column).define { flex in
-            flex.addItem(historyTableView)
-                .grow(1)
-            // tableViewA를 화면 전체 영역에 늘어나도록 설정합니다.
+        historyTableView.snp.makeConstraints {
+            $0.edges.equalTo(view.safeAreaLayoutGuide)
         }
     }
 }
