@@ -17,6 +17,7 @@ enum CellType {
 class HistoryViewController: UIViewController {
     private let historyTableView = UITableView().then {
         $0.register(NoticeNoDataTableViewCell.self, forCellReuseIdentifier: "NoticeNoDataTableViewCell")
+        $0.register(NoticeNewCommentCell.self, forCellReuseIdentifier: "NoticeNewCommentCell")
     }
     
     var cellType: CellType = .isData
