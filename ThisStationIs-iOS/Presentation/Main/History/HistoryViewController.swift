@@ -15,6 +15,8 @@ enum CellType {
 }
 
 class HistoryViewController: UIViewController {
+    private let trashButton = UIBarButtonItem(image: UIImage(named: "trash"), style: .plain, target: self, action: #selector(trashButtonTapped))
+    
     private let historyTableView = UITableView().then {
         $0.register(NoticeNoDataTableViewCell.self, forCellReuseIdentifier: "NoticeNoDataTableViewCell")
         $0.register(NoticeNewCommentCell.self, forCellReuseIdentifier: "NoticeNewCommentCell")
@@ -25,6 +27,7 @@ class HistoryViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         title = "알림"
+        setupNavigationBarItem()
     }
     
     override func viewDidLoad() {
@@ -37,13 +40,17 @@ class HistoryViewController: UIViewController {
         super.viewDidLayoutSubviews()
         setupLayout()
     }
+    
+    @objc
+    func trashButtonTapped() {
+        
+    }
 }
 
 extension HistoryViewController {
     private func setupView(){
         view.backgroundColor = .white
         view.addSubview(historyTableView)
-        historyTableView.backgroundColor = .yellow
         historyTableView.delegate = self
         historyTableView.dataSource = self
     }
@@ -52,6 +59,10 @@ extension HistoryViewController {
         historyTableView.snp.makeConstraints {
             $0.edges.equalTo(view.safeAreaLayoutGuide)
         }
+    }
+    
+    private func setupNavigationBarItem() {
+        navigationItem.rightBarButtonItem = trashButton
     }
 }
 
