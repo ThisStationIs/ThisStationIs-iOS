@@ -41,6 +41,7 @@ class HistoryViewController: UIViewController {
 
 extension HistoryViewController {
     private func setupView(){
+        view.backgroundColor = .white
         view.addSubview(historyTableView)
         historyTableView.backgroundColor = .yellow
         historyTableView.delegate = self
