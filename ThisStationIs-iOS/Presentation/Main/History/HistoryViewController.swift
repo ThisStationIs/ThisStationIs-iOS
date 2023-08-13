@@ -61,12 +61,21 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return cellType == .noData ? setupReuseNoDataCell(tableView, cellForRowAt: indexPath) : setupReuseIsDataCell(tableView, cellForRowAt: indexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return cellType == .noData ? tableView.frame.height : 102
+    }
+    
+    func setupReuseNoDataCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NoticeNoDataTableViewCell", for: indexPath) as! NoticeNoDataTableViewCell
         cell.setupText(text: "알림이 존재하지 않습니다.")
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return cellType == .noData ? tableView.frame.height : 102
+    func setupReuseIsDataCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NoticeNewCommentCell", for: indexPath) as! NoticeNewCommentCell
+        return cell
     }
 }
