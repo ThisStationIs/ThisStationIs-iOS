@@ -40,6 +40,7 @@
 		CF7EE0872A88FB5B00891649 /* NoticeNewCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7EE0862A88FB5B00891649 /* NoticeNewCommentCell.swift */; };
 		CFB85E292A8A7D8A0077AD1B /* UIImage+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB85E282A8A7D8A0077AD1B /* UIImage+Ex.swift */; };
 		CFB85E2B2A8A7E5A0077AD1B /* MyTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB85E2A2A8A7E5A0077AD1B /* MyTableViewHeader.swift */; };
+		CFB85E2D2A8A8A7D0077AD1B /* MyTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB85E2C2A8A8A7D0077AD1B /* MyTitleCell.swift */; };
 		CFD59C662A2F89B500CE92F9 /* RegistPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD59C652A2F89B500CE92F9 /* RegistPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,7 @@
 		CF7EE0862A88FB5B00891649 /* NoticeNewCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeNewCommentCell.swift; sourceTree = "<group>"; };
 		CFB85E282A8A7D8A0077AD1B /* UIImage+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ex.swift"; sourceTree = "<group>"; };
 		CFB85E2A2A8A7E5A0077AD1B /* MyTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewHeader.swift; sourceTree = "<group>"; };
+		CFB85E2C2A8A8A7D0077AD1B /* MyTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTitleCell.swift; sourceTree = "<group>"; };
 		CFD59C652A2F89B500CE92F9 /* RegistPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistPasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -221,6 +223,7 @@
 			children = (
 				393C425029ED70D6002A80FC /* MyViewController.swift */,
 				CFB85E2A2A8A7E5A0077AD1B /* MyTableViewHeader.swift */,
+				CFB85E2C2A8A8A7D0077AD1B /* MyTitleCell.swift */,
 			);
 			path = My;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				393C423029ED6A21002A80FC /* ViewController.swift in Sources */,
 				393C424D29ED70BF002A80FC /* CommunityViewController.swift in Sources */,
 				393C425629ED717B002A80FC /* MainButton.swift in Sources */,
+				CFB85E2D2A8A8A7D0077AD1B /* MyTitleCell.swift in Sources */,
 				CF7EE0872A88FB5B00891649 /* NoticeNewCommentCell.swift in Sources */,
 				3923B5B52A25DD09002845EC /* BottomSheetView.swift in Sources */,
 				393C42632A1BAFDE002A80FC /* NSAttributedString+Ex.swift in Sources */,
