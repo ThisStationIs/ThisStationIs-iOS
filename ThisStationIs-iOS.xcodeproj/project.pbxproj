@@ -41,6 +41,7 @@
 		CFB85E292A8A7D8A0077AD1B /* UIImage+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB85E282A8A7D8A0077AD1B /* UIImage+Ex.swift */; };
 		CFB85E2B2A8A7E5A0077AD1B /* MyTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB85E2A2A8A7E5A0077AD1B /* MyTableViewHeader.swift */; };
 		CFB85E2D2A8A8A7D0077AD1B /* MyTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB85E2C2A8A8A7D0077AD1B /* MyTitleCell.swift */; };
+		CFB85E2F2A8A8F900077AD1B /* MyMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB85E2E2A8A8F900077AD1B /* MyMenuCell.swift */; };
 		CFD59C662A2F89B500CE92F9 /* RegistPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD59C652A2F89B500CE92F9 /* RegistPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,7 @@
 		CFB85E282A8A7D8A0077AD1B /* UIImage+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ex.swift"; sourceTree = "<group>"; };
 		CFB85E2A2A8A7E5A0077AD1B /* MyTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewHeader.swift; sourceTree = "<group>"; };
 		CFB85E2C2A8A8A7D0077AD1B /* MyTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTitleCell.swift; sourceTree = "<group>"; };
+		CFB85E2E2A8A8F900077AD1B /* MyMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMenuCell.swift; sourceTree = "<group>"; };
 		CFD59C652A2F89B500CE92F9 /* RegistPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistPasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -224,6 +226,7 @@
 				393C425029ED70D6002A80FC /* MyViewController.swift */,
 				CFB85E2A2A8A7E5A0077AD1B /* MyTableViewHeader.swift */,
 				CFB85E2C2A8A8A7D0077AD1B /* MyTitleCell.swift */,
+				CFB85E2E2A8A8F900077AD1B /* MyMenuCell.swift */,
 			);
 			path = My;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 			files = (
 				48171E762A5526B800F1F869 /* NoticeNoDataTableViewCell.swift in Sources */,
 				393C425D29ED71C5002A80FC /* APIClient.swift in Sources */,
+				CFB85E2F2A8A8F900077AD1B /* MyMenuCell.swift in Sources */,
 				249FF6CF2A11D81000F5F2A9 /* Constant.swift in Sources */,
 				48171D542A385D2100F1F869 /* AppCoordinator.swift in Sources */,
 				CFB85E292A8A7D8A0077AD1B /* UIImage+Ex.swift in Sources */,
