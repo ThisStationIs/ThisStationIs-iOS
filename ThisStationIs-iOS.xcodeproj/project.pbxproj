@@ -38,6 +38,7 @@
 		48171DCE2A497CA100F1F869 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48171DCD2A497CA100F1F869 /* LoginCoordinator.swift */; };
 		48171E762A5526B800F1F869 /* NoticeNoDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48171E752A5526B700F1F869 /* NoticeNoDataTableViewCell.swift */; };
 		CF7EE0872A88FB5B00891649 /* NoticeNewCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7EE0862A88FB5B00891649 /* NoticeNewCommentCell.swift */; };
+		CFB85E292A8A7D8A0077AD1B /* UIImage+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB85E282A8A7D8A0077AD1B /* UIImage+Ex.swift */; };
 		CFD59C662A2F89B500CE92F9 /* RegistPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD59C652A2F89B500CE92F9 /* RegistPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,7 @@
 		B170A4849F34BBCF59543A3F /* Pods-ThisStationIs-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThisStationIs-iOS.debug.xcconfig"; path = "Target Support Files/Pods-ThisStationIs-iOS/Pods-ThisStationIs-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		BAA9736FCC519EBBE9996F2C /* Pods-ThisStationIs-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThisStationIs-iOS.release.xcconfig"; path = "Target Support Files/Pods-ThisStationIs-iOS/Pods-ThisStationIs-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		CF7EE0862A88FB5B00891649 /* NoticeNewCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeNewCommentCell.swift; sourceTree = "<group>"; };
+		CFB85E282A8A7D8A0077AD1B /* UIImage+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ex.swift"; sourceTree = "<group>"; };
 		CFD59C652A2F89B500CE92F9 /* RegistPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistPasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -248,6 +250,7 @@
 				393C425929ED71A7002A80FC /* String+Ex.swift */,
 				393C42622A1BAFDE002A80FC /* NSAttributedString+Ex.swift */,
 				3981DE162A2F086F007AA4F6 /* UIWindow+Ex.swift */,
+				CFB85E282A8A7D8A0077AD1B /* UIImage+Ex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 				393C425D29ED71C5002A80FC /* APIClient.swift in Sources */,
 				249FF6CF2A11D81000F5F2A9 /* Constant.swift in Sources */,
 				48171D542A385D2100F1F869 /* AppCoordinator.swift in Sources */,
+				CFB85E292A8A7D8A0077AD1B /* UIImage+Ex.swift in Sources */,
 				393C425329ED712B002A80FC /* LoginViewController.swift in Sources */,
 				393C424B29ED70B3002A80FC /* HomeViewController.swift in Sources */,
 				48171D482A30243300F1F869 /* SelectFavoriteLineViewController.swift in Sources */,
