@@ -39,6 +39,7 @@
 		48171E762A5526B800F1F869 /* NoticeNoDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48171E752A5526B700F1F869 /* NoticeNoDataTableViewCell.swift */; };
 		CF7EE0872A88FB5B00891649 /* NoticeNewCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7EE0862A88FB5B00891649 /* NoticeNewCommentCell.swift */; };
 		CFB85E292A8A7D8A0077AD1B /* UIImage+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB85E282A8A7D8A0077AD1B /* UIImage+Ex.swift */; };
+		CFB85E2B2A8A7E5A0077AD1B /* MyTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB85E2A2A8A7E5A0077AD1B /* MyTableViewHeader.swift */; };
 		CFD59C662A2F89B500CE92F9 /* RegistPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD59C652A2F89B500CE92F9 /* RegistPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,7 @@
 		BAA9736FCC519EBBE9996F2C /* Pods-ThisStationIs-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThisStationIs-iOS.release.xcconfig"; path = "Target Support Files/Pods-ThisStationIs-iOS/Pods-ThisStationIs-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		CF7EE0862A88FB5B00891649 /* NoticeNewCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeNewCommentCell.swift; sourceTree = "<group>"; };
 		CFB85E282A8A7D8A0077AD1B /* UIImage+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ex.swift"; sourceTree = "<group>"; };
+		CFB85E2A2A8A7E5A0077AD1B /* MyTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewHeader.swift; sourceTree = "<group>"; };
 		CFD59C652A2F89B500CE92F9 /* RegistPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistPasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -218,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				393C425029ED70D6002A80FC /* MyViewController.swift */,
+				CFB85E2A2A8A7E5A0077AD1B /* MyTableViewHeader.swift */,
 			);
 			path = My;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				48171DCC2A497BB900F1F869 /* LoginViewModel.swift in Sources */,
 				3981DE172A2F086F007AA4F6 /* UIWindow+Ex.swift in Sources */,
 				48171D522A385CF100F1F869 /* Coordinator.swift in Sources */,
+				CFB85E2B2A8A7E5A0077AD1B /* MyTableViewHeader.swift in Sources */,
 				48171D4A2A30268600F1F869 /* LineCollectionViewCell.swift in Sources */,
 				393C425F29ED71D0002A80FC /* Networking.swift in Sources */,
 				393C423029ED6A21002A80FC /* ViewController.swift in Sources */,
