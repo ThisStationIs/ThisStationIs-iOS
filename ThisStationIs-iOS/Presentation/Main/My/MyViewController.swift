@@ -12,6 +12,7 @@ class MyViewController: UIViewController {
     private let myTableView = UITableView().then {
         $0.backgroundColor = .blue
         $0.register(MyTableViewHeader.self, forHeaderFooterViewReuseIdentifier: "MyTableViewHeader")
+        $0.register(MyTitleCell.self, forCellReuseIdentifier: "MyTitleCell")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,6 +36,7 @@ extension MyViewController {
         }
         
         myTableView.delegate = self
+        myTableView.dataSource = self
     }
     
     private func setupLayout() {
@@ -73,13 +75,34 @@ extension MyViewController {
     
 }
 
-extension MyViewController: UITableViewDelegate {
+extension MyViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "MyTableViewHeader") as! MyTableViewHeader
         return header
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 88
+        return section == 0 ? 88 : 0
     }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let section = indexPath.section
+        let row = indexPath.row
+        
+        let titleCell = tableView.dequeueReusableCell(withIdentifier: "MyTitleCell") as! MyTitleCell
+        titleCell.setupTitle(title: section == 0 ? "내 활동" : "이번역은")
+        let menuCell = UITableViewCell()
+        
+        return row == 0 ? titleCell : menuCell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    
 }
