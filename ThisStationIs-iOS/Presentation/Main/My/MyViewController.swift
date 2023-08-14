@@ -6,24 +6,28 @@
 //
 
 import UIKit
+import Then
 
 class MyViewController: UIViewController {
+    private let myTableView = UITableView().then {
+        $0.backgroundColor = AppColor.setupColor(.primaryNormal)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+        setupLayout()
+    }
+}
 
-        // Do any additional setup after loading the view.
+extension MyViewController {
+    private func setupView() {
+        view.addSubview(myTableView)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setupLayout() {
+        myTableView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
     }
-    */
-
 }
