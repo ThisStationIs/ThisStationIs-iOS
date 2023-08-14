@@ -38,14 +38,29 @@ extension MyViewController {
     
     private func setupNavi() {
         setupLeftBarButtonItem()
+        setupRightBarButtonItem()
     }
     
-    private func setupLeftBarButtonItem(){
-        let leftTitleBarItem = UIBarButtonItem(title: "나의 프로필", style: .plain, target: nil, action: nil)
-        leftTitleBarItem.setTitleTextAttributes([
+    private func setupLeftBarButtonItem() {
+        let leftBarItemForTitle = UIBarButtonItem(title: "나의 프로필", style: .plain, target: nil, action: nil)
+        leftBarItemForTitle.setTitleTextAttributes([
             NSAttributedString.Key.foregroundColor: UIColor.white,
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20)
         ], for: .normal)
-        navigationItem.leftBarButtonItem = leftTitleBarItem
+        navigationItem.leftBarButtonItem = leftBarItemForTitle
     }
+    
+    private func setupRightBarButtonItem() {
+        guard let originalImage = UIImage(named: "setting") else { return }
+        
+        let resizedImage = originalImage.resized(to: CGSize(width: 24, height: 24))
+        
+        let tintedImage = resizedImage?.withTintColor(.white, renderingMode: .alwaysOriginal)
+
+        let rightBarItemForSetting = UIBarButtonItem(image: tintedImage, style: .plain, target: nil, action: nil)
+        navigationItem.rightBarButtonItem = rightBarItemForSetting
+    }
+    
+    
 }
+
