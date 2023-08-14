@@ -100,6 +100,7 @@ extension MyViewController: UITableViewDelegate, UITableViewDataSource {
         
         let titleCell = tableView.dequeueReusableCell(withIdentifier: "MyTitleCell") as! MyTitleCell
         titleCell.setupTitle(title: section == 0 ? myActivityMenus[0] : thisStationIsMenus[0])
+        titleCell.version = section == 0 ? .noVersion : .isVersion
         
         let menuCell = tableView.dequeueReusableCell(withIdentifier: "MyMenuCell") as! MyMenuCell
         menuCell.setupTitle(title: section == 0 ? myActivityMenus[row] : thisStationIsMenus[row])

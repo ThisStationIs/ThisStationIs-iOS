@@ -7,14 +7,26 @@
 
 import UIKit
 
+enum MyTitleType {
+    case noVersion
+    case isVersion
+}
+
 class MyTitleCell: UITableViewCell {
     private let titleLabel = UILabel().then {
         $0.attributedText = .attributeFont(font: .heading20, text: "")
     }
     
+    private let versionLabel = UILabel().then {
+        $0.attributedText = .attributeFont(font: .body14, text: "1.0.0")
+        $0.textColor = AppColor.setupColor(.textSub)
+    }
+    
     private let borderLineView = UIView().then {
         $0.backgroundColor = AppColor.setupColor(.componentDivider)
     }
+    
+    var version: MyTitleType = .noVersion
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -26,6 +38,11 @@ class MyTitleCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func layoutIfNeeded() {
+        super.layoutIfNeeded()
+        setupLayout()
+    }
+    
     func setupTitle(title: String) {
         titleLabel.text = title
     }
@@ -34,7 +51,7 @@ class MyTitleCell: UITableViewCell {
 extension MyTitleCell {
     private func setupView() {
         [
-            titleLabel,
+            titleLabel, versionLabel,
             borderLineView
         ].forEach {
             contentView.addSubview($0)
@@ -47,6 +64,15 @@ extension MyTitleCell {
                 .offset(8)
             $0.leading.equalToSuperview()
                 .offset(24)
+        }
+        
+        if version == .isVersion {
+            print("### hi")
+            versionLabel.snp.makeConstraints {
+                $0.centerY.equalTo(titleLabel)
+                $0.trailing.equalToSuperview()
+                    .inset(24)
+            }
         }
         
         borderLineView.snp.makeConstraints {
