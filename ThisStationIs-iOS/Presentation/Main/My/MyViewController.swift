@@ -10,7 +10,8 @@ import Then
 
 class MyViewController: UIViewController {
     private let myTableView = UITableView().then {
-        $0.backgroundColor = AppColor.setupColor(.primaryNormal)
+        $0.backgroundColor = .blue
+        $0.register(MyTableViewHeader.self, forHeaderFooterViewReuseIdentifier: "MyTableViewHeader")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -27,16 +28,24 @@ class MyViewController: UIViewController {
 
 extension MyViewController {
     private func setupView() {
+        view.backgroundColor = AppColor.setupColor(.primaryNormal)
         view.addSubview(myTableView)
+        if #available(iOS 15, *) {
+            myTableView.sectionHeaderTopPadding = 0
+        }
+        
+        myTableView.delegate = self
     }
     
     private func setupLayout() {
         myTableView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.leading.trailing.bottom.equalToSuperview()
         }
     }
     
     private func setupNavi() {
+        navigationController?.navigationBar.backgroundColor = AppColor.setupColor(.primaryNormal)
         setupLeftBarButtonItem()
         setupRightBarButtonItem()
     }
@@ -64,3 +73,13 @@ extension MyViewController {
     
 }
 
+extension MyViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "MyTableViewHeader") as! MyTableViewHeader
+        return header
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 88
+    }
+}
