@@ -32,6 +32,10 @@ class LineCongestionViewController: UIViewController {
         $0.backgroundColor = .white
     }
     
+    let backgroundUnderLineView = UIView().then {
+        $0.backgroundColor = AppColor.setupColor(.componentDivider)
+    }
+    
     let leftDestinationLabel = UILabel().then {
         $0.attributedText = .attributeFont(font: .body16, text: "대화행")
     }
@@ -106,6 +110,24 @@ class LineCongestionViewController: UIViewController {
         $0.textColor = AppColor.setupColor(.accentDanger)
     }
     
+    let infoImageView = UIImageView().then {
+        $0.image = UIImage(named: "info_circle")
+    }
+    
+    let infoTitleLabel = UILabel().then {
+        $0.attributedText = .attributeFont(font: .body16, text: "혼잡도 정보 안내")
+    }
+    
+    let infoDescriptionLabel = UILabel().then {
+        $0.attributedText = .attributeFont(font: .body16, text: "서울교통공사 혼잡도 데이터는 조사일자(평일, 토요일, 일요일), 호선, 역번호, 역명, 상하선구분, 30분단위 별 혼잡도 데이터로 구성되어 있습니다.")
+        $0.textColor = AppColor.setupColor(.textSub)
+        $0.numberOfLines = 0
+    }
+    
+    let refreshButton = UIButton().then {
+        $0.setImage(UIImage(named: "refresh_button"), for: .normal)
+    }
+    
     var thisTrainViewArray: [UIView] = []
     var nextTrainViewArray: [UIView] = []
     var totalTrainCount = 10
@@ -136,13 +158,18 @@ class LineCongestionViewController: UIViewController {
             rightDirectionButton,
             leftDestinationLabel,
             rightDestinationLabel,
+            backgroundUnderLineView,
             leftTimeLabel,
             rightTimeLabel,
             thisTrainLabel,
             nextTrainLabel,
             thisTrainView,
             nextTrainView,
-            congestionInfoView
+            congestionInfoView,
+            infoImageView,
+            infoTitleLabel,
+            infoDescriptionLabel,
+            refreshButton,
         ].forEach {
             self.view.addSubview($0)
         }
@@ -153,7 +180,7 @@ class LineCongestionViewController: UIViewController {
             trainImageView.image = UIImage(named: i == 0 ? "first_place" : "place")?.withRenderingMode(.alwaysTemplate)
             
             // 혼잡도에 따라 색 설정
-            trainImageView.tintColor = setCongsetionColor(type: dummyCongestionArray[i])
+            trainImageView.tintColor = setCongestionColor(type: dummyCongestionArray[i])
             
             let trainNumber = UILabel()
             trainNumber.attributedText = .attributeFont(font: .body14, text: "\(i + 1)")
@@ -176,7 +203,7 @@ class LineCongestionViewController: UIViewController {
             trainImageView.image = UIImage(named: i == 0 ? "first_place" : "place")?.withRenderingMode(.alwaysTemplate)
             
             // 혼잡도에 따라 색 설정
-            trainImageView.tintColor = setCongsetionColor(type: dummyNextCongestionArray[i])
+            trainImageView.tintColor = setCongestionColor(type: dummyNextCongestionArray[i])
             
             let trainNumber = UILabel()
             trainNumber.attributedText = .attributeFont(font: .body14, text: "\(i + 1)")
@@ -224,6 +251,12 @@ class LineCongestionViewController: UIViewController {
             $0.trailing.equalToSuperview()
             $0.height.equalTo(48)
             $0.width.equalTo(UIScreen.width / 2)
+        }
+        
+        backgroundUnderLineView.snp.makeConstraints {
+            $0.top.equalTo(leftDirectionButton.snp.bottom)
+            $0.height.equalTo(1)
+            $0.leading.trailing.equalToSuperview().inset(24)
         }
         
         leftDestinationLabel.snp.makeConstraints {
@@ -347,14 +380,35 @@ class LineCongestionViewController: UIViewController {
         
         congestionInfoView.snp.makeConstraints {
             $0.centerX.equalToSuperview()
+            $0.top.equalTo(accentGoodLabel.snp.top)
+            $0.bottom.equalTo(accentGoodLabel.snp.bottom)
             $0.top.equalTo(nextTrainView.snp.bottom).offset(46)
             $0.leading.equalTo(accentGoodLineView.snp.leading)
             $0.trailing.equalTo(accentDangerLabel.snp.trailing)
         }
         
+        infoImageView.snp.makeConstraints {
+            $0.top.equalTo(congestionInfoView.snp.bottom).offset(42)
+            $0.leading.equalToSuperview().inset(22)
+        }
+        
+        infoTitleLabel.snp.makeConstraints {
+            $0.leading.equalTo(infoImageView.snp.trailing).offset(4)
+            $0.centerY.equalTo(infoImageView)
+        }
+        
+        infoDescriptionLabel.snp.makeConstraints {
+            $0.top.equalTo(infoImageView.snp.bottom).offset(8)
+            $0.leading.trailing.equalToSuperview().inset(22)
+        }
+        
+        refreshButton.snp.makeConstraints {
+            $0.bottom.equalTo(self.view.safeAreaLayoutGuide)
+            $0.trailing.equalToSuperview().inset(24)
+        }
     }
     
-    func setCongsetionColor(type: CongestionType) -> UIColor {
+    func setCongestionColor(type: CongestionType) -> UIColor {
         switch type {
         case .margin:
             return AppColor.setupColor(.accentGood)
