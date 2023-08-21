@@ -96,7 +96,7 @@ extension CongestionSearchLineViewController: UITableViewDelegate, UITableViewDa
         let cell = UITableViewCell.init(style: .default, reuseIdentifier: identifier)
         cell.selectionStyle = .none
         
-        let subwayLineView = SubwayLineView()
+        let subwayLineView = SubwayLineView(type: .default)
         cell.contentView.addSubview(subwayLineView)
         subwayLineView.snp.makeConstraints {
             $0.centerY.equalToSuperview()

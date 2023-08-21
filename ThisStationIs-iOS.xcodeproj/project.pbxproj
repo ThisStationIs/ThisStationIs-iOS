@@ -39,6 +39,8 @@
 		394A03322A5F0B940093A62A /* UIScreen+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394A03312A5F0B940093A62A /* UIScreen+Ex.swift */; };
 		394A03362A5F11410093A62A /* HomeTrendPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394A03352A5F11410093A62A /* HomeTrendPostTableViewCell.swift */; };
 		3981DE172A2F086F007AA4F6 /* UIView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3981DE162A2F086F007AA4F6 /* UIView+Ex.swift */; };
+		39D70E5F2A93046000AABC7E /* BaseUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D70E5E2A93046000AABC7E /* BaseUIViewController.swift */; };
+		39D70E622A930CCB00AABC7E /* CommunityMainTableHaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D70E612A930CCB00AABC7E /* CommunityMainTableHaderView.swift */; };
 		39F97B0B2A7CC885003BB7CA /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F97B0A2A7CC885003BB7CA /* HomeViewModel.swift */; };
 		39F97B0E2A7CC8E4003BB7CA /* CongestionSearchLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F97B0D2A7CC8E4003BB7CA /* CongestionSearchLineViewController.swift */; };
 		39F97B102A7CCFB9003BB7CA /* SubwayLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F97B0F2A7CCFB9003BB7CA /* SubwayLineView.swift */; };
@@ -82,6 +84,8 @@
 		394A03312A5F0B940093A62A /* UIScreen+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Ex.swift"; sourceTree = "<group>"; };
 		394A03352A5F11410093A62A /* HomeTrendPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTrendPostTableViewCell.swift; sourceTree = "<group>"; };
 		3981DE162A2F086F007AA4F6 /* UIView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ex.swift"; sourceTree = "<group>"; };
+		39D70E5E2A93046000AABC7E /* BaseUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIViewController.swift; sourceTree = "<group>"; };
+		39D70E612A930CCB00AABC7E /* CommunityMainTableHaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityMainTableHaderView.swift; sourceTree = "<group>"; };
 		39F97B0A2A7CC885003BB7CA /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		39F97B0D2A7CC8E4003BB7CA /* CongestionSearchLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongestionSearchLineViewController.swift; sourceTree = "<group>"; };
 		39F97B0F2A7CCFB9003BB7CA /* SubwayLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubwayLineView.swift; sourceTree = "<group>"; };
@@ -236,6 +240,7 @@
 		393C425429ED7131002A80FC /* Custom Component */ = {
 			isa = PBXGroup;
 			children = (
+				39D70E602A930CB200AABC7E /* Community */,
 				394A032E2A5F08660093A62A /* Home */,
 				393C425529ED717B002A80FC /* MainButton.swift */,
 				249FF6CA2A11CCDE00F5F2A9 /* InputView.swift */,
@@ -247,6 +252,7 @@
 				244581322A3820A6000BC904 /* PostTableViewCell.swift */,
 				246436B92A3990D700C9F796 /* LinkPreView.swift */,
 				39F97B0F2A7CCFB9003BB7CA /* SubwayLineView.swift */,
+				39D70E5E2A93046000AABC7E /* BaseUIViewController.swift */,
 			);
 			path = "Custom Component";
 			sourceTree = "<group>";
@@ -287,6 +293,14 @@
 				394A03352A5F11410093A62A /* HomeTrendPostTableViewCell.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		39D70E602A930CB200AABC7E /* Community */ = {
+			isa = PBXGroup;
+			children = (
+				39D70E612A930CCB00AABC7E /* CommunityMainTableHaderView.swift */,
+			);
+			path = Community;
 			sourceTree = "<group>";
 		};
 		39F97B0C2A7CC8AD003BB7CA /* Congestion */ = {
@@ -433,6 +447,7 @@
 				39F97B0B2A7CC885003BB7CA /* HomeViewModel.swift in Sources */,
 				249FF6CF2A11D81000F5F2A9 /* Constant.swift in Sources */,
 				393C425329ED712B002A80FC /* LoginViewController.swift in Sources */,
+				39D70E5F2A93046000AABC7E /* BaseUIViewController.swift in Sources */,
 				393C424B29ED70B3002A80FC /* HomeViewController.swift in Sources */,
 				48171D482A30243300F1F869 /* SelectFavoriteLineViewController.swift in Sources */,
 				249FF6CD2A11D07C00F5F2A9 /* TextField.swift in Sources */,
@@ -455,6 +470,7 @@
 				394A03362A5F11410093A62A /* HomeTrendPostTableViewCell.swift in Sources */,
 				393C42632A1BAFDE002A80FC /* NSAttributedString+Ex.swift in Sources */,
 				CFD59C662A2F89B500CE92F9 /* RegistPasswordViewController.swift in Sources */,
+				39D70E622A930CCB00AABC7E /* CommunityMainTableHaderView.swift in Sources */,
 				24684E402A36C762000C2947 /* CheckButtonWithText.swift in Sources */,
 				24684E3C2A36BC2C000C2947 /* RegisterTermsView.swift in Sources */,
 				393C424629ED7083002A80FC /* MainTabBarViewController.swift in Sources */,
