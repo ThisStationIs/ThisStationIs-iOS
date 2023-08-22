@@ -43,6 +43,8 @@ class LoginViewController: UIViewController {
         $0.setTitleColor(AppColor.setupColor(.primaryNormal), for: .normal)
         $0.titleLabel?.attributedText = .attributeFont(font: .label, text: "회원가입")
     }
+    
+    var viewModel: LoginViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
