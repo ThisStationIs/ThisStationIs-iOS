@@ -265,11 +265,7 @@
 				48171D532A385D2100F1F869 /* AppCoordinator.swift */,
 				CFB85E302A94362D0077AD1B /* TabBarCoordinator.swift */,
 				CFB85E322A9436600077AD1B /* TabBarItemType.swift */,
-				CFB85E342A943CCB0077AD1B /* HomeCoordinator.swift */,
-				CFB85E362A9627900077AD1B /* CommunityCoordinator.swift */,
-				CFB85E382A9627D60077AD1B /* WrittingCoordinator.swift */,
-				CFB85E3A2A9628100077AD1B /* HistoryCoordinator.swift */,
-				CFB85E3C2A9628420077AD1B /* MyCoordinator.swift */,
+				CFB2CB1F2A963079002680E5 /* GnbCoordinator */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -301,6 +297,18 @@
 				BAA9736FCC519EBBE9996F2C /* Pods-ThisStationIs-iOS.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		CFB2CB1F2A963079002680E5 /* GnbCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				CFB85E342A943CCB0077AD1B /* HomeCoordinator.swift */,
+				CFB85E362A9627900077AD1B /* CommunityCoordinator.swift */,
+				CFB85E382A9627D60077AD1B /* WrittingCoordinator.swift */,
+				CFB85E3A2A9628100077AD1B /* HistoryCoordinator.swift */,
+				CFB85E3C2A9628420077AD1B /* MyCoordinator.swift */,
+			);
+			path = GnbCoordinator;
 			sourceTree = "<group>";
 		};
 		D3ADC4F57B9EF244D921E4EA /* Frameworks */ = {
