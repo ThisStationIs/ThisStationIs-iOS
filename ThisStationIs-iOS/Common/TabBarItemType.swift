@@ -43,11 +43,11 @@ enum TabBarItemType: String, CaseIterable {
     
     func toIconName() -> String {
         switch self {
-        case .home: return "home"
-        case .community: return "board"
-        case .writting: return "writting"
-        case .history: return "history"
-        case .my: return "my"
+        case .home: return "homeTabIcon"
+        case .community: return "communiyTabIcon"
+        case .writting: return "writtingTabIcon"
+        case .history: return "historyTabIcon"
+        case .my: return "myTabIcon"
         }
     }
 }
