@@ -42,6 +42,13 @@
 		CFB85E2B2A8A7E5A0077AD1B /* MyTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB85E2A2A8A7E5A0077AD1B /* MyTableViewHeader.swift */; };
 		CFB85E2D2A8A8A7D0077AD1B /* MyTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB85E2C2A8A8A7D0077AD1B /* MyTitleCell.swift */; };
 		CFB85E2F2A8A8F900077AD1B /* MyMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB85E2E2A8A8F900077AD1B /* MyMenuCell.swift */; };
+		CFB85E312A94362D0077AD1B /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB85E302A94362D0077AD1B /* TabBarCoordinator.swift */; };
+		CFB85E332A9436600077AD1B /* TabBarItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB85E322A9436600077AD1B /* TabBarItemType.swift */; };
+		CFB85E352A943CCB0077AD1B /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB85E342A943CCB0077AD1B /* HomeCoordinator.swift */; };
+		CFB85E372A9627900077AD1B /* CommunityCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB85E362A9627900077AD1B /* CommunityCoordinator.swift */; };
+		CFB85E392A9627D60077AD1B /* WrittingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB85E382A9627D60077AD1B /* WrittingCoordinator.swift */; };
+		CFB85E3B2A9628100077AD1B /* HistoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB85E3A2A9628100077AD1B /* HistoryCoordinator.swift */; };
+		CFB85E3D2A9628420077AD1B /* MyCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB85E3C2A9628420077AD1B /* MyCoordinator.swift */; };
 		CFD59C662A2F89B500CE92F9 /* RegistPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD59C652A2F89B500CE92F9 /* RegistPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +92,13 @@
 		CFB85E2A2A8A7E5A0077AD1B /* MyTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewHeader.swift; sourceTree = "<group>"; };
 		CFB85E2C2A8A8A7D0077AD1B /* MyTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTitleCell.swift; sourceTree = "<group>"; };
 		CFB85E2E2A8A8F900077AD1B /* MyMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMenuCell.swift; sourceTree = "<group>"; };
+		CFB85E302A94362D0077AD1B /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
+		CFB85E322A9436600077AD1B /* TabBarItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemType.swift; sourceTree = "<group>"; };
+		CFB85E342A943CCB0077AD1B /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		CFB85E362A9627900077AD1B /* CommunityCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityCoordinator.swift; sourceTree = "<group>"; };
+		CFB85E382A9627D60077AD1B /* WrittingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrittingCoordinator.swift; sourceTree = "<group>"; };
+		CFB85E3A2A9628100077AD1B /* HistoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCoordinator.swift; sourceTree = "<group>"; };
+		CFB85E3C2A9628420077AD1B /* MyCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCoordinator.swift; sourceTree = "<group>"; };
 		CFD59C652A2F89B500CE92F9 /* RegistPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistPasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -249,6 +263,13 @@
 				249FF6CE2A11D81000F5F2A9 /* Constant.swift */,
 				48171D512A385CF100F1F869 /* Coordinator.swift */,
 				48171D532A385D2100F1F869 /* AppCoordinator.swift */,
+				CFB85E302A94362D0077AD1B /* TabBarCoordinator.swift */,
+				CFB85E322A9436600077AD1B /* TabBarItemType.swift */,
+				CFB85E342A943CCB0077AD1B /* HomeCoordinator.swift */,
+				CFB85E362A9627900077AD1B /* CommunityCoordinator.swift */,
+				CFB85E382A9627D60077AD1B /* WrittingCoordinator.swift */,
+				CFB85E3A2A9628100077AD1B /* HistoryCoordinator.swift */,
+				CFB85E3C2A9628420077AD1B /* MyCoordinator.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -421,16 +442,23 @@
 				48171D522A385CF100F1F869 /* Coordinator.swift in Sources */,
 				CFB85E2B2A8A7E5A0077AD1B /* MyTableViewHeader.swift in Sources */,
 				48171D4A2A30268600F1F869 /* LineCollectionViewCell.swift in Sources */,
+				CFB85E3B2A9628100077AD1B /* HistoryCoordinator.swift in Sources */,
 				393C425F29ED71D0002A80FC /* Networking.swift in Sources */,
 				393C423029ED6A21002A80FC /* ViewController.swift in Sources */,
 				393C424D29ED70BF002A80FC /* CommunityViewController.swift in Sources */,
 				393C425629ED717B002A80FC /* MainButton.swift in Sources */,
 				CFB85E2D2A8A8A7D0077AD1B /* MyTitleCell.swift in Sources */,
+				CFB85E312A94362D0077AD1B /* TabBarCoordinator.swift in Sources */,
+				CFB85E3D2A9628420077AD1B /* MyCoordinator.swift in Sources */,
 				CF7EE0872A88FB5B00891649 /* NoticeNewCommentCell.swift in Sources */,
+				CFB85E392A9627D60077AD1B /* WrittingCoordinator.swift in Sources */,
 				3923B5B52A25DD09002845EC /* BottomSheetView.swift in Sources */,
 				393C42632A1BAFDE002A80FC /* NSAttributedString+Ex.swift in Sources */,
+				CFB85E332A9436600077AD1B /* TabBarItemType.swift in Sources */,
 				CFD59C662A2F89B500CE92F9 /* RegistPasswordViewController.swift in Sources */,
 				393C424629ED7083002A80FC /* MainTabBarViewController.swift in Sources */,
+				CFB85E372A9627900077AD1B /* CommunityCoordinator.swift in Sources */,
+				CFB85E352A943CCB0077AD1B /* HomeCoordinator.swift in Sources */,
 				393C422C29ED6A21002A80FC /* AppDelegate.swift in Sources */,
 				393C424F29ED70C7002A80FC /* HistoryViewController.swift in Sources */,
 				241E711029F64B1600E9D986 /* EmailRegisterViewController.swift in Sources */,
