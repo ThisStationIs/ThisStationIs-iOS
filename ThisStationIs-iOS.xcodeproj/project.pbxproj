@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		1BC84BE44221C17E659DB310 /* Pods_ThisStationIs_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE21A22CDE95E598FC241D67 /* Pods_ThisStationIs_iOS.framework */; };
 		241E711029F64B1600E9D986 /* EmailRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241E710F29F64B1600E9D986 /* EmailRegisterViewController.swift */; };
+		244581332A3820A6000BC904 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244581322A3820A6000BC904 /* PostTableViewCell.swift */; };
+		246436BA2A3990D700C9F796 /* LinkPreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246436B92A3990D700C9F796 /* LinkPreView.swift */; };
+		24684E3C2A36BC2C000C2947 /* RegisterTermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24684E3B2A36BC2C000C2947 /* RegisterTermsView.swift */; };
+		24684E402A36C762000C2947 /* CheckButtonWithText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24684E3F2A36C762000C2947 /* CheckButtonWithText.swift */; };
+		2469FD3F2A32C11F00B78CF5 /* AuthNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2469FD3E2A32C11F00B78CF5 /* AuthNumberViewController.swift */; };
+		24798B432A37FDB4004A0343 /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24798B422A37FDB4004A0343 /* BadgeView.swift */; };
 		249FF6CB2A11CCDE00F5F2A9 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249FF6CA2A11CCDE00F5F2A9 /* InputView.swift */; };
 		249FF6CD2A11D07C00F5F2A9 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249FF6CC2A11D07C00F5F2A9 /* TextField.swift */; };
 		249FF6CF2A11D81000F5F2A9 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249FF6CE2A11D81000F5F2A9 /* Constant.swift */; };
@@ -29,7 +35,14 @@
 		393C425D29ED71C5002A80FC /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393C425C29ED71C5002A80FC /* APIClient.swift */; };
 		393C425F29ED71D0002A80FC /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393C425E29ED71D0002A80FC /* Networking.swift */; };
 		393C42632A1BAFDE002A80FC /* NSAttributedString+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393C42622A1BAFDE002A80FC /* NSAttributedString+Ex.swift */; };
-		3981DE172A2F086F007AA4F6 /* UIWindow+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3981DE162A2F086F007AA4F6 /* UIWindow+Ex.swift */; };
+		394A03302A5F08720093A62A /* HomeTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394A032F2A5F08720093A62A /* HomeTableHeaderView.swift */; };
+		394A03322A5F0B940093A62A /* UIScreen+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394A03312A5F0B940093A62A /* UIScreen+Ex.swift */; };
+		394A03362A5F11410093A62A /* HomeTrendPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394A03352A5F11410093A62A /* HomeTrendPostTableViewCell.swift */; };
+		3981DE172A2F086F007AA4F6 /* UIView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3981DE162A2F086F007AA4F6 /* UIView+Ex.swift */; };
+		39F97B0B2A7CC885003BB7CA /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F97B0A2A7CC885003BB7CA /* HomeViewModel.swift */; };
+		39F97B0E2A7CC8E4003BB7CA /* CongestionSearchLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F97B0D2A7CC8E4003BB7CA /* CongestionSearchLineViewController.swift */; };
+		39F97B102A7CCFB9003BB7CA /* SubwayLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F97B0F2A7CCFB9003BB7CA /* SubwayLineView.swift */; };
+		39F97B122A7CD7B3003BB7CA /* LineCongestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F97B112A7CD7B3003BB7CA /* LineCongestionViewController.swift */; };
 		48171D482A30243300F1F869 /* SelectFavoriteLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48171D472A30243300F1F869 /* SelectFavoriteLineViewController.swift */; };
 		48171D4A2A30268600F1F869 /* LineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48171D492A30268600F1F869 /* LineCollectionViewCell.swift */; };
 		48171D522A385CF100F1F869 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48171D512A385CF100F1F869 /* Coordinator.swift */; };
@@ -54,6 +67,12 @@
 
 /* Begin PBXFileReference section */
 		241E710F29F64B1600E9D986 /* EmailRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRegisterViewController.swift; sourceTree = "<group>"; };
+		244581322A3820A6000BC904 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		246436B92A3990D700C9F796 /* LinkPreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkPreView.swift; sourceTree = "<group>"; };
+		24684E3B2A36BC2C000C2947 /* RegisterTermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTermsView.swift; sourceTree = "<group>"; };
+		24684E3F2A36C762000C2947 /* CheckButtonWithText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckButtonWithText.swift; sourceTree = "<group>"; };
+		2469FD3E2A32C11F00B78CF5 /* AuthNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNumberViewController.swift; sourceTree = "<group>"; };
+		24798B422A37FDB4004A0343 /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
 		249FF6CA2A11CCDE00F5F2A9 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		249FF6CC2A11D07C00F5F2A9 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		249FF6CE2A11D81000F5F2A9 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -76,7 +95,14 @@
 		393C425C29ED71C5002A80FC /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		393C425E29ED71D0002A80FC /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		393C42622A1BAFDE002A80FC /* NSAttributedString+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Ex.swift"; sourceTree = "<group>"; };
-		3981DE162A2F086F007AA4F6 /* UIWindow+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Ex.swift"; sourceTree = "<group>"; };
+		394A032F2A5F08720093A62A /* HomeTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableHeaderView.swift; sourceTree = "<group>"; };
+		394A03312A5F0B940093A62A /* UIScreen+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Ex.swift"; sourceTree = "<group>"; };
+		394A03352A5F11410093A62A /* HomeTrendPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTrendPostTableViewCell.swift; sourceTree = "<group>"; };
+		3981DE162A2F086F007AA4F6 /* UIView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ex.swift"; sourceTree = "<group>"; };
+		39F97B0A2A7CC885003BB7CA /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		39F97B0D2A7CC8E4003BB7CA /* CongestionSearchLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongestionSearchLineViewController.swift; sourceTree = "<group>"; };
+		39F97B0F2A7CCFB9003BB7CA /* SubwayLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubwayLineView.swift; sourceTree = "<group>"; };
+		39F97B112A7CD7B3003BB7CA /* LineCongestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineCongestionViewController.swift; sourceTree = "<group>"; };
 		48171D472A30243300F1F869 /* SelectFavoriteLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFavoriteLineViewController.swift; sourceTree = "<group>"; };
 		48171D492A30268600F1F869 /* LineCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineCollectionViewCell.swift; sourceTree = "<group>"; };
 		48171D512A385CF100F1F869 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -118,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				241E710F29F64B1600E9D986 /* EmailRegisterViewController.swift */,
+				2469FD3E2A32C11F00B78CF5 /* AuthNumberViewController.swift */,
 				CFD59C652A2F89B500CE92F9 /* RegistPasswordViewController.swift */,
 				48171D472A30243300F1F869 /* SelectFavoriteLineViewController.swift */,
 				48171D492A30268600F1F869 /* LineCollectionViewCell.swift */,
@@ -212,7 +239,9 @@
 		393C424429ED7065002A80FC /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				39F97B0C2A7CC8AD003BB7CA /* Congestion */,
 				393C424A29ED70B3002A80FC /* HomeViewController.swift */,
+				39F97B0A2A7CC885003BB7CA /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -248,10 +277,17 @@
 		393C425429ED7131002A80FC /* Custom Component */ = {
 			isa = PBXGroup;
 			children = (
+				394A032E2A5F08660093A62A /* Home */,
 				393C425529ED717B002A80FC /* MainButton.swift */,
 				249FF6CA2A11CCDE00F5F2A9 /* InputView.swift */,
 				249FF6CC2A11D07C00F5F2A9 /* TextField.swift */,
 				3923B5B42A25DD09002845EC /* BottomSheetView.swift */,
+				24684E3B2A36BC2C000C2947 /* RegisterTermsView.swift */,
+				24684E3F2A36C762000C2947 /* CheckButtonWithText.swift */,
+				24798B422A37FDB4004A0343 /* BadgeView.swift */,
+				244581322A3820A6000BC904 /* PostTableViewCell.swift */,
+				246436B92A3990D700C9F796 /* LinkPreView.swift */,
+				39F97B0F2A7CCFB9003BB7CA /* SubwayLineView.swift */,
 			);
 			path = "Custom Component";
 			sourceTree = "<group>";
@@ -277,6 +313,8 @@
 				393C42622A1BAFDE002A80FC /* NSAttributedString+Ex.swift */,
 				3981DE162A2F086F007AA4F6 /* UIWindow+Ex.swift */,
 				CFB85E282A8A7D8A0077AD1B /* UIImage+Ex.swift */,
+				3981DE162A2F086F007AA4F6 /* UIView+Ex.swift */,
+				394A03312A5F0B940093A62A /* UIScreen+Ex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -288,6 +326,24 @@
 				393C425E29ED71D0002A80FC /* Networking.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		394A032E2A5F08660093A62A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				394A032F2A5F08720093A62A /* HomeTableHeaderView.swift */,
+				394A03352A5F11410093A62A /* HomeTrendPostTableViewCell.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		39F97B0C2A7CC8AD003BB7CA /* Congestion */ = {
+			isa = PBXGroup;
+			children = (
+				39F97B0D2A7CC8E4003BB7CA /* CongestionSearchLineViewController.swift */,
+				39F97B112A7CD7B3003BB7CA /* LineCongestionViewController.swift */,
+			);
+			path = Congestion;
 			sourceTree = "<group>";
 		};
 		3D77D03B872DF0EDFE2FB89C /* Pods */ = {
@@ -436,6 +492,7 @@
 				48171E762A5526B800F1F869 /* NoticeNoDataTableViewCell.swift in Sources */,
 				393C425D29ED71C5002A80FC /* APIClient.swift in Sources */,
 				CFB85E2F2A8A8F900077AD1B /* MyMenuCell.swift in Sources */,
+				39F97B0B2A7CC885003BB7CA /* HomeViewModel.swift in Sources */,
 				249FF6CF2A11D81000F5F2A9 /* Constant.swift in Sources */,
 				48171D542A385D2100F1F869 /* AppCoordinator.swift in Sources */,
 				CFB85E292A8A7D8A0077AD1B /* UIImage+Ex.swift in Sources */,
@@ -449,10 +506,17 @@
 				3981DE172A2F086F007AA4F6 /* UIWindow+Ex.swift in Sources */,
 				48171D522A385CF100F1F869 /* Coordinator.swift in Sources */,
 				CFB85E2B2A8A7E5A0077AD1B /* MyTableViewHeader.swift in Sources */,
+				244581332A3820A6000BC904 /* PostTableViewCell.swift in Sources */,
+				394A03322A5F0B940093A62A /* UIScreen+Ex.swift in Sources */,
+				3981DE172A2F086F007AA4F6 /* UIView+Ex.swift in Sources */,
 				48171D4A2A30268600F1F869 /* LineCollectionViewCell.swift in Sources */,
 				CFB85E3B2A9628100077AD1B /* HistoryCoordinator.swift in Sources */,
+				246436BA2A3990D700C9F796 /* LinkPreView.swift in Sources */,
+				39F97B0E2A7CC8E4003BB7CA /* CongestionSearchLineViewController.swift in Sources */,
 				393C425F29ED71D0002A80FC /* Networking.swift in Sources */,
 				393C423029ED6A21002A80FC /* ViewController.swift in Sources */,
+				2469FD3F2A32C11F00B78CF5 /* AuthNumberViewController.swift in Sources */,
+				39F97B122A7CD7B3003BB7CA /* LineCongestionViewController.swift in Sources */,
 				393C424D29ED70BF002A80FC /* CommunityViewController.swift in Sources */,
 				393C425629ED717B002A80FC /* MainButton.swift in Sources */,
 				CFB85E2D2A8A8A7D0077AD1B /* MyTitleCell.swift in Sources */,
@@ -461,15 +525,21 @@
 				CF7EE0872A88FB5B00891649 /* NoticeNewCommentCell.swift in Sources */,
 				CFB85E392A9627D60077AD1B /* WrittingCoordinator.swift in Sources */,
 				3923B5B52A25DD09002845EC /* BottomSheetView.swift in Sources */,
+				394A03302A5F08720093A62A /* HomeTableHeaderView.swift in Sources */,
+				24798B432A37FDB4004A0343 /* BadgeView.swift in Sources */,
+				394A03362A5F11410093A62A /* HomeTrendPostTableViewCell.swift in Sources */,
 				393C42632A1BAFDE002A80FC /* NSAttributedString+Ex.swift in Sources */,
 				CFB85E332A9436600077AD1B /* TabBarItemType.swift in Sources */,
 				CFD59C662A2F89B500CE92F9 /* RegistPasswordViewController.swift in Sources */,
+				24684E402A36C762000C2947 /* CheckButtonWithText.swift in Sources */,
+				24684E3C2A36BC2C000C2947 /* RegisterTermsView.swift in Sources */,
 				393C424629ED7083002A80FC /* MainTabBarViewController.swift in Sources */,
 				CFB85E372A9627900077AD1B /* CommunityCoordinator.swift in Sources */,
 				CFB85E352A943CCB0077AD1B /* HomeCoordinator.swift in Sources */,
 				393C422C29ED6A21002A80FC /* AppDelegate.swift in Sources */,
 				393C424F29ED70C7002A80FC /* HistoryViewController.swift in Sources */,
 				241E711029F64B1600E9D986 /* EmailRegisterViewController.swift in Sources */,
+				39F97B102A7CCFB9003BB7CA /* SubwayLineView.swift in Sources */,
 				393C425A29ED71A7002A80FC /* String+Ex.swift in Sources */,
 				393C425129ED70D6002A80FC /* MyViewController.swift in Sources */,
 				393C422E29ED6A21002A80FC /* SceneDelegate.swift in Sources */,
@@ -612,6 +682,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P5A4NBG7AB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ThisStationIs-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -639,6 +710,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P5A4NBG7AB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ThisStationIs-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
