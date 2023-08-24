@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "profile.svg",
+      "filename" : "File_dock.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -10,7 +10,6 @@
       "scale" : "2x"
     },
     {
-      "filename" : "profile@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
