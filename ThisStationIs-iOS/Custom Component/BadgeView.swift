@@ -67,7 +67,8 @@ class BadgeView: UIView {
     // 큰 뱃지
     private func setUpLargeBadgeView() {
         self.frame = .init(x: 0, y: 0, width: 59, height: 32)
-        self.layer.cornerRadius = 32 / 2
+        self.layer.masksToBounds = true
+        self.layer.cornerRadius = self.frame.height / 2
         self.addSubview(titleLabel)
         
         titleLabel.attributedText = .attributeFont(font: .body14, text: "Label")
@@ -88,7 +89,8 @@ class BadgeView: UIView {
     // 작은 뱃지
     private func setUpSmallBadgeView() {
         self.frame = .init(x: 0, y: 0, width: 55, height: 24)
-        self.layer.cornerRadius = 24 / 2
+        self.layer.masksToBounds = true
+        self.layer.cornerRadius = self.frame.height / 2
         self.addSubview(titleLabel)
         
         titleLabel.attributedText = .attributeFont(font: .content, text: "Label")

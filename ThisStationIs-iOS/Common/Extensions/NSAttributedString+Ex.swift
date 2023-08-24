@@ -45,7 +45,8 @@ extension NSAttributedString {
             // weight 500
             setFont = UIFont.systemFont(ofSize: 24, weight: .medium)
         case .heading20:
-            setFont = UIFont.systemFont(ofSize: 20, weight: .bold)
+            // weight 500
+            setFont = UIFont.systemFont(ofSize: 20, weight: .medium)
         case .heading16:
             // weight 700
             setFont = UIFont.systemFont(ofSize: 16, weight: .medium)
