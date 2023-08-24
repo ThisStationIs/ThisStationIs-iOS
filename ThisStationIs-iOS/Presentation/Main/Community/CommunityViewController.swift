@@ -18,12 +18,14 @@ class CommunityViewController: BaseUIViewController {
     lazy var boardTableView = UITableView().then {
         $0.delegate = self
         $0.dataSource = self
+        $0.separatorInset = .init(top: 0, left: 24, bottom: 0, right: 24)
         $0.estimatedRowHeight = 318
         $0.rowHeight = UITableView.automaticDimension
     }
     
-    let titleView = UIView().then {
+    lazy var titleView = UIView().then {
         $0.backgroundColor = .white
+        $0.addGestureRecognizer(self.titleViewGeusture)
     }
     
     let titleLabel = UILabel().then {
@@ -41,14 +43,23 @@ class CommunityViewController: BaseUIViewController {
     
     var dummyLine: [String] = ["1", "2", "8", "수", "인"]
     var categoryTitleString: [String] = ["전체", "연착정보", "분실물", "사건사고", "알쓸신잡", "질문", "기타"]
+    lazy var titleViewGeusture = UITapGestureRecognizer(target: self, action: #selector(tapTitleView))
     
     var lineIconViewArray: [UIView] = []
     var categoryViewArray: [UIView] = []
+    
+    let viewModel = CommunityViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpNavigationBar()
         setUpView()
+    }
+    
+    @objc func tapTitleView(_ gesture: UITapGestureRecognizer) {
+        let selectSubwayLineViewController = SelectSubwayLineViewController(viewModel: viewModel)
+        selectSubwayLineViewController.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(selectSubwayLineViewController, animated: true)
     }
      
     @objc func selectRightButton() {
@@ -147,7 +158,6 @@ class CommunityViewController: BaseUIViewController {
         
         boardTableView.snp.makeConstraints {
             $0.top.equalTo(categoryScrollView.snp.bottom)
-//            $0.top.equalToSuperview()
             $0.leading.bottom.trailing.equalToSuperview()
         }
     }
