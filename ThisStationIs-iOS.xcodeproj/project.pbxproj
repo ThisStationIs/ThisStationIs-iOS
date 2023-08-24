@@ -38,6 +38,8 @@
 		394A03302A5F08720093A62A /* HomeTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394A032F2A5F08720093A62A /* HomeTableHeaderView.swift */; };
 		394A03322A5F0B940093A62A /* UIScreen+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394A03312A5F0B940093A62A /* UIScreen+Ex.swift */; };
 		394A03362A5F11410093A62A /* HomeTrendPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394A03352A5F11410093A62A /* HomeTrendPostTableViewCell.swift */; };
+		39541DA42A96F078008B0B41 /* SelectSubwayLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39541DA32A96F078008B0B41 /* SelectSubwayLineViewController.swift */; };
+		39541DA62A971D51008B0B41 /* CommunityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39541DA52A971D51008B0B41 /* CommunityViewModel.swift */; };
 		3981DE172A2F086F007AA4F6 /* UIView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3981DE162A2F086F007AA4F6 /* UIView+Ex.swift */; };
 		39D70E5F2A93046000AABC7E /* BaseUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D70E5E2A93046000AABC7E /* BaseUIViewController.swift */; };
 		39D70E622A930CCB00AABC7E /* CommunityMainTableHaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D70E612A930CCB00AABC7E /* CommunityMainTableHaderView.swift */; };
@@ -83,6 +85,8 @@
 		394A032F2A5F08720093A62A /* HomeTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableHeaderView.swift; sourceTree = "<group>"; };
 		394A03312A5F0B940093A62A /* UIScreen+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Ex.swift"; sourceTree = "<group>"; };
 		394A03352A5F11410093A62A /* HomeTrendPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTrendPostTableViewCell.swift; sourceTree = "<group>"; };
+		39541DA32A96F078008B0B41 /* SelectSubwayLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSubwayLineViewController.swift; sourceTree = "<group>"; };
+		39541DA52A971D51008B0B41 /* CommunityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewModel.swift; sourceTree = "<group>"; };
 		3981DE162A2F086F007AA4F6 /* UIView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ex.swift"; sourceTree = "<group>"; };
 		39D70E5E2A93046000AABC7E /* BaseUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIViewController.swift; sourceTree = "<group>"; };
 		39D70E612A930CCB00AABC7E /* CommunityMainTableHaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityMainTableHaderView.swift; sourceTree = "<group>"; };
@@ -217,6 +221,8 @@
 			isa = PBXGroup;
 			children = (
 				393C424C29ED70BF002A80FC /* CommunityViewController.swift */,
+				39541DA32A96F078008B0B41 /* SelectSubwayLineViewController.swift */,
+				39541DA52A971D51008B0B41 /* CommunityViewModel.swift */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -461,6 +467,7 @@
 				393C425F29ED71D0002A80FC /* Networking.swift in Sources */,
 				393C423029ED6A21002A80FC /* ViewController.swift in Sources */,
 				2469FD3F2A32C11F00B78CF5 /* AuthNumberViewController.swift in Sources */,
+				39541DA42A96F078008B0B41 /* SelectSubwayLineViewController.swift in Sources */,
 				39F97B122A7CD7B3003BB7CA /* LineCongestionViewController.swift in Sources */,
 				393C424D29ED70BF002A80FC /* CommunityViewController.swift in Sources */,
 				393C425629ED717B002A80FC /* MainButton.swift in Sources */,
@@ -470,6 +477,7 @@
 				394A03362A5F11410093A62A /* HomeTrendPostTableViewCell.swift in Sources */,
 				393C42632A1BAFDE002A80FC /* NSAttributedString+Ex.swift in Sources */,
 				CFD59C662A2F89B500CE92F9 /* RegistPasswordViewController.swift in Sources */,
+				39541DA62A971D51008B0B41 /* CommunityViewModel.swift in Sources */,
 				39D70E622A930CCB00AABC7E /* CommunityMainTableHaderView.swift in Sources */,
 				24684E402A36C762000C2947 /* CheckButtonWithText.swift in Sources */,
 				24684E3C2A36BC2C000C2947 /* RegisterTermsView.swift in Sources */,
