@@ -23,6 +23,7 @@ class SelectSubwayLineViewController: BaseUIViewController {
     
     lazy var applyButton = MainButton().then {
         $0.frame = .init(x: 0, y: 0, width: UIScreen.width - 48, height: 60)
+        $0.setAttributedTitle(.attributeFont(font: .button, text: "적용"), for: .normal)
         $0.addTarget(self, action: #selector(selectApplyButton), for: .touchUpInside)
     }
     
@@ -87,6 +88,7 @@ class SelectSubwayLineViewController: BaseUIViewController {
             titleLabel,
             separatorView,
             lineContentView,
+            applyButton,
         ].forEach {
             self.view.addSubview($0)
         }
@@ -186,5 +188,10 @@ class SelectSubwayLineViewController: BaseUIViewController {
             positionX = positionX + lineNameViewArray[i].frame.size.width + 16
         }
         
+        applyButton.snp.makeConstraints {
+            $0.bottom.equalTo(self.view.safeAreaLayoutGuide)
+            $0.leading.trailing.equalToSuperview().inset(24)
+            $0.height.equalTo(60)
+        }
     }
 }
