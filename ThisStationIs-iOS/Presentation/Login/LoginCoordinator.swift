@@ -9,15 +9,17 @@ import Foundation
 import UIKit
 
 class LoginCoordinator: Coordinator {
-    var parentCoordinator: Coordinator?
-    var children: [Coordinator] = []
-    
     var navigationController: UINavigationController
     
-    init(navigationController: UINavigationController) {
+    var childCoordinators: [Coordinator] = []
+    var finishDelegate: CoordinatorFinishDelegate?
+    
+    var type: CoordinatorType = .login
+    
+    required init(_ navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
-    
+
     func start(){
         goToLogin()
     }

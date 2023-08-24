@@ -26,7 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene) // SceneDelegate의 프로퍼티에 설정해줌
 //        let mainViewController = UINavigationController(rootViewController: ViewController()) // 맨 처음 보여줄 ViewController
         let navigationController = UINavigationController.init()
-        appCoordinator = AppCoordinator(navigationController: navigationController)
+        appCoordinator = AppCoordinator(navigationController)
         appCoordinator!.start()
 
 //        window?.rootViewController = mainViewController
