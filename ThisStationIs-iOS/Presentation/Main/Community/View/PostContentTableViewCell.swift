@@ -1,14 +1,13 @@
 //
-//  PostTableViewCell.swift
+//  PostContentTableViewCell.swift
 //  ThisStationIs-iOS
 //
-//  Created by milli on 2023/06/13.
+//  Created by min on 2023/08/24.
 //
 
 import UIKit
-import SnapKit
 
-class PostTableViewCell: UITableViewCell {
+class PostContentTableViewCell: UITableViewCell {
     
     let containerView = UIView()
     
@@ -39,16 +38,14 @@ class PostTableViewCell: UITableViewCell {
     }
     
     let titleLabel = UILabel().then {
-        $0.attributedText = .attributeFont(font: .heading16, text: "제목")
+        $0.attributedText = .attributeFont(font: .heading18, text: "제목")
         $0.numberOfLines = 2
     }
     
     let contentLabel = UILabel().then {
         $0.attributedText = .attributeFont(font: .body16, text: "주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리")
-        $0.numberOfLines = 2
+        $0.numberOfLines = 0
     }
-    
-    let commentView = UIView()
     
     let commentIamgeView = UIImageView().then {
         $0.frame = .init(x: 0, y: 0, width: 24, height: 24)
@@ -60,22 +57,23 @@ class PostTableViewCell: UITableViewCell {
         $0.textColor = AppColor.setupColor(.textSub)
     }
     
+    let bottomSeparatorView = UIView().then {
+        $0.frame = .init(x: 0, y: 0, width: UIScreen.width - 24, height: 1)
+        $0.backgroundColor = AppColor.setupColor(.componentDivider)
+    }
+    
     init(reuseIdentifier: String?) {
         super.init(style: .default, reuseIdentifier: reuseIdentifier)
-        setupView()
-        //        self.backgroundColor = .systemBlue
+        setUpView()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupView() {
-        self.backgroundColor = .white
-        
+    private func setUpView() {
         self.contentView.addSubview(containerView)
         
-        // ContentView에 추가
         [
             profileImageView,
             usernameLabel,
@@ -84,24 +82,17 @@ class PostTableViewCell: UITableViewCell {
             categoryBadge,
             titleLabel,
             contentLabel,
-            commentView
-        ].forEach {
-            self.containerView.addSubview($0)
-        }
-        
-        // commentView
-        [
             commentIamgeView,
-            commentCountLabel
+            commentCountLabel,
+            bottomSeparatorView,
         ].forEach {
-            self.commentView.addSubview($0)
+            containerView.addSubview($0)
         }
         
-        /// SetLayout
-        setupLayout()
+        setUpLayout()
     }
     
-    private func setupLayout() {
+    private func setUpLayout() {
         profileImageView.snp.makeConstraints {
             $0.top.equalToSuperview().inset(16)
             $0.leading.equalToSuperview().inset(24)
@@ -139,27 +130,28 @@ class PostTableViewCell: UITableViewCell {
             $0.leading.trailing.equalToSuperview().inset(24)
         }
         
-        commentIamgeView.snp.makeConstraints {
-            $0.top.leading.equalToSuperview()
-            $0.width.height.equalTo(24)
-        }
-        
         commentCountLabel.snp.makeConstraints {
+            $0.top.equalTo(profileImageView.snp.bottom).offset(8)
+            $0.trailing.equalToSuperview().inset(24)
             $0.centerY.equalTo(commentIamgeView)
-            $0.leading.equalTo(commentIamgeView.snp.trailing).offset(8)
         }
         
-        commentView.snp.makeConstraints {
-            $0.top.equalTo(contentLabel.snp.bottom).offset(28)
+        commentIamgeView.snp.makeConstraints {
+            $0.top.equalTo(profileImageView.snp.bottom).offset(8)
+            $0.width.height.equalTo(24)
+            $0.trailing.equalTo(commentCountLabel.snp.leading).inset(-8)
+        }
+        
+        bottomSeparatorView.snp.makeConstraints {
+            $0.top.equalTo(contentLabel.snp.bottom).offset(30)
+            $0.height.equalTo(1)
             $0.leading.trailing.equalToSuperview().inset(24)
-            $0.top.equalTo(commentIamgeView.snp.top)
-            $0.bottom.equalTo(commentIamgeView.snp.bottom)
-            $0.bottom.equalToSuperview().inset(8)
+            $0.bottom.equalToSuperview().inset(30)
         }
         
         containerView.snp.makeConstraints {
             $0.top.equalTo(profileImageView.snp.top).inset(-16)
-            $0.bottom.equalTo(commentView.snp.bottom).inset(-8)
+            $0.bottom.equalTo(bottomSeparatorView.snp.bottom).inset(-30)
             $0.edges.equalToSuperview()
         }
     }

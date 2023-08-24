@@ -40,6 +40,10 @@
 		394A03362A5F11410093A62A /* HomeTrendPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394A03352A5F11410093A62A /* HomeTrendPostTableViewCell.swift */; };
 		39541DA42A96F078008B0B41 /* SelectSubwayLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39541DA32A96F078008B0B41 /* SelectSubwayLineViewController.swift */; };
 		39541DA62A971D51008B0B41 /* CommunityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39541DA52A971D51008B0B41 /* CommunityViewModel.swift */; };
+		39541DAA2A972DDE008B0B41 /* DetailCommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39541DA92A972DDE008B0B41 /* DetailCommunityViewController.swift */; };
+		39541DAC2A973583008B0B41 /* PostContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39541DAB2A973583008B0B41 /* PostContentTableViewCell.swift */; };
+		39541DAE2A974580008B0B41 /* PostCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39541DAD2A974580008B0B41 /* PostCommentTableViewCell.swift */; };
+		39541DB02A974CFE008B0B41 /* CommentTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39541DAF2A974CFE008B0B41 /* CommentTextField.swift */; };
 		3981DE172A2F086F007AA4F6 /* UIView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3981DE162A2F086F007AA4F6 /* UIView+Ex.swift */; };
 		39D70E5F2A93046000AABC7E /* BaseUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D70E5E2A93046000AABC7E /* BaseUIViewController.swift */; };
 		39D70E622A930CCB00AABC7E /* CommunityMainTableHaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D70E612A930CCB00AABC7E /* CommunityMainTableHaderView.swift */; };
@@ -87,6 +91,10 @@
 		394A03352A5F11410093A62A /* HomeTrendPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTrendPostTableViewCell.swift; sourceTree = "<group>"; };
 		39541DA32A96F078008B0B41 /* SelectSubwayLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSubwayLineViewController.swift; sourceTree = "<group>"; };
 		39541DA52A971D51008B0B41 /* CommunityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewModel.swift; sourceTree = "<group>"; };
+		39541DA92A972DDE008B0B41 /* DetailCommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCommunityViewController.swift; sourceTree = "<group>"; };
+		39541DAB2A973583008B0B41 /* PostContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostContentTableViewCell.swift; sourceTree = "<group>"; };
+		39541DAD2A974580008B0B41 /* PostCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCommentTableViewCell.swift; sourceTree = "<group>"; };
+		39541DAF2A974CFE008B0B41 /* CommentTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTextField.swift; sourceTree = "<group>"; };
 		3981DE162A2F086F007AA4F6 /* UIView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ex.swift"; sourceTree = "<group>"; };
 		39D70E5E2A93046000AABC7E /* BaseUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIViewController.swift; sourceTree = "<group>"; };
 		39D70E612A930CCB00AABC7E /* CommunityMainTableHaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityMainTableHaderView.swift; sourceTree = "<group>"; };
@@ -220,9 +228,8 @@
 		393C424729ED7086002A80FC /* Community */ = {
 			isa = PBXGroup;
 			children = (
-				393C424C29ED70BF002A80FC /* CommunityViewController.swift */,
-				39541DA32A96F078008B0B41 /* SelectSubwayLineViewController.swift */,
-				39541DA52A971D51008B0B41 /* CommunityViewModel.swift */,
+				39541DA72A972DB9008B0B41 /* View */,
+				39541DA82A972DC1008B0B41 /* ViewModel */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -259,6 +266,7 @@
 				246436B92A3990D700C9F796 /* LinkPreView.swift */,
 				39F97B0F2A7CCFB9003BB7CA /* SubwayLineView.swift */,
 				39D70E5E2A93046000AABC7E /* BaseUIViewController.swift */,
+				39541DAF2A974CFE008B0B41 /* CommentTextField.swift */,
 			);
 			path = "Custom Component";
 			sourceTree = "<group>";
@@ -299,6 +307,26 @@
 				394A03352A5F11410093A62A /* HomeTrendPostTableViewCell.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		39541DA72A972DB9008B0B41 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				393C424C29ED70BF002A80FC /* CommunityViewController.swift */,
+				39541DA32A96F078008B0B41 /* SelectSubwayLineViewController.swift */,
+				39541DA92A972DDE008B0B41 /* DetailCommunityViewController.swift */,
+				39541DAB2A973583008B0B41 /* PostContentTableViewCell.swift */,
+				39541DAD2A974580008B0B41 /* PostCommentTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		39541DA82A972DC1008B0B41 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				39541DA52A971D51008B0B41 /* CommunityViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		39D70E602A930CB200AABC7E /* Community */ = {
@@ -462,6 +490,7 @@
 				394A03322A5F0B940093A62A /* UIScreen+Ex.swift in Sources */,
 				3981DE172A2F086F007AA4F6 /* UIView+Ex.swift in Sources */,
 				48171D4A2A30268600F1F869 /* LineCollectionViewCell.swift in Sources */,
+				39541DB02A974CFE008B0B41 /* CommentTextField.swift in Sources */,
 				246436BA2A3990D700C9F796 /* LinkPreView.swift in Sources */,
 				39F97B0E2A7CC8E4003BB7CA /* CongestionSearchLineViewController.swift in Sources */,
 				393C425F29ED71D0002A80FC /* Networking.swift in Sources */,
@@ -474,6 +503,8 @@
 				3923B5B52A25DD09002845EC /* BottomSheetView.swift in Sources */,
 				394A03302A5F08720093A62A /* HomeTableHeaderView.swift in Sources */,
 				24798B432A37FDB4004A0343 /* BadgeView.swift in Sources */,
+				39541DAE2A974580008B0B41 /* PostCommentTableViewCell.swift in Sources */,
+				39541DAC2A973583008B0B41 /* PostContentTableViewCell.swift in Sources */,
 				394A03362A5F11410093A62A /* HomeTrendPostTableViewCell.swift in Sources */,
 				393C42632A1BAFDE002A80FC /* NSAttributedString+Ex.swift in Sources */,
 				CFD59C662A2F89B500CE92F9 /* RegistPasswordViewController.swift in Sources */,
@@ -488,6 +519,7 @@
 				39F97B102A7CCFB9003BB7CA /* SubwayLineView.swift in Sources */,
 				393C425A29ED71A7002A80FC /* String+Ex.swift in Sources */,
 				393C425129ED70D6002A80FC /* MyViewController.swift in Sources */,
+				39541DAA2A972DDE008B0B41 /* DetailCommunityViewController.swift in Sources */,
 				393C422E29ED6A21002A80FC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

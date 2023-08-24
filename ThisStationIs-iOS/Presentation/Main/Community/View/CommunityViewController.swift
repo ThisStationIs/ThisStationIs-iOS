@@ -56,6 +56,11 @@ class CommunityViewController: BaseUIViewController {
         setUpView()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setUpLineView()
+    }
+    
     @objc func tapTitleView(_ gesture: UITapGestureRecognizer) {
         let selectSubwayLineViewController = SelectSubwayLineViewController(viewModel: viewModel)
         selectSubwayLineViewController.hidesBottomBarWhenPushed = true
@@ -169,9 +174,10 @@ class CommunityViewController: BaseUIViewController {
         lineIconViewArray.forEach { $0.removeFromSuperview() }
         lineIconViewArray = []
         
-        for i in 0..<dummyLine.count {
+        for i in 0..<viewModel.selectedLineArray.count {
             let lineView = SubwayLineView(type: .icon)
-            lineView.setLineName = dummyLine[i]
+            let firstIndex = viewModel.selectedLineArray[i].startIndex
+            lineView.setLineName = "\(viewModel.selectedLineArray[i][firstIndex])"
             
             lineIconViewArray.append(lineView)
         }
@@ -214,6 +220,11 @@ extension CommunityViewController: UITableViewDelegate, UITableViewDataSource {
         cell.selectionStyle = .none
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailCommunityViewController = DetailCommunityViewController()
+        self.navigationController?.pushViewController(detailCommunityViewController, animated: true)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

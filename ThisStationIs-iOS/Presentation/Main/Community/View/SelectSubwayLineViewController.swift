@@ -81,6 +81,7 @@ class SelectSubwayLineViewController: BaseUIViewController {
     
     @objc func selectApplyButton() {
         // 적용 버튼
+        self.navigationController?.popViewController(animated: true   )
     }
     
     private func setUpView() {
