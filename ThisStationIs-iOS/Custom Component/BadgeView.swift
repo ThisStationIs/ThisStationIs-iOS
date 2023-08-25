@@ -68,7 +68,7 @@ class BadgeView: UIView {
     private func setUpLargeBadgeView() {
         self.frame = .init(x: 0, y: 0, width: 59, height: 32)
         self.layer.masksToBounds = true
-        self.layer.cornerRadius = self.frame.height / 2
+        self.layer.cornerRadius = 26 / 2
         self.addSubview(titleLabel)
         
         titleLabel.attributedText = .attributeFont(font: .body14, text: "Label")

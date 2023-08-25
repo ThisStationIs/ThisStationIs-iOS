@@ -27,7 +27,9 @@ class SelectSubwayLineViewController: BaseUIViewController {
         $0.addTarget(self, action: #selector(selectApplyButton), for: .touchUpInside)
     }
     
-    let lineNameArray: [String] = ["1호선", "2호선", "3호선", "4호선", "5호선", "6호선", "7호선", "8호선", "9호선", "경강선", "경의중앙선", "경춘선", "공항철도", "김포도시철도", "서해선", "수인 분당선", "신림선", "신분당선", "용인경전철", "우의경전철", "인천 1호선", "인천 2호선", "의정부경전철"]
+    let lineNameArray: [String] = ["1호선", "2호선", "3호선", "4호선", "5호선", "6호선", "7호선", "8호선", "9호선", "경강선", "경의중앙선", "경춘선", "공항철도", "김포골드라인", "서해선", "수인 분당선", "신림선", "신분당선", "용인에버라인", "우이신설선", "인천 1호선", "인천 2호선", "의정부경전철"]
+    
+//    let lineNameArray: [LineColorSet] = [.lineOne, .lineTwo, .lineThree, .lineFour, .lineFive, .lineSix, .lineSeven, .lineEight, .lineNine, .경강선, .경의중앙선, .경춘선, .공항철도, .김포골드라인, .서해선, .수인분당선, .신림선, .신분당선, .용인에버라인, .우이신설선, .인천1호선, .인천2호선, .의정부경전철]
     
 //    let lineNameArray: [String] = ["1호선", "2호선", "3호선", "4호선", "5호선", "6호선", "7호선", "8호선", "9호선"]
     
@@ -72,11 +74,11 @@ class SelectSubwayLineViewController: BaseUIViewController {
             return
         }
         
-        lineNameViewArray[sender.tag].backgroundColor = sender.isSelected ? AppColor.setupColor(.accentWarning) : .white
+        lineNameViewArray[sender.tag].backgroundColor = sender.isSelected ? AppColor.setupLineColor(lineNameArray[sender.tag]).withAlphaComponent(0.1) : .white
         lineNameViewArray[sender.tag].layer.borderWidth = sender.isSelected ? 0 : 1
         
         let titleLabel = lineNameViewArray[sender.tag].subviews[0] as! UILabel
-        titleLabel.textColor = sender.isSelected ? .white : AppColor.setupColor(.textTeritory)
+        titleLabel.textColor = sender.isSelected ? AppColor.setupLineColor(lineNameArray[sender.tag]) : AppColor.setupColor(.textTeritory)
     }
     
     @objc func selectApplyButton() {
@@ -125,9 +127,10 @@ class SelectSubwayLineViewController: BaseUIViewController {
                 // 이름이 같으면 선택 처리
                 if viewModel.selectedLineArray[j] == lineNameArray[i] {
                     lineButton.isSelected = true
-                    lineButton.backgroundColor = AppColor.setupColor(.accentWarning)
+                    // 배경 색, 텍스트 색 변경
+                    lineLabel.textColor = AppColor.setupLineColor(lineNameArray[i])
+                    lineButton.backgroundColor = AppColor.setupLineColor(lineNameArray[i]).withAlphaComponent(0.1)
                     lineButton.layer.borderWidth = 0
-                    lineLabel.textColor = .white
                 }
             }
             

@@ -177,7 +177,9 @@ class CommunityViewController: BaseUIViewController {
         for i in 0..<viewModel.selectedLineArray.count {
             let lineView = SubwayLineView(type: .icon)
             let firstIndex = viewModel.selectedLineArray[i].startIndex
-            lineView.setLineName = "\(viewModel.selectedLineArray[i][firstIndex])"
+//            lineView.setLineName = "\(viewModel.selectedLineArray[i][firstIndex])"
+            lineView.lineLabel.attributedText = .attributeFont(font: .content, text:"\(viewModel.selectedLineArray[i][firstIndex])")
+            lineView.setLineColor = AppColor.setupLineColor(viewModel.selectedLineArray[i])
             
             lineIconViewArray.append(lineView)
         }

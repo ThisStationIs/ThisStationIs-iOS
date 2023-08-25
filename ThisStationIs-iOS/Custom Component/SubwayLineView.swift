@@ -17,6 +17,7 @@ class SubwayLineView: UIView {
     let circleView = UIView().then {
         $0.frame = .init(x: 0, y: 0, width: 20, height: 20)
         $0.backgroundColor = .systemBlue
+        $0.layer.masksToBounds = true
         $0.layer.cornerRadius = $0.layer.frame.width / 2
     }
     
@@ -34,6 +35,12 @@ class SubwayLineView: UIView {
     var setLineName: String = "" {
         didSet {
             lineLabel.attributedText = .attributeFont(font: .body16, text: setLineName)
+        }
+    }
+    
+    var setLineColor: UIColor = AppColor.setupLineColor("1호선") {
+        didSet {
+            circleView.backgroundColor = setLineColor
         }
     }
     
@@ -86,6 +93,8 @@ class SubwayLineView: UIView {
             $0.top.bottom.equalToSuperview().inset(8)
             $0.leading.equalToSuperview().inset(type == .default ? 12 : 0)
         }
+        
+        circleView.layer.cornerRadius = 20 / 2
         
         lineLabel.snp.makeConstraints {
             $0.center.equalToSuperview()
