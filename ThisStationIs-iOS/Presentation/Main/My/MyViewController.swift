@@ -117,4 +117,18 @@ extension MyViewController: UITableViewDelegate, UITableViewDataSource {
         return row == 0 ? 45 : 40
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let section = indexPath.section
+        let row = indexPath.row
+        
+        if section == 1 {
+            print("### row: \(row)")
+            let nextVC = AppPopUpViewController()
+            nextVC.type = .twoButtonBodyOnly
+            nextVC.setupBody(body: "‘문의하기'는 <이번역은> 공식 메일로\n바로 연결됩니다!\nthis_stop_is@gmail.com")
+            nextVC.modalPresentationStyle = .overFullScreen
+            self.present(nextVC, animated: false)
+        }
+    }
+    
 }
