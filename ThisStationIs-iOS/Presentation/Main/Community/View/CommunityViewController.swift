@@ -46,7 +46,9 @@ class CommunityViewController: BaseUIViewController {
     lazy var titleViewGeusture = UITapGestureRecognizer(target: self, action: #selector(tapTitleView))
     
     var lineIconViewArray: [UIView] = []
-    var categoryViewArray: [UIView] = []
+    var categoryViewArray: [BadgeView] = []
+    
+    var dummyPostData = postDummyData
     
     let viewModel = CommunityViewModel()
 
@@ -69,8 +71,23 @@ class CommunityViewController: BaseUIViewController {
      
     @objc func selectRightButton() {
         //
-        dummyLine = ["4", "5"]
-        setUpLineView()
+//        dummyLine = ["4", "5"]
+//        setUpLineView()
+    }
+    
+    @objc func selectBadgeTapGesture(_ sender: UIGestureRecognizer) {
+        guard let badgeView = sender.view as? BadgeView else { return }
+        badgeView.isSelect.toggle()
+        
+        badgeView.isSelect ? viewModel.addSelectCategory(category: categoryTitleString[badgeView.tag], tag: badgeView.tag) : viewModel.removeSelectCategory(category: categoryTitleString[badgeView.tag], tag: badgeView.tag)
+        
+        // 태그가 첫번째 태그를 선택한게 아니면 첫번째 태그 삭제
+        if badgeView.tag == 0 {
+            categoryViewArray.forEach { $0.isSelect = false }
+            categoryViewArray[0].isSelect = true
+        } else {
+            categoryViewArray[0].isSelect = false
+        }
     }
     
     private func setUpNavigationBar() {
@@ -108,6 +125,10 @@ class CommunityViewController: BaseUIViewController {
             badgeView.text = .attributeFont(font: .body14, text: categoryTitleString[i])
             badgeView.outlineColor = AppColor.setupColor(.primaryNormal)
             badgeView.textColor = AppColor.setupColor(.primaryNormal)
+            badgeView.isSelect = i == 0 ? true : false
+            
+            let badgeTapGesture = UITapGestureRecognizer(target: self, action: #selector(selectBadgeTapGesture))
+            badgeView.addGestureRecognizer(badgeTapGesture)
             
             categoryViewArray.append(badgeView)
         }
@@ -173,6 +194,7 @@ class CommunityViewController: BaseUIViewController {
         // 상위 뷰에서 삭제 후 다시 그려주기
         lineIconViewArray.forEach { $0.removeFromSuperview() }
         lineIconViewArray = []
+        dummyPostData = postDummyData
         
         for i in 0..<viewModel.selectedLineArray.count {
             let lineView = SubwayLineView(type: .icon)
@@ -199,12 +221,21 @@ class CommunityViewController: BaseUIViewController {
                 }
             }
         }
+        
+        if viewModel.selectedLineArray.count > 0 {
+            // 필터가 변경된 대로 게시글 보여주기
+            dummyPostData = dummyPostData.filter({ value in
+                viewModel.selectedLineArray.contains(value.subway)
+            })
+        }
+        
+        self.boardTableView.reloadData()
     }
 }
  
 extension CommunityViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return dummyPostData.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -212,20 +243,21 @@ extension CommunityViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let identifier = "\(indexPath.row)"
+        let postData = dummyPostData[indexPath.row]
+        let identifier = "\(indexPath.row) \(postData.idx)"
         
         if let reuseCell = tableView.dequeueReusableCell(withIdentifier: identifier) {
             return reuseCell
         }
         
-        let cell = PostTableViewCell(reuseIdentifier: identifier)
+        let cell = PostTableViewCell(reuseIdentifier: identifier, postData: postData)
         cell.selectionStyle = .none
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailCommunityViewController = DetailCommunityViewController()
+        let detailCommunityViewController = DetailCommunityViewController(postData: dummyPostData[indexPath.row])
         self.navigationController?.pushViewController(detailCommunityViewController, animated: true)
     }
     

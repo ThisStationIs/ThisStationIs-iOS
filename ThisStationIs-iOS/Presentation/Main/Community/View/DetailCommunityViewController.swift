@@ -32,7 +32,19 @@ class DetailCommunityViewController: BaseUIViewController {
     let sendButton = UIButton().then {
         $0.setImage(UIImage(named: "send"), for: .normal)
     }
-
+    
+    var postData: PostModel?
+    var dummyCommentData = commentDummyData
+    
+    init(postData: PostModel) {
+        super.init(nibName: nil, bundle: nil)
+        self.postData = postData
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -106,7 +118,7 @@ extension DetailCommunityViewController: UITableViewDelegate, UITableViewDataSou
             return 1
         }
         
-        return 10
+        return dummyCommentData.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -115,24 +127,26 @@ extension DetailCommunityViewController: UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            let identifier = "\(indexPath.row)"
+            guard let postData = postData else { return UITableViewCell() }
+            let identifier = "\(indexPath.row) \(postData.idx)"
             
             if let reuseCell = tableView.dequeueReusableCell(withIdentifier: identifier) {
                 return reuseCell
             }
             
-            let cell = PostContentTableViewCell.init(reuseIdentifier: identifier)
+            let cell = PostContentTableViewCell.init(reuseIdentifier: identifier, postData: postData)
             cell.selectionStyle = .none
             
             return cell
         } else {
-            let identifier = "\(indexPath.row)"
+            let commentData = dummyCommentData[indexPath.row]
+            let identifier = "\(indexPath.row) \(commentData.idx)"
             
             if let reuseCell = tableView.dequeueReusableCell(withIdentifier: identifier) {
                 return reuseCell
             }
             
-            let cell = PostCommentTableViewCell.init(reuseIdentifier: identifier)
+            let cell = PostCommentTableViewCell.init(reuseIdentifier: identifier, commentData: commentData)
             cell.selectionStyle = .none
             
             return cell

@@ -21,6 +21,18 @@ class BadgeView: UIView {
     
     let titleLabel = UILabel()
     
+    var isSelect: Bool = false {
+        didSet {
+            if isSelect {
+                titleLabel.textColor = textColor
+                self.layer.borderColor = outlineColor.cgColor
+            } else {
+                titleLabel.textColor = AppColor.setupColor(.textTeritory)
+                self.layer.borderColor = AppColor.setupColor(.componentDivider).cgColor
+            }
+        }
+    }
+    
     init(size: BadgeSize = .small, type: BadgeType = .solid) {
         super.init(frame: .zero)
         

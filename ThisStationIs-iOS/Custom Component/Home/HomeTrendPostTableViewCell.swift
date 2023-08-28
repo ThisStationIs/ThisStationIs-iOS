@@ -20,9 +20,11 @@ class HomeTrendPostTableViewCell: UITableViewCell {
     var postViewArray: [UIView] = []
     
     let contentViewWidth = UIScreen.width - 24 - 16 - 24
+    var postData: [PostModel]?
     
-    init(reuseIdentifier: String?) {
+    init(reuseIdentifier: String?, postDataArray: [PostModel]) {
         super.init(style: .default, reuseIdentifier: reuseIdentifier)
+        self.postData = postDataArray
         setupView()
     }
     
@@ -36,8 +38,9 @@ class HomeTrendPostTableViewCell: UITableViewCell {
     }
     
     private func setupScrollContent() {
+        guard let postData = postData else { return }
         for i in 0..<10 {
-            let trendPostView = setupScrollContentView()
+            let trendPostView = setupScrollContentView(postData: postData[i])
             trendPostView.tag = i
             
             self.postViewArray.append(trendPostView)
@@ -83,7 +86,7 @@ class HomeTrendPostTableViewCell: UITableViewCell {
 }
 
 extension HomeTrendPostTableViewCell {
-    func setupScrollContentView() -> UIView {
+    func setupScrollContentView(postData: PostModel) -> UIView {
         
         let trendPostView = UIView()
         trendPostView.backgroundColor = AppColor.setupColor(.componentTextbox)
@@ -95,33 +98,33 @@ extension HomeTrendPostTableViewCell {
         }
         
         let usernameLabel = UILabel().then {
-            $0.attributedText = .attributeFont(font: .body16, text: "행복한 바나나")
+            $0.attributedText = .attributeFont(font: .body16, text: postData.userName)
         }
         
         let writeDateLabel = UILabel().then {
-            $0.attributedText = .attributeFont(font: .body14, text: "23.03.09 17:37")
+            $0.attributedText = .attributeFont(font: .body14, text: postData.writeDate)
             $0.textColor = AppColor.setupColor(.textSub)
         }
         
         let lineBadge = BadgeView().then {
-            $0.text = .attributeFont(font: .content, text: "1호선")
-            $0.textColor = .systemBlue
-            $0.backgroundColor = .systemBlue.withAlphaComponent(0.1)
+            $0.text = .attributeFont(font: .content, text: postData.subway)
+            $0.textColor = AppColor.setupLineColor(postData.subway)
+            $0.backgroundColor = AppColor.setupLineColor(postData.subway).withAlphaComponent(0.1)
         }
         
         let categoryBadge = BadgeView().then {
-            $0.text = .attributeFont(font: .content, text: "연착정보")
+            $0.text = .attributeFont(font: .content, text: postData.category)
             $0.textColor = AppColor.setupColor(.textSub)
             $0.backgroundColor = AppColor.setupColor(.textSub).withAlphaComponent(0.1)
         }
         
         let titleLabel = UILabel().then {
-            $0.attributedText = .attributeFont(font: .heading16, text: "제목")
-            $0.numberOfLines = 2
+            $0.attributedText = .attributeFont(font: .heading16, text: postData.title)
+            $0.numberOfLines = 1
         }
         
         let contentLabel = UILabel().then {
-            $0.attributedText = .attributeFont(font: .body16, text: "주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리")
+            $0.attributedText = .attributeFont(font: .body16, text: postData.content)
             $0.numberOfLines = 2
         }
         

@@ -34,14 +34,21 @@ class PostCommentTableViewCell: UITableViewCell {
         $0.numberOfLines = 0
     }
     
-    init(reuseIdentifier: String?) {
+    init(reuseIdentifier: String?, commentData: CommentModel) {
         super.init(style: .default, reuseIdentifier: reuseIdentifier)
         
         setUpView()
+        setUpData(commentData)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setUpData(_ commentData: CommentModel) {
+        usernameLabel.attributedText = .attributeFont(font: .body14, text: commentData.userName)
+        writeDateLabel.attributedText = .attributeFont(font: .body14, text: commentData.writeDate)
+        commentLabel.attributedText = .attributeFont(font: .body14, text: commentData.comment)
     }
     
     private func setUpView() {

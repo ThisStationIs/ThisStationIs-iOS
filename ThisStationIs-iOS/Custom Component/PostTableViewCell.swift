@@ -17,33 +17,33 @@ class PostTableViewCell: UITableViewCell {
         $0.image = UIImage(named: "profile")
     }
     
-    let usernameLabel = UILabel().then {
+    var usernameLabel = UILabel().then {
         $0.attributedText = .attributeFont(font: .body16, text: "행복한 바나나")
     }
     
-    let writeDateLabel = UILabel().then {
+    var writeDateLabel = UILabel().then {
         $0.attributedText = .attributeFont(font: .body14, text: "23.03.09 17:37")
         $0.textColor = AppColor.setupColor(.textSub)
     }
     
-    let lineBadge = BadgeView().then {
+    var lineBadge = BadgeView().then {
         $0.text = .attributeFont(font: .content, text: "1호선")
         $0.textColor = .systemBlue
         $0.backgroundColor = .systemBlue.withAlphaComponent(0.1)
     }
     
-    let categoryBadge = BadgeView().then {
+    var categoryBadge = BadgeView().then {
         $0.text = .attributeFont(font: .content, text: "연착정보")
         $0.textColor = AppColor.setupColor(.textSub)
         $0.backgroundColor = AppColor.setupColor(.textSub).withAlphaComponent(0.1)
     }
     
-    let titleLabel = UILabel().then {
-        $0.attributedText = .attributeFont(font: .heading16, text: "제목")
+    var titleLabel = UILabel().then {
+        $0.attributedText = .attributeFont(font: .heading18, text: "제목")
         $0.numberOfLines = 2
     }
     
-    let contentLabel = UILabel().then {
+    var contentLabel = UILabel().then {
         $0.attributedText = .attributeFont(font: .body16, text: "주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리 주저리")
         $0.numberOfLines = 2
     }
@@ -60,14 +60,30 @@ class PostTableViewCell: UITableViewCell {
         $0.textColor = AppColor.setupColor(.textSub)
     }
     
-    init(reuseIdentifier: String?) {
+    init(reuseIdentifier: String?, postData: PostModel) {
         super.init(style: .default, reuseIdentifier: reuseIdentifier)
         setupView()
+        setUpData(postData)
         //        self.backgroundColor = .systemBlue
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setUpData(_ postData: PostModel) {
+        // 데이터 세팅
+        usernameLabel.attributedText = .attributeFont(font: .body16, text: postData.userName)
+        titleLabel.attributedText = .attributeFont(font: .heading18, text: postData.title)
+        contentLabel.attributedText = .attributeFont(font: .body16, text: postData.content)
+        writeDateLabel.attributedText = .attributeFont(font: .body14, text: postData.writeDate)
+        
+        // 호선 색상 세팅
+        lineBadge.text = .attributeFont(font: .content, text: postData.subway)
+        lineBadge.textColor = AppColor.setupLineColor(postData.subway)
+        lineBadge.backgroundColor = AppColor.setupLineColor(postData.subway).withAlphaComponent(0.1)
+        
+        categoryBadge.text = .attributeFont(font: .content, text: postData.category)
     }
     
     private func setupView() {
