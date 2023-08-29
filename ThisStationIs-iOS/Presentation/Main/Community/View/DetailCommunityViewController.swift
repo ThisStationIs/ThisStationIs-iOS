@@ -6,6 +6,32 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
+
+class DetailCommunityViewCoordinator: Coordinator {
+    var navigationController: UINavigationController
+    
+    var childCoordinators: [Coordinator] = []
+    var finishDelegate: CoordinatorFinishDelegate?
+    weak var parentCoordinator: CommunityCoordinator?
+    
+    var type: CoordinatorType = .community
+    
+    required init(_ navigationController: UINavigationController) {
+        self.navigationController = navigationController
+    }
+    
+    func start() {
+        print("start")
+//        self.navigationController.pushViewController(DetailCommunityViewController(), animated: true)
+    }
+    
+    func start(postData: PostModel) {
+        let detailCommunityViewController = DetailCommunityViewController(postData: postData)
+        detailCommunityViewController.coordinator = self
+        navigationController.pushViewController(detailCommunityViewController, animated: true)
+    }
+}
 
 class DetailCommunityViewController: BaseUIViewController {
     
@@ -29,12 +55,14 @@ class DetailCommunityViewController: BaseUIViewController {
         $0.backgroundColor = AppColor.setupColor(.componentTextbox)
     }
     
-    let sendButton = UIButton().then {
+    lazy var sendButton = UIButton().then {
         $0.setImage(UIImage(named: "send"), for: .normal)
+        $0.addTarget(self, action: #selector(selectSendButton), for: .touchUpInside)
     }
     
     var postData: PostModel?
     var dummyCommentData = commentDummyData
+    var coordinator: Coordinator?
     
     init(postData: PostModel) {
         super.init(nibName: nil, bundle: nil)
@@ -59,12 +87,34 @@ class DetailCommunityViewController: BaseUIViewController {
         setUpView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        IQKeyboardManager.shared.enable = false
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        IQKeyboardManager.shared.enable = true
+    }
+    
     @objc func selectLeftBarButton() {
         self.navigationController?.popViewController(animated: true)
     }
     
     @objc func selectRightBarButton() {
         
+    }
+    
+    @objc func selectSendButton() {
+        guard
+            let text = commentTextField.text,
+            !text.isEmpty
+        else { return }
+        
+        let commentInfo = CommentModel(idx: dummyCommentData.last!.idx + 1, userName: "모험적인 길잡이", writeDate: Date().dateToString(), comment: text)
+        dummyCommentData.append(commentInfo)
+        
+        contentTableView.reloadData()
+        
+        commentTextField.text = ""
     }
      
     private func setUpView() {

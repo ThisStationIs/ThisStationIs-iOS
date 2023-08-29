@@ -20,7 +20,9 @@ class CommunityCoordinator: Coordinator {
     }
     
     func start() {
-        self.navigationController.pushViewController(CommunityViewController(), animated: true)
+        let communityViewController  = CommunityViewController()
+        communityViewController.coordinator = self
+        navigationController.pushViewController(communityViewController, animated: true)
     }
     
 }
@@ -34,3 +36,15 @@ extension CommunityCoordinator: CoordinatorFinishDelegate {
     }
 }
 
+
+extension CommunityCoordinator: CommunityDelegate {
+    func pushDetailViewController(postData: PostModel) {
+        
+        
+        
+        let detailCommunityCoordinator = DetailCommunityViewCoordinator(navigationController)
+        detailCommunityCoordinator.parentCoordinator = self
+        childCoordinators.append(detailCommunityCoordinator)
+        detailCommunityCoordinator.start(postData: postData)
+    }
+}

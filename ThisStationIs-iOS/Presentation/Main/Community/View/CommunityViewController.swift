@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol CommunityDelegate: AnyObject {
+    func pushDetailViewController(postData: PostModel)
+}
+
 class CommunityViewController: BaseUIViewController {
     
     let searchBar = UISearchBar().then {
@@ -51,6 +55,8 @@ class CommunityViewController: BaseUIViewController {
     var dummyPostData = postDummyData
     
     let viewModel = CommunityViewModel()
+    var coordinator: CommunityCoordinator?
+    weak var delegate: CommunityDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -257,7 +263,10 @@ extension CommunityViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        delegate?.pushDetailViewController(postData: dummyPostData[indexPath.row])
+        
         let detailCommunityViewController = DetailCommunityViewController(postData: dummyPostData[indexPath.row])
+        detailCommunityViewController.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(detailCommunityViewController, animated: true)
     }
     
