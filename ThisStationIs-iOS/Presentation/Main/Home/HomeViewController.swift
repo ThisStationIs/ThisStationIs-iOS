@@ -29,6 +29,8 @@ class HomeViewController: UIViewController {
         $0.placeholder = "키워드를 검색해보세요"
     }
     
+    var dummyPostData = postDummyData
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -69,7 +71,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         if section == 0 {
             return 1
         } else {
-            return 10
+            return dummyPostData.count
         }
     }
     
@@ -122,39 +124,29 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 return reuseCell
             }
             
-            let cell = HomeTrendPostTableViewCell(reuseIdentifier: identifier)
+            let cell = HomeTrendPostTableViewCell(reuseIdentifier: identifier, postDataArray: dummyPostData)
             cell.selectionStyle = .none
             
             return cell
         } else {
-            let identifier = "\(indexPath.row)"
+            let postData = dummyPostData[indexPath.row]
+            let identifier = "\(indexPath.row) \(postData.idx)"
             
             if let reuseCell = tableView.dequeueReusableCell(withIdentifier: identifier) {
                 return reuseCell
             }
             
-            let cell = PostTableViewCell(reuseIdentifier: identifier)
+            let cell = PostTableViewCell(reuseIdentifier: identifier, postData: postData)
             cell.selectionStyle = .none
             
             return cell
         }
     }
-}
-
-extension UIView {
-  func makeSecure() {
-    DispatchQueue.main.async {
-      let textField = UITextField()
-      textField.isSecureTextEntry = true
-      
-      self.addSubview(textField)
-      textField.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-      textField.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-      
-      // 캡쳐하려는 뷰의 레이어를 textField.layer 사이에 끼워넣기
-      textField.layer.removeFromSuperlayer() // 이 코드가 없으면 run time error (layer 참조 관계에 cycle이 생성되므로)
-      self.layer.superlayer?.insertSublayer(textField.layer, at: 0)
-      textField.layer.sublayers?.last?.addSublayer(self.layer)
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 1 {
+            let detailCommunityViewController = DetailCommunityViewController(postData: dummyPostData[indexPath.row])
+            self.navigationController?.pushViewController(detailCommunityViewController, animated: true)
+        }
     }
-  }
 }

@@ -12,6 +12,7 @@ import SnapKit
 import Then
 import FlexLayout
 import PinLayout
+import IQKeyboardManagerSwift
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -24,6 +25,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene) // SceneDelegate의 프로퍼티에 설정해줌
+        IQKeyboardManager.shared.enable = true
+        
 //        let mainViewController = UINavigationController(rootViewController: ViewController()) // 맨 처음 보여줄 ViewController
         let navigationController = UINavigationController.init()
         appCoordinator = AppCoordinator(navigationController)
