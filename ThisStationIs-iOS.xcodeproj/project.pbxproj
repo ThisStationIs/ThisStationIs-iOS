@@ -56,6 +56,7 @@
 		39F97B102A7CCFB9003BB7CA /* SubwayLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F97B0F2A7CCFB9003BB7CA /* SubwayLineView.swift */; };
 		39F97B122A7CD7B3003BB7CA /* LineCongestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F97B112A7CD7B3003BB7CA /* LineCongestionViewController.swift */; };
 		3C6F218B2AA092CD006AF08E /* SelectLineTableVewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6F218A2AA092CD006AF08E /* SelectLineTableVewCell.swift */; };
+		3C6F218D2AA0950E006AF08E /* SelectTagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6F218C2AA0950E006AF08E /* SelectTagTableViewCell.swift */; };
 		3C94989E2AA05C850014699E /* WriteCommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C94989D2AA05C850014699E /* WriteCommunityViewController.swift */; };
 		48171D482A30243300F1F869 /* SelectFavoriteLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48171D472A30243300F1F869 /* SelectFavoriteLineViewController.swift */; };
 		48171D4A2A30268600F1F869 /* LineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48171D492A30268600F1F869 /* LineCollectionViewCell.swift */; };
@@ -130,6 +131,7 @@
 		39F97B0F2A7CCFB9003BB7CA /* SubwayLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubwayLineView.swift; sourceTree = "<group>"; };
 		39F97B112A7CD7B3003BB7CA /* LineCongestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineCongestionViewController.swift; sourceTree = "<group>"; };
 		3C6F218A2AA092CD006AF08E /* SelectLineTableVewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLineTableVewCell.swift; sourceTree = "<group>"; };
+		3C6F218C2AA0950E006AF08E /* SelectTagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTagTableViewCell.swift; sourceTree = "<group>"; };
 		3C94989D2AA05C850014699E /* WriteCommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteCommunityViewController.swift; sourceTree = "<group>"; };
 		48171D472A30243300F1F869 /* SelectFavoriteLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFavoriteLineViewController.swift; sourceTree = "<group>"; };
 		48171D492A30268600F1F869 /* LineCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -381,6 +383,7 @@
 				39541DAB2A973583008B0B41 /* PostContentTableViewCell.swift */,
 				39541DAD2A974580008B0B41 /* PostCommentTableViewCell.swift */,
 				3C6F218A2AA092CD006AF08E /* SelectLineTableVewCell.swift */,
+				3C6F218C2AA0950E006AF08E /* SelectTagTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -623,6 +626,7 @@
 				393C42632A1BAFDE002A80FC /* NSAttributedString+Ex.swift in Sources */,
 				CFB85E332A9436600077AD1B /* TabBarItemType.swift in Sources */,
 				CFD59C662A2F89B500CE92F9 /* RegistPasswordViewController.swift in Sources */,
+				3C6F218D2AA0950E006AF08E /* SelectTagTableViewCell.swift in Sources */,
 				39541DA62A971D51008B0B41 /* CommunityViewModel.swift in Sources */,
 				39D70E622A930CCB00AABC7E /* CommunityMainTableHaderView.swift in Sources */,
 				24684E402A36C762000C2947 /* CheckButtonWithText.swift in Sources */,

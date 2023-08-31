@@ -16,6 +16,7 @@ class WriteCommunityViewController: UIViewController {
         $0.separatorStyle = .none
         
         $0.register(SelectLineTableVewCell.self, forCellReuseIdentifier: "SelectLineTableVewCell")
+        $0.register(SelectTagTableViewCell.self, forCellReuseIdentifier: "SelectTagTableViewCell")
     }
     
     var coordinator: WrittingCoordinator?
@@ -75,6 +76,10 @@ extension WriteCommunityViewController: UITableViewDelegate, UITableViewDataSour
             let cell = tableView.dequeueReusableCell(withIdentifier: "SelectLineTableVewCell") as! SelectLineTableVewCell
             cell.selectionStyle = .none
             return cell
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SelectTagTableViewCell") as! SelectTagTableViewCell
+            cell.selectionStyle = .none
+            return cell
         default:
             return UITableViewCell()
         }
@@ -86,6 +91,8 @@ extension WriteCommunityViewController: UITableViewDelegate, UITableViewDataSour
         switch row {
         case 0:
             return 88
+        case 1:
+            return 128
         default:
             return 100
         }
