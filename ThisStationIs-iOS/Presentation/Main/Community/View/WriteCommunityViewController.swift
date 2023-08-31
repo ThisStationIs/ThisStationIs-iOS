@@ -17,6 +17,8 @@ class WriteCommunityViewController: UIViewController {
         
         $0.register(SelectLineTableVewCell.self, forCellReuseIdentifier: "SelectLineTableVewCell")
         $0.register(SelectTagTableViewCell.self, forCellReuseIdentifier: "SelectTagTableViewCell")
+        $0.register(WriteCommunityTitleTableViewCell.self, forCellReuseIdentifier: "WriteCommunityTitleTableViewCell")
+        $0.register(WriteCommunityContentsTableViewCell.self, forCellReuseIdentifier: "WriteCommunityContentsTableViewCell")
     }
     
     var coordinator: WrittingCoordinator?
@@ -66,7 +68,7 @@ extension WriteCommunityViewController {
 
 extension WriteCommunityViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -80,8 +82,14 @@ extension WriteCommunityViewController: UITableViewDelegate, UITableViewDataSour
             let cell = tableView.dequeueReusableCell(withIdentifier: "SelectTagTableViewCell") as! SelectTagTableViewCell
             cell.selectionStyle = .none
             return cell
+        case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "WriteCommunityTitleTableViewCell") as! WriteCommunityTitleTableViewCell
+            cell.selectionStyle = .none
+            return cell
         default:
-            return UITableViewCell()
+            let cell = tableView.dequeueReusableCell(withIdentifier: "WriteCommunityContentsTableViewCell") as! WriteCommunityContentsTableViewCell
+            cell.selectionStyle = .none
+            return cell
         }
     }
     
@@ -93,8 +101,10 @@ extension WriteCommunityViewController: UITableViewDelegate, UITableViewDataSour
             return 88
         case 1:
             return 128
+        case 2:
+            return 56
         default:
-            return 100
+            return UIScreen.main.bounds.height - 88 - 128 - 56
         }
     }
     
