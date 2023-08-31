@@ -20,7 +20,8 @@ class HomeCoordinator: Coordinator {
     }
     
     func start() {
-        self.navigationController.pushViewController(HomeViewController(), animated: true)
+        let homeViewController = HomeViewController()
+        self.navigationController.pushViewController(homeViewController, animated: true)
     }
     
 }
