@@ -62,13 +62,27 @@ class PostContentTableViewCell: UITableViewCell {
         $0.backgroundColor = AppColor.setupColor(.componentDivider)
     }
     
-    init(reuseIdentifier: String?) {
+    init(reuseIdentifier: String?, postData: PostModel) {
         super.init(style: .default, reuseIdentifier: reuseIdentifier)
         setUpView()
+        setUpData(postData)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setUpData(_ postData: PostModel) {
+        usernameLabel.attributedText = .attributeFont(font: .body16, text: postData.userName)
+        titleLabel.attributedText = .attributeFont(font: .heading18, text: postData.title)
+        contentLabel.attributedText = .attributeFont(font: .body16, text: postData.content)
+        writeDateLabel.attributedText = .attributeFont(font: .body14, text: postData.writeDate)
+        
+        lineBadge.text = .attributeFont(font: .content, text: postData.subway)
+        lineBadge.textColor = AppColor.setupLineColor(postData.subway)
+        lineBadge.backgroundColor = AppColor.setupLineColor(postData.subway).withAlphaComponent(0.1)
+        
+        categoryBadge.text = .attributeFont(font: .content, text: postData.category)
     }
     
     private func setUpView() {

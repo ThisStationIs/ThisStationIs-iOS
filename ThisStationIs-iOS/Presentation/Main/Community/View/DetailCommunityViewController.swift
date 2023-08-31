@@ -6,6 +6,32 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
+
+class DetailCommunityViewCoordinator: Coordinator {
+    var navigationController: UINavigationController
+    
+    var childCoordinators: [Coordinator] = []
+    var finishDelegate: CoordinatorFinishDelegate?
+    weak var parentCoordinator: CommunityCoordinator?
+    
+    var type: CoordinatorType = .community
+    
+    required init(_ navigationController: UINavigationController) {
+        self.navigationController = navigationController
+    }
+    
+    func start() {
+        print("start")
+        //        self.navigationController.pushViewController(DetailCommunityViewController(), animated: true)
+    }
+    
+    func start(postData: PostModel) {
+        let detailCommunityViewController = DetailCommunityViewController(postData: postData)
+        detailCommunityViewController.coordinator = self
+        navigationController.pushViewController(detailCommunityViewController, animated: true)
+    }
+}
 
 class DetailCommunityViewController: BaseUIViewController {
     
@@ -29,10 +55,24 @@ class DetailCommunityViewController: BaseUIViewController {
         $0.backgroundColor = AppColor.setupColor(.componentTextbox)
     }
     
-    let sendButton = UIButton().then {
+    lazy var sendButton = UIButton().then {
         $0.setImage(UIImage(named: "send"), for: .normal)
+        $0.addTarget(self, action: #selector(selectSendButton), for: .touchUpInside)
     }
-
+    
+    var postData: PostModel?
+    var dummyCommentData = commentDummyData
+    var coordinator: Coordinator?
+    
+    init(postData: PostModel) {
+        super.init(nibName: nil, bundle: nil)
+        self.postData = postData
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,7 +84,24 @@ class DetailCommunityViewController: BaseUIViewController {
         let rightBarButton = UIBarButtonItem(image: UIImage(named: "menu"), style: .plain, target: self, action: #selector(selectRightBarButton))
         self.navigationItem.rightBarButtonItem = rightBarButton
         
+        let tapGesure: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(keyboardDownAction))
+        tapGesure.cancelsTouchesInView = false
+        contentTableView.addGestureRecognizer(tapGesure)
+        
+        // 키보드 옵저버
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardUpAction), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDownAction), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        
         setUpView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        IQKeyboardManager.shared.enable = false
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        IQKeyboardManager.shared.enable = true
     }
     
     @objc func selectLeftBarButton() {
@@ -54,7 +111,59 @@ class DetailCommunityViewController: BaseUIViewController {
     @objc func selectRightBarButton() {
         
     }
-     
+    
+    @objc func selectSendButton() {
+        guard
+            let text = commentTextField.text,
+            !text.isEmpty
+        else { return }
+        
+        let commentInfo = CommentModel(idx: dummyCommentData.last!.idx + 1, userName: "모험적인 길잡이", writeDate: Date().dateToString(), comment: text)
+        dummyCommentData.append(commentInfo)
+        
+        contentTableView.reloadData()
+        scrollToBottom()
+        
+        commentTextField.text = ""
+    }
+    
+    @objc func keyboardUpAction(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            let keyboardHeight: CGFloat
+            keyboardHeight = keyboardSize.height - self.view.safeAreaInsets.bottom
+            self.bottomView.snp.updateConstraints {
+                $0.bottom.equalToSuperview().inset(keyboardHeight)
+            }
+            
+            self.contentTableView.snp.updateConstraints {
+                $0.bottom.equalToSuperview().inset(98 + keyboardHeight)
+            }
+            
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    @objc func keyboardDownAction() {
+        self.bottomView.snp.updateConstraints {
+            $0.bottom.equalToSuperview()
+        }
+        
+        self.contentTableView.snp.updateConstraints {
+            $0.bottom.equalToSuperview().inset(98)
+        }
+        
+        self.view.endEditing(true)
+        self.view.layoutIfNeeded()
+        scrollToBottom()
+    }
+    
+    func scrollToBottom() {
+        DispatchQueue.main.async {
+            let indexPath = IndexPath(row: self.dummyCommentData.count - 1, section: 1)
+            self.contentTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+        }
+    }
+    
     private func setUpView() {
         self.view.addSubview(contentTableView)
         self.view.addSubview(bottomView)
@@ -104,9 +213,9 @@ extension DetailCommunityViewController: UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return 1
+        } else {
+            return dummyCommentData.count
         }
-        
-        return 10
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -115,24 +224,26 @@ extension DetailCommunityViewController: UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            let identifier = "\(indexPath.row)"
+            guard let postData = postData else { return UITableViewCell() }
+            let identifier = "\(indexPath.row) \(postData.idx)"
             
             if let reuseCell = tableView.dequeueReusableCell(withIdentifier: identifier) {
                 return reuseCell
             }
             
-            let cell = PostContentTableViewCell.init(reuseIdentifier: identifier)
+            let cell = PostContentTableViewCell.init(reuseIdentifier: identifier, postData: postData)
             cell.selectionStyle = .none
             
             return cell
         } else {
-            let identifier = "\(indexPath.row)"
+            let commentData = dummyCommentData[indexPath.row]
+            let identifier = "\(indexPath.row) \(commentData.idx)"
             
             if let reuseCell = tableView.dequeueReusableCell(withIdentifier: identifier) {
                 return reuseCell
             }
             
-            let cell = PostCommentTableViewCell.init(reuseIdentifier: identifier)
+            let cell = PostCommentTableViewCell.init(reuseIdentifier: identifier, commentData: commentData)
             cell.selectionStyle = .none
             
             return cell

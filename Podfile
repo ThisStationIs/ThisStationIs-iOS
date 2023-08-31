@@ -10,6 +10,7 @@ target 'ThisStationIs-iOS' do
   pod 'SnapKit', '~> 5.6.0'
   pod 'Then'
   pod 'PinLayout'
+  pod 'IQKeyboardManagerSwift'
   # Pods for ThisStationIs-iOS
 
 end

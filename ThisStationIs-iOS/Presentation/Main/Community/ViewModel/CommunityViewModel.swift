@@ -10,6 +10,7 @@ import Foundation
 class CommunityViewModel: NSObject {
     
     var selectedLineArray: [String] = []
+    var selectedCategoryArray: [String] = []
     var canSelect: Bool = false
     
     // 선택한 호선 저장
@@ -31,5 +32,27 @@ class CommunityViewModel: NSObject {
         selectedLineArray = selectedLineArray.filter { $0 != lineInfo }
         
         print("🗑 삭제 완료 : \(selectedLineArray)")
+    }
+    
+    // 선택한 카테고리 저장
+    func addSelectCategory(category: String, tag: Int) {
+        if category != "전체" {
+            selectedCategoryArray.append(category)
+            print("👾 추가 완료 : \(selectedCategoryArray)")
+        } else {
+            selectedCategoryArray.removeAll()
+        }
+    }
+    
+    // 선택한 카테고리 삭제, 전체 선택 시 전부 삭제
+    func removeSelectCategory(category: String, tag: Int) {
+        // 전체 선택 시 선택한 카테고리 전부 해제
+        if tag == 0 {
+            selectedCategoryArray.removeAll()
+        } else {
+            selectedCategoryArray = selectedCategoryArray.filter { $0 != category }
+        }
+        
+        print("🗑 삭제 완료 : \(selectedCategoryArray)")
     }
 }
