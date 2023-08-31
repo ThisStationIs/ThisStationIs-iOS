@@ -22,15 +22,33 @@ class WriteCommunityViewController: UIViewController {
         super.viewWillAppear(animated)
         title = "게시글 작성"
         setupRightBarButtonItem()
+        setupTabBar()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .yellow
+        setupView()
+        setupLayout()
     }
 }
 
 extension WriteCommunityViewController {
+    private func setupView() {
+        view.backgroundColor = .white
+        view.addSubview(mainTableView)
+    }
+    
+    private func setupLayout() {
+        mainTableView.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.leading.trailing.bottom.equalToSuperview()
+        }
+    }
+    
+    private func setupTabBar() {
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
     private func setupRightBarButtonItem() {
         guard let originalImage = UIImage(named: "send") else { return }
         
