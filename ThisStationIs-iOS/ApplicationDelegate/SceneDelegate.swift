@@ -29,6 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
 //        let mainViewController = UINavigationController(rootViewController: ViewController()) // 맨 처음 보여줄 ViewController
         let navigationController = UINavigationController.init()
+        navigationController.navigationBar.isHidden = true
         appCoordinator = AppCoordinator(navigationController)
         appCoordinator!.start()
 

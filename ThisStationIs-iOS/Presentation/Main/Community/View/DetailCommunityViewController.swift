@@ -23,7 +23,7 @@ class DetailCommunityViewCoordinator: Coordinator {
     
     func start() {
         print("start")
-//        self.navigationController.pushViewController(DetailCommunityViewController(), animated: true)
+        //        self.navigationController.pushViewController(DetailCommunityViewController(), animated: true)
     }
     
     func start(postData: PostModel) {
@@ -84,6 +84,15 @@ class DetailCommunityViewController: BaseUIViewController {
         let rightBarButton = UIBarButtonItem(image: UIImage(named: "menu"), style: .plain, target: self, action: #selector(selectRightBarButton))
         self.navigationItem.rightBarButtonItem = rightBarButton
         
+        let tapGesure: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(keyboardDownAction))
+        tapGesure.cancelsTouchesInView = false
+        contentTableView.addGestureRecognizer(tapGesure)
+        
+        // 키보드 옵저버
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardUpAction), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDownAction), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        
         setUpView()
     }
     
@@ -113,10 +122,48 @@ class DetailCommunityViewController: BaseUIViewController {
         dummyCommentData.append(commentInfo)
         
         contentTableView.reloadData()
+        scrollToBottom()
         
         commentTextField.text = ""
     }
-     
+    
+    @objc func keyboardUpAction(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            let keyboardHeight: CGFloat
+            keyboardHeight = keyboardSize.height - self.view.safeAreaInsets.bottom
+            self.bottomView.snp.updateConstraints {
+                $0.bottom.equalToSuperview().inset(keyboardHeight)
+            }
+            
+            self.contentTableView.snp.updateConstraints {
+                $0.bottom.equalToSuperview().inset(98 + keyboardHeight)
+            }
+            
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    @objc func keyboardDownAction() {
+        self.bottomView.snp.updateConstraints {
+            $0.bottom.equalToSuperview()
+        }
+        
+        self.contentTableView.snp.updateConstraints {
+            $0.bottom.equalToSuperview().inset(98)
+        }
+        
+        self.view.endEditing(true)
+        self.view.layoutIfNeeded()
+        scrollToBottom()
+    }
+    
+    func scrollToBottom() {
+        DispatchQueue.main.async {
+            let indexPath = IndexPath(row: self.dummyCommentData.count - 1, section: 1)
+            self.contentTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+        }
+    }
+    
     private func setUpView() {
         self.view.addSubview(contentTableView)
         self.view.addSubview(bottomView)
@@ -166,9 +213,9 @@ extension DetailCommunityViewController: UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return 1
+        } else {
+            return dummyCommentData.count
         }
-        
-        return dummyCommentData.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
