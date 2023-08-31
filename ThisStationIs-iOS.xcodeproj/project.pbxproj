@@ -55,6 +55,7 @@
 		39F97B0E2A7CC8E4003BB7CA /* CongestionSearchLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F97B0D2A7CC8E4003BB7CA /* CongestionSearchLineViewController.swift */; };
 		39F97B102A7CCFB9003BB7CA /* SubwayLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F97B0F2A7CCFB9003BB7CA /* SubwayLineView.swift */; };
 		39F97B122A7CD7B3003BB7CA /* LineCongestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F97B112A7CD7B3003BB7CA /* LineCongestionViewController.swift */; };
+		3C94989E2AA05C850014699E /* WriteCommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C94989D2AA05C850014699E /* WriteCommunityViewController.swift */; };
 		48171D482A30243300F1F869 /* SelectFavoriteLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48171D472A30243300F1F869 /* SelectFavoriteLineViewController.swift */; };
 		48171D4A2A30268600F1F869 /* LineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48171D492A30268600F1F869 /* LineCollectionViewCell.swift */; };
 		48171D522A385CF100F1F869 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48171D512A385CF100F1F869 /* Coordinator.swift */; };
@@ -127,6 +128,7 @@
 		39F97B0D2A7CC8E4003BB7CA /* CongestionSearchLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongestionSearchLineViewController.swift; sourceTree = "<group>"; };
 		39F97B0F2A7CCFB9003BB7CA /* SubwayLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubwayLineView.swift; sourceTree = "<group>"; };
 		39F97B112A7CD7B3003BB7CA /* LineCongestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineCongestionViewController.swift; sourceTree = "<group>"; };
+		3C94989D2AA05C850014699E /* WriteCommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteCommunityViewController.swift; sourceTree = "<group>"; };
 		48171D472A30243300F1F869 /* SelectFavoriteLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFavoriteLineViewController.swift; sourceTree = "<group>"; };
 		48171D492A30268600F1F869 /* LineCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineCollectionViewCell.swift; sourceTree = "<group>"; };
 		48171D512A385CF100F1F869 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -371,6 +373,7 @@
 			isa = PBXGroup;
 			children = (
 				393C424C29ED70BF002A80FC /* CommunityViewController.swift */,
+				3C94989D2AA05C850014699E /* WriteCommunityViewController.swift */,
 				39541DA32A96F078008B0B41 /* SelectSubwayLineViewController.swift */,
 				39541DA92A972DDE008B0B41 /* DetailCommunityViewController.swift */,
 				39541DAB2A973583008B0B41 /* PostContentTableViewCell.swift */,
@@ -480,7 +483,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					393C422729ED6A21002A80FC = {
 						CreatedOnToolsVersion = 14.2;
@@ -611,6 +614,7 @@
 				24798B432A37FDB4004A0343 /* BadgeView.swift in Sources */,
 				39541DAE2A974580008B0B41 /* PostCommentTableViewCell.swift in Sources */,
 				39541DAC2A973583008B0B41 /* PostContentTableViewCell.swift in Sources */,
+				3C94989E2AA05C850014699E /* WriteCommunityViewController.swift in Sources */,
 				394A03362A5F11410093A62A /* HomeTrendPostTableViewCell.swift in Sources */,
 				393C42632A1BAFDE002A80FC /* NSAttributedString+Ex.swift in Sources */,
 				CFB85E332A9436600077AD1B /* TabBarItemType.swift in Sources */,
@@ -769,7 +773,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P5A4NBG7AB;
+				DEVELOPMENT_TEAM = 6GGFAY4XMT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ThisStationIs-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -797,7 +801,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P5A4NBG7AB;
+				DEVELOPMENT_TEAM = 6GGFAY4XMT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ThisStationIs-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
