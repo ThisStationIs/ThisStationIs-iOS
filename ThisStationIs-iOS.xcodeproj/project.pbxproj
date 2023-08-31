@@ -55,6 +55,7 @@
 		39F97B0E2A7CC8E4003BB7CA /* CongestionSearchLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F97B0D2A7CC8E4003BB7CA /* CongestionSearchLineViewController.swift */; };
 		39F97B102A7CCFB9003BB7CA /* SubwayLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F97B0F2A7CCFB9003BB7CA /* SubwayLineView.swift */; };
 		39F97B122A7CD7B3003BB7CA /* LineCongestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F97B112A7CD7B3003BB7CA /* LineCongestionViewController.swift */; };
+		3C6F218B2AA092CD006AF08E /* SelectLineTableVewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6F218A2AA092CD006AF08E /* SelectLineTableVewCell.swift */; };
 		3C94989E2AA05C850014699E /* WriteCommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C94989D2AA05C850014699E /* WriteCommunityViewController.swift */; };
 		48171D482A30243300F1F869 /* SelectFavoriteLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48171D472A30243300F1F869 /* SelectFavoriteLineViewController.swift */; };
 		48171D4A2A30268600F1F869 /* LineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48171D492A30268600F1F869 /* LineCollectionViewCell.swift */; };
@@ -128,6 +129,7 @@
 		39F97B0D2A7CC8E4003BB7CA /* CongestionSearchLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongestionSearchLineViewController.swift; sourceTree = "<group>"; };
 		39F97B0F2A7CCFB9003BB7CA /* SubwayLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubwayLineView.swift; sourceTree = "<group>"; };
 		39F97B112A7CD7B3003BB7CA /* LineCongestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineCongestionViewController.swift; sourceTree = "<group>"; };
+		3C6F218A2AA092CD006AF08E /* SelectLineTableVewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLineTableVewCell.swift; sourceTree = "<group>"; };
 		3C94989D2AA05C850014699E /* WriteCommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteCommunityViewController.swift; sourceTree = "<group>"; };
 		48171D472A30243300F1F869 /* SelectFavoriteLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFavoriteLineViewController.swift; sourceTree = "<group>"; };
 		48171D492A30268600F1F869 /* LineCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -378,6 +380,7 @@
 				39541DA92A972DDE008B0B41 /* DetailCommunityViewController.swift */,
 				39541DAB2A973583008B0B41 /* PostContentTableViewCell.swift */,
 				39541DAD2A974580008B0B41 /* PostCommentTableViewCell.swift */,
+				3C6F218A2AA092CD006AF08E /* SelectLineTableVewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -572,6 +575,7 @@
 				393C425D29ED71C5002A80FC /* APIClient.swift in Sources */,
 				CFB85E2F2A8A8F900077AD1B /* MyMenuCell.swift in Sources */,
 				39F97B0B2A7CC885003BB7CA /* HomeViewModel.swift in Sources */,
+				3C6F218B2AA092CD006AF08E /* SelectLineTableVewCell.swift in Sources */,
 				249FF6CF2A11D81000F5F2A9 /* Constant.swift in Sources */,
 				48171D542A385D2100F1F869 /* AppCoordinator.swift in Sources */,
 				CFB85E292A8A7D8A0077AD1B /* UIImage+Ex.swift in Sources */,
