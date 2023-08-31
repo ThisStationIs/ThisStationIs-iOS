@@ -14,6 +14,8 @@ class WriteCommunityViewController: UIViewController {
         $0.estimatedRowHeight = 72
         $0.rowHeight = UITableView.automaticDimension
         $0.separatorStyle = .none
+        
+        $0.register(SelectLineTableVewCell.self, forCellReuseIdentifier: "SelectLineTableVewCell")
     }
     
     var coordinator: WrittingCoordinator?
@@ -67,6 +69,33 @@ extension WriteCommunityViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let row = indexPath.row
+        switch row {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SelectLineTableVewCell") as! SelectLineTableVewCell
+            cell.selectionStyle = .none
+            return cell
+        default:
+            return UITableViewCell()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return UITableView.automaticDimension
+        let row = indexPath.row
+        switch row {
+        case 0:
+            return 88
+        default:
+            return 100
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let row = indexPath.row
+        if row == 0 {
+            let nextVC = SelectSubwayLineViewController(viewModel: CommunityViewModel())
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        }
     }
 }
