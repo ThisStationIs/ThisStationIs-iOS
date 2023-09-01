@@ -49,6 +49,7 @@
 		399FB8C72A9C3B49004C7E34 /* PostDummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399FB8C62A9C3B49004C7E34 /* PostDummyData.swift */; };
 		399FB8C92A9C3B7B004C7E34 /* Date+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399FB8C82A9C3B7B004C7E34 /* Date+Ex.swift */; };
 		39A2AB2D2A9889910030AEAB /* FirstLastTrainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A2AB2C2A9889910030AEAB /* FirstLastTrainViewController.swift */; };
+		39CCC3B92AA1939600AA6AA7 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CCC3B82AA1939600AA6AA7 /* TextView.swift */; };
 		39D70E5F2A93046000AABC7E /* BaseUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D70E5E2A93046000AABC7E /* BaseUIViewController.swift */; };
 		39D70E622A930CCB00AABC7E /* CommunityMainTableHaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D70E612A930CCB00AABC7E /* CommunityMainTableHaderView.swift */; };
 		39F97B0B2A7CC885003BB7CA /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F97B0A2A7CC885003BB7CA /* HomeViewModel.swift */; };
@@ -126,6 +127,7 @@
 		399FB8C62A9C3B49004C7E34 /* PostDummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDummyData.swift; sourceTree = "<group>"; };
 		399FB8C82A9C3B7B004C7E34 /* Date+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ex.swift"; sourceTree = "<group>"; };
 		39A2AB2C2A9889910030AEAB /* FirstLastTrainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLastTrainViewController.swift; sourceTree = "<group>"; };
+		39CCC3B82AA1939600AA6AA7 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		39D70E5E2A93046000AABC7E /* BaseUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIViewController.swift; sourceTree = "<group>"; };
 		39D70E612A930CCB00AABC7E /* CommunityMainTableHaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityMainTableHaderView.swift; sourceTree = "<group>"; };
 		39F97B0A2A7CC885003BB7CA /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 				39F97B0F2A7CCFB9003BB7CA /* SubwayLineView.swift */,
 				39D70E5E2A93046000AABC7E /* BaseUIViewController.swift */,
 				39541DAF2A974CFE008B0B41 /* CommentTextField.swift */,
+				39CCC3B82AA1939600AA6AA7 /* TextView.swift */,
 			);
 			path = "Custom Component";
 			sourceTree = "<group>";
@@ -612,6 +615,7 @@
 				393C425F29ED71D0002A80FC /* Networking.swift in Sources */,
 				393C423029ED6A21002A80FC /* ViewController.swift in Sources */,
 				2469FD3F2A32C11F00B78CF5 /* AuthNumberViewController.swift in Sources */,
+				39CCC3B92AA1939600AA6AA7 /* TextView.swift in Sources */,
 				39541DA42A96F078008B0B41 /* SelectSubwayLineViewController.swift in Sources */,
 				39F97B122A7CD7B3003BB7CA /* LineCongestionViewController.swift in Sources */,
 				393C424D29ED70BF002A80FC /* CommunityViewController.swift in Sources */,

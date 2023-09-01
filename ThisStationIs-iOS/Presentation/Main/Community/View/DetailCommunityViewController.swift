@@ -118,7 +118,12 @@ class DetailCommunityViewController: BaseUIViewController {
             !text.isEmpty
         else { return }
         
-        let commentInfo = CommentModel(idx: dummyCommentData.last!.idx + 1, userName: "모험적인 길잡이", writeDate: Date().dateToString(), comment: text)
+        var idx = 0
+        if let dummyData = dummyCommentData.last {
+            idx = dummyData.idx + 1
+        }
+        
+        let commentInfo = CommentModel(idx: idx, userName: "모험적인 길잡이", writeDate: Date().dateToString(), comment: text)
         dummyCommentData.append(commentInfo)
         
         contentTableView.reloadData()

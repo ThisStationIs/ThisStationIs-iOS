@@ -14,9 +14,21 @@ class SelectTagTableViewCell: UITableViewCell {
     
     let tagContentView = UIView()
     
-    var tagButtonArray: [UIButton] = []
+    var tagButtonArray: [BadgeView] = []
     
     let tagTitleArray: [String] = ["분실물", "연착정보", "사건사고", "알쓸신잡", "질문", "기타"]
+    
+    var categorySelectAction: ((_ title: String, _ tag: Int) -> ())?
+    
+    @objc func selectBadgeTapGesture(_ sender: UIGestureRecognizer) {
+        guard let sender = sender.view as? BadgeView else { return }
+        tagButtonArray.forEach { $0.isSelect = false }
+        sender.isSelect.toggle()
+        
+        if let categorySelectAction = categorySelectAction {
+            categorySelectAction(tagTitleArray[sender.tag], sender.tag)
+        }
+    }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -40,29 +52,15 @@ extension SelectTagTableViewCell {
         
         // tag 뷰 만들기
         for i in 0..<tagTitleArray.count {
-            let tagButton = UIButton()
-            tagButton.layer.cornerRadius = 32 / 2
-            tagButton.layer.masksToBounds = true
-            tagButton.layer.borderWidth = 1
-            tagButton.layer.borderColor = AppColor.setupColor(.textTeritory).cgColor
-            tagButton.tag = i
-//            tagButton.addTarget(self, action: #selector(selectLineButton), for: .touchUpInside)
+            let badgeView = BadgeView(size: .large, type: .solid)
+            badgeView.tag = i
+            badgeView.text = .attributeFont(font: .body14, text: tagTitleArray[i])
+            badgeView.outlineColor = AppColor.setupColor(.primaryNormal)
+            badgeView.textColor = AppColor.setupColor(.primaryNormal)
+            badgeView.isSelect = false
             
-            let tagLabel = UILabel()
-            tagLabel.attributedText = .attributeFont(font: .content, text: tagTitleArray[i])
-            tagLabel.textColor = AppColor.setupColor(.textTeritory)
-            tagButton.addSubview(tagLabel)
-            tagLabel.snp.makeConstraints {
-                $0.top.bottom.equalToSuperview().inset(8)
-                $0.leading.trailing.equalToSuperview().inset(12)
-            }
-            
-            tagButton.snp.makeConstraints {
-                $0.top.equalTo(tagLabel.snp.top).inset(-8)
-                $0.bottom.equalTo(tagLabel.snp.bottom).inset(-8)
-                $0.leading.equalTo(tagLabel.snp.leading).inset(-12)
-                $0.trailing.equalTo(tagLabel.snp.trailing).inset(-12)
-            }
+            let badgeTapGesture = UITapGestureRecognizer(target: self, action: #selector(selectBadgeTapGesture))
+            badgeView.addGestureRecognizer(badgeTapGesture)
             
             // 현재 선택되어있는 호선 표시
             //            for j in 0..<viewModel.selectedLineArray.count {
@@ -76,7 +74,7 @@ extension SelectTagTableViewCell {
             //                }
             //            }
             
-            tagButtonArray.append(tagButton)
+            tagButtonArray.append(badgeView)
         }
     
         tagButtonArray.forEach { tagContentView.addSubview($0) }
@@ -111,9 +109,9 @@ extension SelectTagTableViewCell {
             
             tagContentView.layoutIfNeeded()
             
-            if tagButtonArray[i].frame.maxX + 16 > UIScreen.width {
+            if tagButtonArray[i].frame.maxX + 8 > UIScreen.width - 48 {
                 positionX = 0.0
-                positionY = positionY + 32 + 16
+                positionY = positionY + 32 + 8
                 
                 tagButtonArray[i].snp.remakeConstraints {
                     $0.left.equalTo(positionX)
@@ -124,7 +122,7 @@ extension SelectTagTableViewCell {
                 tagContentView.layoutIfNeeded()
             }
             
-            positionX = positionX + tagButtonArray[i].frame.size.width + 16
+            positionX = positionX + tagButtonArray[i].frame.size.width + 8
         }
     }
 }

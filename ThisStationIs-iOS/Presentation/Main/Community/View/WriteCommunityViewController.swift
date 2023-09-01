@@ -22,12 +22,29 @@ class WriteCommunityViewController: UIViewController {
     }
     
     var coordinator: WrittingCoordinator?
+    var viewModel: CommunityViewModel!
+    
+    var selectCategory: String = ""
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         title = "게시글 작성"
         setupRightBarButtonItem()
         setupTabBar()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        mainTableView.reloadData()
+    }
+    
+    init(viewModel: CommunityViewModel) {
+        super.init(nibName: nil, bundle: nil)
+        self.viewModel = viewModel
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
@@ -61,8 +78,34 @@ extension WriteCommunityViewController {
         
         let tintedImage = resizedImage?.withTintColor(AppColor.setupColor(.primaryNormal), renderingMode: .alwaysOriginal)
 
-        let rightBarItemForSetting = UIBarButtonItem(image: tintedImage, style: .plain, target: nil, action: nil)
+        let rightBarItemForSetting = UIBarButtonItem(image: tintedImage, style: .plain, target: self, action: #selector(selectUploadPost))
         navigationItem.rightBarButtonItem = rightBarItemForSetting
+    }
+    
+    func categorySelectAction(title: String, tag: Int) {
+        selectCategory = title
+    }
+}
+
+extension WriteCommunityViewController {
+    @objc func selectUploadPost() {
+        // 업로드
+        let titleCell = mainTableView.cellForRow(at: IndexPath(row: 2, section: 0)) as! WriteCommunityTitleTableViewCell
+        let titleText = titleCell.getText()
+        
+        let contentCell = mainTableView.cellForRow(at: IndexPath(row: 3, section: 0)) as! WriteCommunityContentsTableViewCell
+        let contentText = contentCell.getText()
+        
+        let postModel = PostModel(idx: postDummyData.last!.idx + 1, userName: "모험적인 길잡이", writeDate: Date().dateToString(), category: selectCategory, subway: viewModel.selectedLineArray.first ?? "", title: titleText, content: contentText)
+        
+        postDummyData.append(postModel)
+//
+        print(postModel)
+        
+        let detailCommunityViewController = DetailCommunityViewController(postData: postModel)
+        detailCommunityViewController.hidesBottomBarWhenPushed = true
+        detailCommunityViewController.dummyCommentData = []
+        self.navigationController?.pushViewController(detailCommunityViewController, animated: true)
     }
 }
 
@@ -76,11 +119,13 @@ extension WriteCommunityViewController: UITableViewDelegate, UITableViewDataSour
         switch row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "SelectLineTableVewCell") as! SelectLineTableVewCell
+            cell.setLine = viewModel.selectedLineArray.first ?? "호선을 선택해주세요."
             cell.selectionStyle = .none
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "SelectTagTableViewCell") as! SelectTagTableViewCell
             cell.selectionStyle = .none
+            cell.categorySelectAction = categorySelectAction
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "WriteCommunityTitleTableViewCell") as! WriteCommunityTitleTableViewCell
@@ -111,7 +156,7 @@ extension WriteCommunityViewController: UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let row = indexPath.row
         if row == 0 {
-            let nextVC = SelectSubwayLineViewController(viewModel: CommunityViewModel())
+            let nextVC = SelectSubwayLineViewController(viewModel: viewModel)
             self.navigationController?.pushViewController(nextVC, animated: true)
         }
     }
