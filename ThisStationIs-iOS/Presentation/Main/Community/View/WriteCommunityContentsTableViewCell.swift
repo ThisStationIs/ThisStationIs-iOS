@@ -8,8 +8,9 @@
 import UIKit
 
 class WriteCommunityContentsTableViewCell: UITableViewCell {
-    private let contentTextField = UITextField().then {
-        $0.placeholder = "선택하신 태그와 관련된 글로 입력해주세요. \n댓글이 있는 경우 수정이 불가능합니다."
+    private let contentTextView = TextView().then {
+        $0.attributedText = .attributeFont(font: .body16, text: "")
+        $0.backgroundColor = .white
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -21,23 +22,27 @@ class WriteCommunityContentsTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func getText() -> String {
+        guard let text = contentTextView.text else { return "" }
+        return text
+    }
 }
 
 extension WriteCommunityContentsTableViewCell {
     private func setupView() {
         [
-            contentTextField,
+            contentTextView,
         ].forEach {
             contentView.addSubview($0)
         }
     }
     
     private func setupLayout() {
-        contentTextField.snp.makeConstraints {
+        contentTextView.snp.makeConstraints {
             $0.top.equalToSuperview()
                 .offset(16)
-            $0.leading.trailing.equalToSuperview()
-                .offset(-24)
+            $0.leading.trailing.equalToSuperview().inset(24)
             $0.bottom.equalToSuperview()
         }
     }

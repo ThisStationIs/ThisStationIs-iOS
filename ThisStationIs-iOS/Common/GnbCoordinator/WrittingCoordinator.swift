@@ -21,8 +21,7 @@ class WrittingCoordinator: Coordinator {
     }
     
     func start() {
-        let writeCommunityViewController  = WriteCommunityViewController()
-        writeCommunityViewController.coordinator = self
+        let writeCommunityViewController  = WriteCommunityViewController(viewModel: CommunityViewModel())
         self.navigationController.pushViewController(writeCommunityViewController, animated: true)
     }
     

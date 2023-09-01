@@ -21,6 +21,13 @@ class SelectLineTableVewCell: UITableViewCell {
         $0.image = UIImage(named: "downArrow")
     }
     
+    var setLine: String = "" {
+        didSet {
+            placeholderLabel.attributedText = .attributeFont(font: .heading16, text: setLine)
+            placeholderLabel.textColor = setLine == "호선을 선택해주세요." ? AppColor.setupColor(.textSub) : .black
+        }
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupView()
